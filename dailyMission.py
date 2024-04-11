@@ -146,7 +146,7 @@ def lottery():
 
 if __name__ == '__main__':
     login()
-    signin()
+    #signin()
     question()
     lottery()
     driver.quit()  
