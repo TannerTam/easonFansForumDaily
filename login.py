@@ -109,7 +109,7 @@ message_element = WebDriverWait(driver, 10).until(
 if message_element:
     print("今天已免费抽奖。")
 else:
-# 等待抽奖按钮可点击
+    # 等待抽奖按钮可点击
     WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.ID, "pointlevel"))
     )
