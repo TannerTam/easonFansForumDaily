@@ -37,37 +37,6 @@ else:
     driver.quit()
     exit() 
 
-for i in range(4):
-    driver.get("https://www.easonfans.com/forum/plugin.php?id=ahome_dayquestion:index")
-    participated_element = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.ID, "inner"))
-    )
-    matches = re.search(r"今日已参与 \((\d+)/(\d+)\)", participated_element.text)
-    participated = matches.group(1)
-
-    if participated == "3":
-        print("今日答题已完成。")
-        break
-
-    # 等待选项加载完毕    
-    WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.ID, "a4"))
-    )
-
-    # 点击单选按钮
-    radio_button = driver.find_element(By.ID, "a4")
-    radio_button.click()
-
-    # 等待提交按钮加载完毕
-    WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
-    )
-
-    # 点击提交按钮
-    submit_button = driver.find_element(By.XPATH, "//button[@name='submit'][@value='true']")
-    submit_button.click()
-    print(f"回答第 {participated+1} 题成功！")
-
 # 导航到签到页面
 driver.get("https://www.easonfans.com/forum/plugin.php?id=dsu_paulsign:sign")
 message_element = WebDriverWait(driver, 10).until(
@@ -98,6 +67,37 @@ else:
         print("签到成功！")
     else:
         print("签到失败。")
+
+for i in range(4):
+    driver.get("https://www.easonfans.com/forum/plugin.php?id=ahome_dayquestion:index")
+    participated_element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, "inner"))
+    )
+    matches = re.search(r"今日已参与 \((\d+)/(\d+)\)", participated_element.text)
+    participated = matches.group(1)
+
+    if participated == "3":
+        print("今日答题已完成。")
+        break
+
+    # 等待选项加载完毕    
+    WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.ID, "a4"))
+    )
+
+    # 点击单选按钮
+    radio_button = driver.find_element(By.ID, "a4")
+    radio_button.click()
+
+    # 等待提交按钮加载完毕
+    WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
+    )
+
+    # 点击提交按钮
+    submit_button = driver.find_element(By.XPATH, "//button[@name='submit'][@value='true']")
+    submit_button.click()
+    print(f"回答第 {participated+1} 题成功！")
 
 # 导航到抽奖页面
 driver.get("https://www.easonfans.com/forum/plugin.php?id=gplayconstellation:front")
