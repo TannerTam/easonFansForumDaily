@@ -1,9 +1,30 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 from time import sleep
 import re
 import os
 
 username = os.environ['USERNAME']
 password = os.environ['PASSWORD']
+
+
+# 模拟浏览器打开网站
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chromedriver = "/usr/bin/chromedriver"
+os.environ["webdriver.chrome.driver"] = chromedriver
+driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+#window电脑本地
+# driver = webdriver.Chrome("C:\Program Files (x86)\Google\Chrome\Application\chromedriver")
+
 
 def login():
     # 打开网页
