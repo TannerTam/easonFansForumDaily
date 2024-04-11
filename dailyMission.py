@@ -21,8 +21,8 @@ chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--disable-dev-shm-usage')
 chromedriver = "/usr/bin/chromedriver"
 os.environ["webdriver.chrome.driver"] = chromedriver
-driver = webdriver.Chrome(executable_path=chromedriver, chrome_options=chrome_options)
-
+service = Service(executable_path=chromedriver, chrome_options=chrome_options)
+driver = webdriver.Chrome(service=service)
 def login():
     # 打开网页
     driver.get("https://www.easonfans.com/forum/plugin.php?id=ahome_dayquestion:index")
