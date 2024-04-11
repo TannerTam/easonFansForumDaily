@@ -30,7 +30,7 @@ jobs:
       uses: nanasess/setup-chromedriver@v2
     - name: dailyMission
       env:
-        SCUT_USER: ${{ secrets.USERNAME }}
-        SCUT_PASSWORD: ${{ secrets.PASSWORD }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PASSWORD: ${{ secrets.PASSWORD }}
       run: |
         python dailyMission.py
