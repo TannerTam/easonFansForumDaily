@@ -21,10 +21,8 @@ chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--disable-dev-shm-usage')
 chromedriver = "/usr/bin/chromedriver"
 os.environ["webdriver.chrome.driver"] = chromedriver
-driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
-#window电脑本地
-# driver = webdriver.Chrome("C:\Program Files (x86)\Google\Chrome\Application\chromedriver")
-
+# driver = webdriver.Chrome(chrome_options=chrome_options,executable_path=chromedriver)
+driver = webdriver.Chrome(executable_path=chromedriver,chrome_options=chrome_options)
 
 def login():
     # 打开网页
