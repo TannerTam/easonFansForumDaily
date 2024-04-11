@@ -35,7 +35,7 @@ jobs:
         pip install -r ./requirements.txt
 
     - name: Prepare chromedriver
-      uses: nanasess/setup-chromedriver@v2
+      uses: nanasess/setup-chromedriver@v3
 
     - name: dailyMission
       env:
