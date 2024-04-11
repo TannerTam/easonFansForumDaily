@@ -19,10 +19,10 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--disable-dev-shm-usage')
-chromedriver = "/usr/local/bin/chromedriver.exe"
+# chromedriver = "/usr/local/bin/chromedriver.exe"
 # os.environ["webdriver.chrome.driver"] = chromedriver
-service = Service(executable_path='/usr/local/bin/chromedriver.exe')
-driver = webdriver.Chrome(service=service, options=chrome_options)
+# service = Service(executable_path='/usr/local/bin/chromedriver.exe')
+driver = webdriver.Chrome(options=chrome_options)
 
 def login():
     # 打开网页
