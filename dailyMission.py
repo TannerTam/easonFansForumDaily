@@ -119,20 +119,17 @@ def check_free_lottery(driver):
     except:
         return True  # 还有剩余免费抽奖次数
 
-def perform_lottery(driver):
+def lottery(driver):
+    if not check_free_lottery(driver):
+        print("今天已免费抽奖。")
+        return
+
     # 等待抽奖按钮可点击并点击
     WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.ID, "pointlevel"))
     ).click()
     print("开始免费抽奖。")
     sleep(5)  # 等待抽奖结果
-
-def lottery(driver):
-    if not check_free_lottery(driver):
-        print("今天已免费抽奖。")
-        return
-
-    perform_lottery(driver)
 
     # 重新检查是否抽奖成功
     if not check_free_lottery(driver):
@@ -148,7 +145,7 @@ if __name__ == '__main__':
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--disable-dev-shm-usage')
     chromedriver = "/usr/local/bin/chromedriver.exe"
-    # os.environ["webdriver.chrome.driver"] = chromedriver
+
     service = Service(executable_path='/usr/local/bin/chromedriver.exe')
     driver = webdriver.Chrome(options=chrome_options)
     login(driver)
