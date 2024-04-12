@@ -83,7 +83,7 @@ def question(driver):
             participated_element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.ID, "inner"))
             )
-            matches = re.search(r"今日已参与 \((\d+)/(\d+)\)", participated_element.text)
+            matches = re.search(r"\((\d+)/(\d+)\)", participated_element.text)
             if matches:
                 participated, total = matches.groups()
                 if participated == total:
