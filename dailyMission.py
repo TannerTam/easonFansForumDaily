@@ -160,8 +160,8 @@ def main():
     chromedriver = "/usr/local/bin/chromedriver.exe"
     driver = webdriver.Chrome(options=chrome_options)
 
-    initial_money = getMoney(driver)
     login(driver)
+    initial_money = getMoney(driver)
     signin(driver)
     question(driver)
     lottery(driver)
