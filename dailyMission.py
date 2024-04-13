@@ -166,7 +166,7 @@ def errorOccured():
     message['Subject'] = Header(subject, 'utf-8')
     try:
         smtpObj = smtplib.SMTP() 
-        smtpObj.connect(mail_host, 25)    # 25 为 SMTP 端口号
+        smtpObj.connect(mail_host, 465)    # 25 为 SMTP 端口号
         smtpObj.login(mail_user,mail_pass)  
         smtpObj.sendmail(sender, receiver, message.as_string())
         print ("邮件发送成功。")
