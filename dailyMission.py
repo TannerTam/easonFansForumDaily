@@ -160,7 +160,7 @@ def getMoney(driver):
 def errorOccured():
     sender = receiver = mail_user
     message = MIMEText('神经论坛脚本运行错误。', 'plain', 'utf-8')
-    message['From'] = formataddr(("FromRunoob", mail_user))
+    message['From'] = formataddr(("GitHub Action Assitance", mail_user))
     message['To'] = formataddr(("Tanner", receiver))
     message['Subject'] = Header('GitHub Action 运行错误', 'utf-8')
     try:
@@ -171,8 +171,6 @@ def errorOccured():
         server.quit()  # 关闭连接
     except smtplib.SMTPException as e:
         print(f"邮件发送失败。{e}")
-
-
     
 def main():
     # 模拟浏览器打开网站
