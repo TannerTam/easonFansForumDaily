@@ -12,7 +12,7 @@ import os
 
 import smtplib
 from email.mime.text import MIMEText
-from email.header import Header
+from email.utils import formataddr
 
 username = os.environ['USERNAME']
 password = os.environ['PASSWORD']
@@ -157,12 +157,11 @@ def getMoney(driver):
         return 0
     
 def errorOccured():
-    mail_host="smtp.qq.com"  #设置服务器
     sender = receiver = mail_user
     message = MIMEText('GitHub Action 运行错误。', 'plain', 'utf-8')
-    message['From'] = Header("GitHub Action", 'utf-8')
-    subject = 'GitHub Action 运行错误'
-    message['Subject'] = Header(subject, 'utf-8')
+    message['From']=formataddr(["GitHubActionAssistance",sender])
+    message['To'] = formataddr(receiver)
+    message['Subject'] = 'GitHub Action 运行错误'
     try:
         server=smtplib.SMTP_SSL("smtp.qq.com", 465)
         server.login(mail_user,mail_pass)  
