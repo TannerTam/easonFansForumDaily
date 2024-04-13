@@ -139,13 +139,17 @@ def lottery(driver):
 
 def getMoney(driver):
     driver.get("https://www.easonfans.com/forum/home.php?mod=spacecp&ac=credit&showcredit=1")
+    try:
+        money_element = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//li[@class='xi1 cl']"))
+        )
+        money_text = money_element.text
+        money_amount = [int(s) for s in money_text.split() if s.isdigit()][0]  # 提取数字并假设第一个数字为金钱数额
+        return money_amount
+    except Exception as e:
+        print(f"获取金钱失败：{e}")
+        return 0
     
-    money_element = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, "//li[@class='xi1 cl']/em/following-sibling::text()"))
-    )
-    money_amount = money_element.text.strip().split()[-1]
-    return int(money_amount)  # 假设金钱数额为整数
-
 def main():
     # 模拟浏览器打开网站
     chrome_options = webdriver.ChromeOptions()
