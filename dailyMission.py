@@ -7,11 +7,18 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException
 from time import sleep
+import requests
 import re
 import os
 
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
+
 username = os.environ['USERNAME']
 password = os.environ['PASSWORD']
+mail_user= os.environ['MAIL_USERNAME']
+mail_pass= os.environ['MAIL_PASSWORD']
 
 def login(driver):
     # 打开网页
@@ -150,6 +157,23 @@ def getMoney(driver):
         print(f"获取金钱失败：{e}")
         return 0
     
+def errorOccured():
+    mail_host="smtp.qq.com"  #设置服务器
+    sender = receiver = mail_user
+    message = MIMEText('GitHub Action 运行错误。', 'plain', 'utf-8')
+    message['From'] = Header("GitHub Action", 'utf-8')
+    subject = 'GitHub Action 运行错误'
+    message['Subject'] = Header(subject, 'utf-8')
+    try:
+        smtpObj = smtplib.SMTP() 
+        smtpObj.connect(mail_host, 25)    # 25 为 SMTP 端口号
+        smtpObj.login(mail_user,mail_pass)  
+        smtpObj.sendmail(sender, receiver, message.as_string())
+        print ("邮件发送成功。")
+    except smtplib.SMTPException:
+        print ("邮件发送失败。")
+
+    
 def main():
     # 模拟浏览器打开网站
     chrome_options = webdriver.ChromeOptions()
@@ -167,7 +191,10 @@ def main():
     lottery(driver)
     final_money = getMoney(driver)
     print(f"金钱变化：{initial_money} -> {final_money}。")
-    driver.quit()  
+    driver.quit()
+
+    if final_money == initial_money or final_money == 0 or initial_money:
+        errorOccured()  
 
 if __name__ == '__main__':
     main()
