@@ -164,13 +164,14 @@ def errorOccured():
     subject = 'GitHub Action 运行错误'
     message['Subject'] = Header(subject, 'utf-8')
     try:
-        smtpObj = smtplib.SMTP() 
-        smtpObj.connect(mail_host, 465)    # 25 为 SMTP 端口号
-        smtpObj.login(mail_user,mail_pass)  
-        smtpObj.sendmail(sender, receiver, message.as_string())
+        server=smtplib.SMTP_SSL("smtp.qq.com", 465)
+        server.login(mail_user,mail_pass)  
+        server.sendmail(sender, receiver, message.as_string())
         print ("邮件发送成功。")
-    except smtplib.SMTPException:
+        server.quit()  # 关闭连接
+    except Exception:  # 如果 try 中的语句没有执行，则会执行下面的 ret=False
         print ("邮件发送失败。")
+
 
     
 def main():
@@ -192,7 +193,7 @@ def main():
     print(f"金钱变化：{initial_money} -> {final_money}。")
     driver.quit()
 
-    if final_money == initial_money or final_money == 0 or initial_money:
+    if final_money == initial_money or final_money == 0 or initial_money == 0:
         errorOccured()  
 
 if __name__ == '__main__':
