@@ -165,7 +165,7 @@ def errorOccured():
     try:
         server=smtplib.SMTP_SSL("smtp.qq.com", 465)
         server.login(mail_user,mail_pass)  
-        server.sendmail(sender, receiver, message.as_string())
+        server.sendmail(sender,[receiver,],message.as_string())
         print ("邮件发送成功。")
         server.quit()  # 关闭连接
     except Exception:  # 如果 try 中的语句没有执行，则会执行下面的 ret=False
