@@ -7,7 +7,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import TimeoutException
 from time import sleep
-import requests
 import re
 import os
 
