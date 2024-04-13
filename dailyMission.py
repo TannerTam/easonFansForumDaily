@@ -160,7 +160,7 @@ def errorOccured():
     sender = receiver = mail_user
     message = MIMEText('神经论坛脚本运行错误。', 'plain', 'utf-8')
     message['From']=Header(["GitHubActionAssistance",sender])
-    message['To'] = receiver
+    message['To']=Header(["Tanner",receiver])
     message['Subject'] = 'GitHub Action 运行错误'
     try:
         server=smtplib.SMTP_SSL("smtp.qq.com", 465)
@@ -168,8 +168,8 @@ def errorOccured():
         server.sendmail(sender,[receiver,],message.as_string())
         print ("邮件发送成功。")
         server.quit()  # 关闭连接
-    except Exception:  # 如果 try 中的语句没有执行，则会执行下面的 ret=False
-        print ("邮件发送失败。")
+    except smtplib.SMTPException as e:  # 如果 try 中的语句没有执行，则会执行下面的 ret=False
+        print ("邮件发送失败。"+{})
 
 
     
