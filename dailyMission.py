@@ -137,7 +137,16 @@ def lottery(driver):
     else:
         print("免费抽奖失败。")
 
-if __name__ == '__main__':
+def getMoney(driver):
+    driver.get("https://www.easonfans.com/forum/home.php?mod=spacecp&ac=credit&showcredit=1")
+    
+    money_element = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//li[@class='xi1 cl']/em/following-sibling::text()"))
+    )
+    money_amount = money_element.text.strip().split()[-1]
+    return int(money_amount)  # 假设金钱数额为整数
+
+def main():
     # 模拟浏览器打开网站
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
@@ -145,11 +154,16 @@ if __name__ == '__main__':
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--disable-dev-shm-usage')
     chromedriver = "/usr/local/bin/chromedriver.exe"
-
-    service = Service(executable_path='/usr/local/bin/chromedriver.exe')
     driver = webdriver.Chrome(options=chrome_options)
+
+    initial_money = getMoney(driver)
     login(driver)
     signin(driver)
     question(driver)
     lottery(driver)
+    final_money = getMoney(driver)
+    print(f"金钱变化：{initial_money} -> {final_money}。")
     driver.quit()  
+
+if __name__ == '__main__':
+    main()
