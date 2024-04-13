@@ -159,17 +159,17 @@ def getMoney(driver):
 def errorOccured():
     sender = receiver = mail_user
     message = MIMEText('神经论坛脚本运行错误。', 'plain', 'utf-8')
-    message['From']=Header(["GitHubActionAssistance",sender])
-    message['To']=Header(["Tanner",receiver])
-    message['Subject'] = 'GitHub Action 运行错误'
+    message['From'] = Header("FromRunoob <{}>".format(mail_user), 'utf-8')
+    message['To'] = Header("Tanner <{}>".format(receiver), 'utf-8')
+    message['Subject'] = Header('GitHub Action 运行错误', 'utf-8')
     try:
         server=smtplib.SMTP_SSL("smtp.qq.com", 465)
         server.login(mail_user,mail_pass)  
-        server.sendmail(sender,[receiver,],message.as_string())
+        server.sendmail(sender,[receiver],message.as_string())
         print ("邮件发送成功。")
         server.quit()  # 关闭连接
-    except smtplib.SMTPException as e:  # 如果 try 中的语句没有执行，则会执行下面的 ret=False
-        print ("邮件发送失败。"+{})
+    except smtplib.SMTPException as e:
+        print(f"邮件发送失败。{e}")
 
 
     
