@@ -14,6 +14,8 @@ import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
 from email.utils import formataddr
+import io
+import sys
 
 username = os.environ['USERNAME']
 password = os.environ['PASSWORD']
@@ -157,12 +159,12 @@ def getMoney(driver):
         print(f"获取金钱失败：{e}")
         return 0
     
-def errorOccured():
+def sendEmail(msg):
     sender = receiver = mail_user
-    message = MIMEText('神经论坛脚本运行错误。', 'plain', 'utf-8')
+    message = MIMEText(msg, 'plain', 'utf-8')
     message['From'] = formataddr(("GitHub Action Assitance", mail_user))
     message['To'] = formataddr(("Tanner", receiver))
-    message['Subject'] = Header('GitHub Action 运行错误', 'utf-8')
+    message['Subject'] = Header('GitHub Action 运行报告', 'utf-8')
     try:
         server=smtplib.SMTP_SSL("smtp.qq.com", 465)
         server.login(mail_user,mail_pass)  
@@ -171,6 +173,14 @@ def errorOccured():
         server.quit()  # 关闭连接
     except smtplib.SMTPException as e:
         print(f"邮件发送失败。{e}")
+
+def capture_output(func):
+    # 重定向标准输出到一个内存缓冲区
+    buffer = io.StringIO()
+    sys.stdout = buffer
+    func()
+    sys.stdout = sys.__stdout__  # 恢复标准输出
+    return buffer.getvalue()
     
 def main():
     # 模拟浏览器打开网站
@@ -191,8 +201,7 @@ def main():
     print(f"金钱变化：{initial_money} -> {final_money}。")
     driver.quit()
 
-    if final_money == initial_money or final_money == 0 or initial_money == 0:
-        errorOccured()  
-
 if __name__ == '__main__':
     main()
+    output_message = capture_output(main)
+    sendEmail(output_message)
