@@ -182,7 +182,7 @@ def capture_output(func):
     sys.stdout = sys.__stdout__  # 恢复标准输出
     return buffer.getvalue()
     
-def main():
+def merge():
     # 模拟浏览器打开网站
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
@@ -202,6 +202,5 @@ def main():
     driver.quit()
 
 if __name__ == '__main__':
-    main()
-    output_message = capture_output(main)
+    output_message = capture_output(merge)
     sendEmail(output_message)
