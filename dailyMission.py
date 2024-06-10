@@ -54,17 +54,19 @@ def signin(driver):
         badge_window = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "fwin_badgewin_7ree"))
         )
+        print("需要领取徽章")
     except:
         pass
 
     if badge_window:
         # 查找并点击领取徽章的链接
-        badge_link = badge_window.find_element(By.CSS_SELECTOR, "div.popcard_button_7ree a")
-        badge_link.click()
-        print("已领取徽章")
+        # driver.get("https://www.easonfans.com/forum/plugin.php?id=badge_7ree:badge_7ree&code=1")
+        # print("已领取徽章")
 
-        # 重新打开网页
+        # 重新打开签到网页
         driver.get('https://www.easonfans.com/forum/plugin.php?id=dsu_paulsign:sign')
+    else:
+        print("无徽章可以领取")
 
     try:
         # 检查是否已经签到或签到未开始
