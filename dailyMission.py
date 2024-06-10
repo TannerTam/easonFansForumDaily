@@ -49,24 +49,19 @@ def signin(driver):
     # 导航到签到页面
     driver.get("https://www.easonfans.com/forum/plugin.php?id=dsu_paulsign:sign")
     
-    badge_window = None
-    try:
-        badge_window = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.ID, "fwin_badgewin_7ree"))
-        )
-        print("需要领取徽章")
-    except:
-        pass
+    badge_window = WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.ID, "fwin_badgewin_7ree"))
+    )
 
     if badge_window:
+        print("需要领取徽章")
         # 查找并点击领取徽章的链接
         # driver.get("https://www.easonfans.com/forum/plugin.php?id=badge_7ree:badge_7ree&code=1")
-        # print("已领取徽章")
-
+        # print("徽章领取成功")
         # 重新打开签到网页
         driver.get('https://www.easonfans.com/forum/plugin.php?id=dsu_paulsign:sign')
     else:
-        print("无徽章可以领取")
+        print("无需领取徽章")
 
     try:
         # 检查是否已经签到或签到未开始
