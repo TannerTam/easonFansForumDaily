@@ -48,6 +48,23 @@ def login(driver):
 def signin(driver):
     # 导航到签到页面
     driver.get("https://www.easonfans.com/forum/plugin.php?id=dsu_paulsign:sign")
+    
+    badge_window = None
+    try:
+        badge_window = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "fwin_badgewin_7ree"))
+        )
+    except:
+        pass
+
+    if badge_window:
+        # 查找并点击领取徽章的链接
+        badge_link = badge_window.find_element(By.CSS_SELECTOR, "div.popcard_button_7ree a")
+        badge_link.click()
+        print("已领取徽章")
+
+        # 重新打开网页
+        driver.get('https://www.easonfans.com/forum/plugin.php?id=dsu_paulsign:sign')
 
     try:
         # 检查是否已经签到或签到未开始
