@@ -46,24 +46,12 @@ def login(driver):
         exit() 
 
 def signin(driver):
+    # 点击徽章大厅链接
+    driver.get("https://www.easonfans.com/forum/plugin.php?id=badge_7ree:badge_7ree&code=1")
+    sleep(5)  # 等待页面加载
+
     # 导航到签到页面
     driver.get("https://www.easonfans.com/forum/plugin.php?id=dsu_paulsign:sign")
-    
-    badge_window = None
-    try:
-        # 检查是否需要领取徽章
-        badge_window = WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.ID, "fwin_badgewin_7ree"))
-        )
-        # 点击徽章大厅链接
-        # driver.get("https://www.easonfans.com/forum/plugin.php?id=badge_7ree:badge_7ree&code=1")
-        # sleep(5)
-        # print("徽章领取成功！")
-        # 重新打开签到网页
-        driver.get('https://www.easonfans.com/forum/plugin.php?id=dsu_paulsign:sign')
-    except TimeoutException:
-        print("无需领取徽章。")
-
     try:
         # 检查是否已经签到或签到未开始
         message_element = WebDriverWait(driver, 10).until(
