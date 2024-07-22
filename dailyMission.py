@@ -46,9 +46,9 @@ def login(driver):
         exit() 
 
 def signin(driver):
-    # 点击徽章大厅链接
-    driver.get("https://www.easonfans.com/forum/plugin.php?id=badge_7ree:badge_7ree&code=1")
-    sleep(5)  # 等待页面加载
+    # # 点击徽章大厅链接
+    # driver.get("https://www.easonfans.com/forum/plugin.php?id=badge_7ree:badge_7ree&code=1")
+    # sleep(5)  # 等待页面加载
 
     # 导航到签到页面
     driver.get("https://www.easonfans.com/forum/plugin.php?id=dsu_paulsign:sign")
