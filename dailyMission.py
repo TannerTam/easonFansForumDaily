@@ -55,13 +55,24 @@ def signin(driver):
             EC.presence_of_element_located((By.ID, "fwin_badgewin_7ree"))
         )
         if badge_element:
-            print("徽章弹窗出现，处理徽章领取逻辑。")
-            # 点击领取徽章按钮
-            badge_link = driver.find_element(By.XPATH, "//a[contains(text(), '领取这枚徽章')]")
-            badge_link.click()
-            print("徽章领取成功！")
+            print("徽章弹窗出现，准备领取徽章。")
+            # 打开徽章领取页面
+            driver.get("https://www.easonfans.com/forum/plugin.php?id=badge_7ree:badge_7ree&code=1")
+            
+            # 检查是否在新页面中弹出领取成功的徽章弹窗
+            try:
+                badge_success_element = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.CLASS_NAME, "popcard_tip_7ree"))
+                )
+                if badge_success_element:
+                    print("徽章领取成功！")
+            except TimeoutException:
+                print("徽章领取失败。")
     except TimeoutException:
         print("没有徽章弹窗。")
+    
+    # 导航到签到页面
+    driver.get("https://www.easonfans.com/forum/plugin.php?id=dsu_paulsign:sign")
     
     # 开始签到流程
     try:
@@ -94,6 +105,7 @@ def signin(driver):
             print("签到成功！")
         except TimeoutException:
             print("签到失败。")
+
 
 def question(driver):
     base_url = "https://www.easonfans.com/forum/plugin.php?id=ahome_dayquestion:index"
