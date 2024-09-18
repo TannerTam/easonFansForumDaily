@@ -24,7 +24,7 @@ mail_pass= os.environ['MAIL_PASSWORD']
 
 def login(driver):
     # 打开网页
-    driver.get("https://www.easonfans.com/forum/plugin.php?id=ahome_dayquestion:index")
+    driver.get("https://www.easonfans.com/FORUM/member.php?mod=logging&action=login")
 
     # 等待并填写登录表单
     WebDriverWait(driver, 10).until(
