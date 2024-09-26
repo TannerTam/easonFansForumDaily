@@ -24,26 +24,29 @@ mail_pass= os.environ['MAIL_PASSWORD']
 
 def login(driver):
     # 打开网页
-    driver.get("https://www.easonfans.com/FORUM/member.php?mod=logging&action=login")
+    try:
+        driver.get("https://www.easonfans.com/FORUM/member.php?mod=logging&action=login")
 
-    # 等待并填写登录表单
-    WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.NAME, "username"))
-    )
-    driver.find_element(By.NAME, "username").send_keys(username)
-    driver.find_element(By.NAME, "password").send_keys(password)
-    driver.find_element(By.NAME, "loginsubmit").click()
+        # 等待并填写登录表单
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.NAME, "username"))
+        )
+        driver.find_element(By.NAME, "username").send_keys(username)
+        driver.find_element(By.NAME, "password").send_keys(password)
+        driver.find_element(By.NAME, "loginsubmit").click()
 
-    login_element = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.ID, "umLogin"))
-    )
-    # 登录后的操作
-    if login_element:
-        print("登录成功！")
-    else:      
-        print("登录失败。")
-        driver.quit()
-        exit() 
+        login_element = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "umLogin"))
+        )
+        # 登录后的操作
+        if login_element:
+            print("登录成功！")
+        else:      
+            print("登录失败。")
+            driver.quit()
+            exit()
+    except Exception as e:
+        print(f"登录过程中出现错误：{e}")
 
 def signin(driver):
     # 导航到签到页面
@@ -83,28 +86,31 @@ def signin(driver):
         print("今天已签到或签到未开始。")
     except TimeoutException:
         # 签到按钮可点击，开始签到流程
-        WebDriverWait(driver, 10).until(
-            EC.element_to_be_clickable((By.XPATH, "//a[@onclick=\"showWindow('qwindow', 'qiandao', 'post', '0');return false\"]"))
-        )
-
-        # 点击签到触发元素
-        li_element = driver.find_element(By.ID, "kx")
-        li_element.click()
-
-        radio_button = driver.find_element(By.CSS_SELECTOR, "input[type='radio'][name='qdmode'][value='3']")
-        radio_button.click()
-
-        link = driver.find_element(By.XPATH, "//a[@onclick=\"showWindow('qwindow', 'qiandao', 'post', '0');return false\"]")
-        link.click()
-
-        # 重新检查是否签到成功
         try:
             WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, "//h1[contains(text(), '您今天已经签到过了或者签到时间还未开始')]"))
+                EC.element_to_be_clickable((By.XPATH, "//a[@onclick=\"showWindow('qwindow', 'qiandao', 'post', '0');return false\"]"))
             )
-            print("签到成功！")
-        except TimeoutException:
-            print("签到失败。")
+
+            # 点击签到触发元素
+            li_element = driver.find_element(By.ID, "kx")
+            li_element.click()
+
+            radio_button = driver.find_element(By.CSS_SELECTOR, "input[type='radio'][name='qdmode'][value='3']")
+            radio_button.click()
+
+            link = driver.find_element(By.XPATH, "//a[@onclick=\"showWindow('qwindow', 'qiandao', 'post', '0');return false\"]")
+            link.click()
+
+            # 重新检查是否签到成功
+            try:
+                WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.XPATH, "//h1[contains(text(), '您今天已经签到过了或者签到时间还未开始')]"))
+                )
+                print("签到成功！")
+            except TimeoutException:
+                print("签到失败。")
+        except Exception as e:
+            print(f"签到过程中出现错误：{e}")
 
 
 def question(driver):
@@ -132,7 +138,7 @@ def question(driver):
                 print("未找到答题信息。")
                 break
         except Exception as e:
-            print(f"遇到异常：{e}")
+            print(f"答题过程中出现错误：{e}")
             break
 
 def answer_question(driver, question_number):
@@ -161,17 +167,21 @@ def lottery(driver):
         return
 
     # 等待抽奖按钮可点击并点击
-    WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.ID, "pointlevel"))
-    ).click()
-    print("开始免费抽奖。")
-    sleep(5)  # 等待抽奖结果
+    
+    try:
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.ID, "pointlevel"))
+        ).click()
+        print("开始免费抽奖。")
+        sleep(5)  # 等待抽奖结果
 
-    # 重新检查是否抽奖成功
-    if not check_free_lottery(driver):
-        print("免费抽奖成功！")
-    else:
-        print("免费抽奖失败。")
+        # 重新检查是否抽奖成功
+        if not check_free_lottery(driver):
+            print("免费抽奖成功！")
+        else:
+            print("免费抽奖失败。")
+    except Exception as e:
+        print(f"抽奖过程中出现错误: {e}")
 
 def getMoney(driver):
     driver.get("https://www.easonfans.com/forum/home.php?mod=spacecp&ac=credit&showcredit=1")
