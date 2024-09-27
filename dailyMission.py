@@ -110,7 +110,7 @@ def signin(driver):
             except TimeoutException:
                 print("签到失败。")
         except Exception as e:
-            print(f"签到过程中出现错误：{e}")
+            print(f"签到过程中出现错误。")
 
 
 def question(driver):
@@ -138,7 +138,7 @@ def question(driver):
                 print("未找到答题信息。")
                 break
         except Exception as e:
-            print(f"答题过程中出现错误：{e}")
+            print(f"答题过程中出现错误。")
             break
 
 def answer_question(driver, question_number):
@@ -181,7 +181,7 @@ def lottery(driver):
         else:
             print("免费抽奖失败。")
     except Exception as e:
-        print(f"抽奖过程中出现错误: {e}")
+        print(f"抽奖过程中出现错误。")
 
 def getMoney(driver):
     driver.get("https://www.easonfans.com/forum/home.php?mod=spacecp&ac=credit&showcredit=1")
@@ -193,7 +193,7 @@ def getMoney(driver):
         money_amount = [int(s) for s in money_text.split() if s.isdigit()][0]  # 提取数字并假设第一个数字为金钱数额
         return money_amount
     except Exception as e:
-        print(f"获取金钱失败：{e}")
+        print(f"获取金钱失败。")
         return 0
     
 def sendEmail(msg):
@@ -209,7 +209,7 @@ def sendEmail(msg):
         print ("邮件发送成功。")
         server.quit()  # 关闭连接
     except smtplib.SMTPException as e:
-        print(f"邮件发送失败。{e}")
+        print(f"邮件发送失败。")
 
 def capture_output(func):
     # 重定向标准输出到一个内存缓冲区
