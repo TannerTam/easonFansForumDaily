@@ -46,7 +46,7 @@ def login(driver):
             driver.quit()
             exit()
     except Exception as e:
-        print(f"登录过程中出现错误：{e}")
+        print(f"登录过程中出现错误。")
 
 def signin(driver):
     # 导航到签到页面
