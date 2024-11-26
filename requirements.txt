@@ -1,1 +1,3 @@
 selenium
+zhipuai
+bs4
