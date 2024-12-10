@@ -143,7 +143,7 @@ def question(driver):
 
 def answer_question(driver, question_number):
     # 等待选项加载并点击
-    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "a4"))).click()
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "a1"))).click()
     # 提交答案
     WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
