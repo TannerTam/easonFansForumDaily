@@ -61,16 +61,21 @@ def signin(driver):
             print("徽章弹窗出现，准备领取徽章。")
             # 打开徽章领取页面
             driver.get("https://www.easonfans.com/forum/plugin.php?id=badge_7ree:badge_7ree&code=1")
+
             
-            # 检查是否在新页面中弹出领取成功的徽章弹窗
-            try:
-                badge_success_element = WebDriverWait(driver, 10).until(
-                    EC.presence_of_element_located((By.CLASS_NAME, "popcard_tip_7ree"))
-                )
-                if badge_success_element:
-                    print("徽章领取成功！")
-            except TimeoutException:
+            button = driver.find_element("css selector", 'a[href*="plugin.php?id=badge_7ree"]')
+            before_click_content = driver.page_source  # 记录点击前页面内容
+            button.click()  # 点击领取按钮
+            WebDriverWait(driver, 5).until(
+                EC.staleness_of(badge_element)  # 等待元素失效（通常意味着页面刷新）
+            )
+            after_click_content = driver.page_source  # 记录点击后页面内容
+
+            if before_click_content != after_click_content:
+                print("徽章领取成功！")
+            else:
                 print("徽章领取失败。")
+
     except TimeoutException:
         print("没有徽章弹窗。")
     
