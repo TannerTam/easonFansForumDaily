@@ -28,6 +28,11 @@ jobs:
       with:
         python-version: "3.11"
 
+    - name: Install tesseract-ocr
+      run: |
+        sudo apt update
+        sudo apt install -y tesseract-ocr
+
     - name: Install dependencies
       run: |
         pip install --upgrade pip

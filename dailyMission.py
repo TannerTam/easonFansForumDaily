@@ -9,6 +9,14 @@ from selenium.common.exceptions import TimeoutException
 from time import sleep
 import re
 import os
+import argparse
+import json
+import time
+from PIL import Image
+from io import BytesIO
+import pytesseract
+import base64
+import shutil
 
 import smtplib
 from email.mime.text import MIMEText
@@ -17,17 +25,36 @@ from email.utils import formataddr
 import io
 import sys
 
-username = os.environ['USERNAME']
-password = os.environ['PASSWORD']
-mail_user= os.environ['MAIL_USERNAME']
-mail_pass= os.environ['MAIL_PASSWORD']
+username = None
+password = None
+mail_user = None
+mail_pass = None
 
 def login(driver):
-    # 打开网页
     try:
         driver.get("https://www.easonfans.com/FORUM/member.php?mod=logging&action=login")
 
-        # 等待并填写登录表单
+        verify_img = WebDriverWait(driver, 5).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "verifyimg"))
+        )
+
+        img_url = verify_img.get_attribute("src")
+
+        base64_data = img_url.split(',')[1]
+
+        image_data = base64.b64decode(base64_data)
+        image = Image.open(BytesIO(image_data))
+
+        # image.save("debug_verify_code.png")
+        # print("[调试] 验证码图片已保存为 debug_verify_code.png")
+
+        code = pytesseract.image_to_string(image)
+        time.sleep(1)
+
+        input_box = driver.find_element(By.ID, "intext")
+        input_box.send_keys(code)
+
+        # 填写登录表单
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.NAME, "username"))
         )
@@ -35,18 +62,15 @@ def login(driver):
         driver.find_element(By.NAME, "password").send_keys(password)
         driver.find_element(By.NAME, "loginsubmit").click()
 
-        login_element = WebDriverWait(driver, 10).until(
+        # 检查是否登录成功
+        WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "umLogin"))
         )
-        # 登录后的操作
-        if login_element:
-            print("登录成功！")
-        else:      
-            print("登录失败。")
-            driver.quit()
-            exit()
+        print("登录成功！")
+
     except Exception as e:
-        print(f"登录过程中出现错误。")
+        print(f"登录过程中出现错误：{e}")
+        driver.quit()
 
 def signin(driver):
     # 导航到签到页面
@@ -224,15 +248,19 @@ def capture_output(func):
     sys.stdout = sys.__stdout__  # 恢复标准输出
     return buffer.getvalue()
     
-def merge():
+def merge(headless: bool, chromedriver_path: str):
+    global username, password, mail_user, mail_pass
+
     # 模拟浏览器打开网站
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument('--headless')
+    if headless:
+        chrome_options.add_argument('--headless')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--disable-dev-shm-usage')
-    chromedriver = "/usr/local/bin/chromedriver.exe"
-    driver = webdriver.Chrome(options=chrome_options)
+    
+    service = Service(executable_path=chromedriver_path)
+    driver = webdriver.Chrome(service=service, options=chrome_options)
 
     login(driver)
     initial_money = getMoney(driver)
@@ -243,6 +271,40 @@ def merge():
     print(f"金钱变化：{initial_money} -> {final_money}。")
     driver.quit()
 
-if __name__ == '__main__':
-    output_message = capture_output(merge)
+def main():
+    global username, password, mail_user, mail_pass
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--local', action='store_true', help='Use local config and chromedriver path')
+    parser.add_argument('--headless', action='store_true', help='Enable headless mode')
+    args = parser.parse_args()
+
+    # 配置加载
+    try:
+        if args.local:
+            chromedriver_path = "/home/tanner/Scripts/chromedriver-linux64/chromedriver"
+            with open('config.json', 'r') as f:
+                config = json.load(f)
+                credentials = {
+                    'username': config['USERNAME'],
+                    'password': config['PASSWORD'],
+                    'mail_user': config['MAIL_USERNAME'],
+                    'mail_pass': config['MAIL_PASSWORD']
+                }
+        else:
+            chromedriver_path = shutil.which("chromedriver")
+            credentials = {
+                'username': os.environ['USERNAME'],
+                'password': os.environ['PASSWORD'],
+                'mail_user': os.environ['MAIL_USERNAME'],
+                'mail_pass': os.environ['MAIL_PASSWORD']
+            }
+    except KeyError as e:
+        raise Exception(f"Missing required configuration: {e}")
+
+
+    output_message = capture_output(merge(headless=args.headless, chromedriver_path=chromedriver_path))
     sendEmail(output_message)
+
+if __name__ == '__main__':
+    main()
