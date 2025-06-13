@@ -24,6 +24,7 @@ from email.header import Header
 from email.utils import formataddr
 import io
 import sys
+from functools import partial
 
 username = None
 password = None
@@ -49,7 +50,8 @@ def login(driver):
         # print("[调试] 验证码图片已保存为 debug_verify_code.png")
 
         code = pytesseract.image_to_string(image)
-        time.sleep(1)
+        # print(f"识别的验证码: {code.strip()}")
+        time.sleep(0.5)
 
         input_box = driver.find_element(By.ID, "intext")
         input_box.send_keys(code)
@@ -67,10 +69,12 @@ def login(driver):
             EC.presence_of_element_located((By.ID, "umLogin"))
         )
         print("登录成功！")
+        return True
 
     except Exception as e:
-        print(f"登录过程中出现错误：{e}")
-        driver.quit()
+        print(f"登录过程中出现错误")
+        # return e
+        # driver.quit()
 
 def signin(driver):
     # 导航到签到页面
@@ -228,9 +232,9 @@ def getMoney(driver):
 def sendEmail(msg):
     sender = receiver = mail_user
     message = MIMEText(msg, 'plain', 'utf-8')
-    message['From'] = formataddr(("GitHub Action Assitance", mail_user))
+    message['From'] = formataddr(("Daily mission Assitance", sender))
     message['To'] = formataddr(("Tanner", receiver))
-    message['Subject'] = Header('GitHub Action 运行报告', 'utf-8')
+    message['Subject'] = Header('签到脚本运行报告', 'utf-8')
     try:
         server=smtplib.SMTP_SSL("smtp.qq.com", 465)
         server.login(mail_user,mail_pass)  
@@ -262,7 +266,15 @@ def merge(headless: bool, chromedriver_path: str):
     service = Service(executable_path=chromedriver_path)
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
-    login(driver)
+    login_success = False
+    while not login_success:
+        login_success = login(driver)
+        if login_success:
+            break
+        else:
+            print("5s后重试...")
+            sleep(5)
+    # login(driver)
     initial_money = getMoney(driver)
     signin(driver)
     question(driver)
@@ -278,32 +290,29 @@ def main():
     parser.add_argument('--local', action='store_true', help='Use local config and chromedriver path')
     parser.add_argument('--headless', action='store_true', help='Enable headless mode')
     args = parser.parse_args()
-
+    # args.local = True
     # 配置加载
     try:
         if args.local:
             chromedriver_path = "/home/tanner/Scripts/chromedriver-linux64/chromedriver"
-            with open('config.json', 'r') as f:
+            with open('/home/tanner/Scripts/easonFansForumDaily/config.json', 'r') as f:
                 config = json.load(f)
-                credentials = {
-                    'username': config['USERNAME'],
-                    'password': config['PASSWORD'],
-                    'mail_user': config['MAIL_USERNAME'],
-                    'mail_pass': config['MAIL_PASSWORD']
-                }
+            username = config['USERNAME']
+            password = config['PASSWORD']
+            mail_user = config['MAIL_USERNAME']
+            mail_pass = config['MAIL_PASSWORD']
         else:
             chromedriver_path = shutil.which("chromedriver")
-            credentials = {
-                'username': os.environ['USERNAME'],
-                'password': os.environ['PASSWORD'],
-                'mail_user': os.environ['MAIL_USERNAME'],
-                'mail_pass': os.environ['MAIL_PASSWORD']
-            }
+            username = os.environ['USERNAME']
+            password = os.environ['PASSWORD']
+            mail_user = os.environ['MAIL_USERNAME']
+            mail_pass = os.environ['MAIL_PASSWORD']
     except KeyError as e:
         raise Exception(f"Missing required configuration: {e}")
 
-
-    output_message = capture_output(merge(headless=args.headless, chromedriver_path=chromedriver_path))
+    # merge(headless=args.headless, chromedriver_path=chromedriver_path)
+    merge_fn = partial(merge, headless=args.headless, chromedriver_path=chromedriver_path)
+    output_message = capture_output(merge_fn)
     sendEmail(output_message)
 
 if __name__ == '__main__':

@@ -48,4 +48,4 @@ jobs:
         MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
         MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
       run: |
-        python dailyMission.py
+        python dailyMission.py --headless
