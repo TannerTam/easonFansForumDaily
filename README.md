@@ -45,5 +45,5 @@ fork本repositroy后，在Settings->Secrets中新建仓库密码（New repositor
     python dailyMission.py --local --headless
     
     #显示窗口
-    python dailyMission.py --headless
+    python dailyMission.py --local
     ```
