@@ -31,10 +31,10 @@ fork本repositroy后，在Settings->Secrets中新建仓库密码（New repositor
 
     ```json
     {
-        "USERNAME": "", //论坛用户名
-        "PASSWORD": "", //论坛密码
-        "MAIL_USERNAME": "", //邮箱
-        "MAIL_PASSWORD": "" //邮箱授权码
+        "USERNAME": "",
+        "PASSWORD": "",
+        "MAIL_USERNAME": "",
+        "MAIL_PASSWORD": ""
     }
     ```
 3. 下载与自己chrome版本相符合的chrome driver，并将路径保存到变量chromedriver
