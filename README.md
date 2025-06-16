@@ -10,6 +10,40 @@ fork本repositroy后，在Settings->Secrets中新建仓库密码（New repositor
 ![tutorial2](img/tutorial2.png "tutorial2")
 
 ## 本地运行
-1. 将dailyMission.py复制一份并改名为dailyMissionLocal.py
-2. 将文件中的变量用户名等变量修改为自己的
+1. Clone this repo and install prerequisites:
+
+    ```bash
+    # Clone this repo
+    git clone git@github.com:TannerTam/easonFansForumDaily.git
+    
+    # Create a Conda environment
+    conda create -n easonFansForumDaily python=3.10.0
+    conda activate easonFansForumDaily
+    
+    # Install prequisites
+    pip install -r requirements.txt
+    # Install packages
+    sudo apt update
+    sudo apt install tesseract-ocr
+    ```
+
+2. 在本地新建`config.json`文件，内容为
+
+    ```json
+    {
+        "USERNAME": "", //论坛用户名
+        "PASSWORD": "", //论坛密码
+        "MAIL_USERNAME": "", //邮箱
+        "MAIL_PASSWORD": "" //邮箱授权码
+    }
+    ```
 3. 下载与自己chrome版本相符合的chrome driver，并将路径保存到变量chromedriver
+4. 运行
+
+    ```bash
+    #无头
+    python dailyMission.py --local --headless
+    
+    #显示窗口
+    python dailyMission.py --headless
+    ```
