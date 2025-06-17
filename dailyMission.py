@@ -253,15 +253,15 @@ def capture_output(func):
     sys.stdout = sys.__stdout__  # 恢复标准输出
     return buffer.getvalue()
     
-def merge(headless: bool, chromedriver_path: str):
+def merge(headless: bool, local: bool, chromedriver_path: str):
     global username, password, mail_user, mail_pass
 
     # 模拟浏览器打开网站
     chrome_options = webdriver.ChromeOptions()
     if headless:
-        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--headless=new')
+        chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--no-sandbox')
-    chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--disable-dev-shm-usage')
     
     service = Service(executable_path=chromedriver_path)
@@ -269,7 +269,10 @@ def merge(headless: bool, chromedriver_path: str):
 
     beijing_tz = timezone(timedelta(hours=8))
     now_str = datetime.now(beijing_tz).strftime("%Y-%m-%d %H:%M:%S")
-    print(f"=== Script started at {now_str} ===")
+    if local:
+        print(f"=== Script started at {now_str} in local===")
+    else:
+        print(f"=== Script started at {now_str} in service===")
 
     login_success = False
     while not login_success:
@@ -316,7 +319,7 @@ def main():
         raise Exception(f"Missing required configuration: {e}")
 
     # merge(headless=args.headless, chromedriver_path=chromedriver_path)
-    merge_fn = partial(merge, headless=args.headless, chromedriver_path=chromedriver_path)
+    merge_fn = partial(merge, headless=args.headless, local=args.local, chromedriver_path=chromedriver_path)
     output_message = capture_output(merge_fn)
     sendEmail(output_message)
 
