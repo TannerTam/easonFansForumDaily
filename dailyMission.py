@@ -25,7 +25,7 @@ from email.utils import formataddr
 import io
 import sys
 from functools import partial
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 username = None
 password = None
@@ -267,7 +267,10 @@ def merge(headless: bool, chromedriver_path: str):
     service = Service(executable_path=chromedriver_path)
     driver = webdriver.Chrome(service=service, options=chrome_options)
 
-    print(f"=== Script started at {datetime.now()} ===")
+    beijing_tz = timezone(timedelta(hours=8))
+    now_str = datetime.now(beijing_tz).strftime("%Y-%m-%d %H:%M:%S")
+    print(f"=== Script started at {now_str} ===")
+
     login_success = False
     while not login_success:
         login_success = login(driver)
