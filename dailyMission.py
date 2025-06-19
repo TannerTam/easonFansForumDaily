@@ -26,11 +26,14 @@ import io
 import sys
 from functools import partial
 from datetime import datetime, timedelta, timezone
+from bs4 import BeautifulSoup
+from dashscope import Application
 
 username = None
 password = None
 mail_user = None
 mail_pass = None
+api_key = None
 
 def login(driver):
     try:
@@ -176,13 +179,68 @@ def question(driver):
             break
 
 def answer_question(driver, question_number):
+    prompt = build_prompt(driver)
+    print("===============")
+    print(prompt)
+    label = get_answer_from_api(prompt)
+    if not label or label.strip() == '':
+        print("API 未返回结果，默认选择 a2")
+        label = 'a2'
+    
+    label = label.strip()
+
     # 等待选项加载并点击
-    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, "a1"))).click()
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, label))).click()
     # 提交答案
     WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
     ).click()
-    print(f"回答第 {question_number + 1} 题成功！")
+    print(f"回答第 {question_number + 1} 题成功，提交选项：{label}")
+
+def build_prompt(driver):
+    # 获取页面 HTML 内容
+    html = driver.page_source
+    soup = BeautifulSoup(html, 'html.parser')
+
+    # 1. 提取题目内容
+    b_tag = soup.find('b', string=lambda s: s and '【题目】' in s)
+
+    # b标签的父节点通常是font或span，拿父节点的所有文本内容
+    parent_tag = b_tag.parent
+
+    # 拿父标签内全部文本，去除【题目】及前后空白符
+    full_text = parent_tag.get_text(separator='', strip=True)
+    full_text = full_text.replace('【题目】', '').replace('\xa0', ' ').strip()
+
+    # 2. 提取选项内容（ID 和 文本）
+    options = []
+    option_divs = soup.find_all('div', class_='qs_option')
+    for div in option_divs:
+        input_tag = div.find('input')
+        label = input_tag.get('id') if input_tag else 'unknown'
+        # 取整段文本，剔除 &nbsp;&nbsp; 或空格
+        raw_text = div.get_text(strip=True).replace('\xa0', ' ')
+        # 去掉可能的前缀（如 “a1. ”）
+        text = raw_text.split(' ', 1)[-1] if ' ' in raw_text else raw_text
+        options.append((label, text))
+
+    # 3. 构建 prompt
+    prompt = f"题目：{full_text}\n\n选项：\n"
+    for label, text in options:
+        prompt += f"{label}. {text}\n"
+    prompt += "\n请从上述选项中选择一个最合理的答案，并只返回选项标签。"
+
+    return prompt
+
+def get_answer_from_api(prompt):
+    response = Application.call(
+    api_key=api_key,
+    app_id='a28c65816de34018acb4dc1a3c19dbab',
+    prompt=prompt)
+
+    label = response.output.text
+    print(f"API 返回的答案标签: {label}")
+    return label if label else None
 
 def check_free_lottery(driver):
     driver.get("https://www.easonfans.com/forum/plugin.php?id=gplayconstellation:front")
@@ -280,9 +338,9 @@ def merge(headless: bool, local: bool, chromedriver_path: str):
         if login_success:
             break
         else:
-            print("5s后重试...")
-            sleep(5)
-    # login(driver)
+            print("重新尝试登录...")
+            # sleep(5)
+    login(driver)
     initial_money = getMoney(driver)
     signin(driver)
     question(driver)
@@ -292,7 +350,7 @@ def merge(headless: bool, local: bool, chromedriver_path: str):
     driver.quit()
 
 def main():
-    global username, password, mail_user, mail_pass
+    global username, password, mail_user, mail_pass, api_key
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--local', action='store_true', help='Use local config and chromedriver path')
@@ -309,16 +367,18 @@ def main():
             password = config['PASSWORD']
             mail_user = config['MAIL_USERNAME']
             mail_pass = config['MAIL_PASSWORD']
+            api_key = config['API_KEY']
         else:
             chromedriver_path = shutil.which("chromedriver")
             username = os.environ['USERNAME']
             password = os.environ['PASSWORD']
             mail_user = os.environ['MAIL_USERNAME']
             mail_pass = os.environ['MAIL_PASSWORD']
+            api_key = os.environ['API_KEY']
     except KeyError as e:
         raise Exception(f"Missing required configuration: {e}")
 
-    # merge(headless=args.headless, chromedriver_path=chromedriver_path)
+    # merge(headless=args.headless, local=args.local, chromedriver_path=chromedriver_path)
     merge_fn = partial(merge, headless=args.headless, local=args.local, chromedriver_path=chromedriver_path)
     output_message = capture_output(merge_fn)
     sendEmail(output_message)

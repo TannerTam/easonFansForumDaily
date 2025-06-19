@@ -1,2 +1,4 @@
 selenium
 pytesseract
+beautifulsoup4
+dashscope
