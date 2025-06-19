@@ -47,5 +47,6 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
         MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
         MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+        API_KEY: ${{ secrets.API_KEY }}
       run: |
         python dailyMission.py --headless
