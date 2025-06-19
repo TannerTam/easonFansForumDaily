@@ -165,6 +165,7 @@ def question(driver):
             matches = re.search(r"\((\d+)/(\d+)\)", participated_element.text)
             if matches:
                 participated, total = matches.groups()
+                question_count = participated
                 if participated == total:
                     print("今日答题已完成。")
                     break
@@ -186,8 +187,12 @@ def answer_question(driver, question_number):
     if not label or label.strip() == '':
         print("API 未返回结果，默认选择 a2")
         label = 'a2'
-    
-    label = label.strip()
+
+    # 标准化去除空格，并检查是否合法选项
+    label = label.strip().lower()
+    if label not in ['a1', 'a2', 'a3', 'a4']:
+        print("API 返回结果不在合法选项中，默认选择 a2")
+        label = 'a2'
 
     # 等待选项加载并点击
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, label))).click()
