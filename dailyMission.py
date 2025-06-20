@@ -153,28 +153,22 @@ def signin(driver):
 def question(driver):
     base_url = "https://www.easonfans.com/forum/plugin.php?id=ahome_dayquestion:index"
     question_count = 0
-    max_attempts = 3
+    total = 3
 
-    while question_count < max_attempts:
-        driver.get(base_url)
+    while question_count < total:
         try:
+            driver.get(base_url)
             # 等待页面加载完成并检查参与情况
             participated_element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.ID, "inner"))
             )
             matches = re.search(r"\((\d+)/(\d+)\)", participated_element.text)
-            if matches:
-                participated, total = matches.groups()
-                question_count = participated
-                if participated == total:
-                    print("今日答题已完成。")
-                    break
-                else:
-                    answer_question(driver, int(participated))
-                    question_count += 1
-            else:
-                print("未找到答题信息。")
+            participated, total = matches.groups()
+            if participated == total:
+                print("今日答题已完成。")
                 break
+            else:
+                answer_question(driver, participated)
         except Exception as e:
             print(f"答题过程中出现错误。")
             break
