@@ -359,8 +359,19 @@ def main():
     # 配置加载
     try:
         if args.local:
-            chromedriver_path = "/home/tanner/Scripts/chromedriver-linux64/chromedriver"
-            with open('/home/tanner/Scripts/easonFansForumDaily/config.json', 'r') as f:
+            base_dir = os.path.dirname(os.path.abspath(__file__))
+            linux_driver_dir = os.path.join(base_dir, "chromedriver-linux64")
+            win_driver_dir = os.path.join(base_dir, "chromedriver-win64")
+
+            if os.path.exists(linux_driver_dir):
+                chromedriver_path = os.path.join(linux_driver_dir, "chromedriver")
+            elif os.path.exists(win_driver_dir):
+                chromedriver_path = os.path.join(win_driver_dir, "chromedriver.exe")
+            else:
+                raise FileNotFoundError("未找到 chromedriver-linux64 或 chromedriver-win64 文件夹")
+            
+            config_path = os.path.join(base_dir, "config.json")
+            with open(config_path, 'r') as f:
                 config = json.load(f)
             username = config['USERNAME']
             password = config['PASSWORD']
