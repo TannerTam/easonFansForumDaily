@@ -152,10 +152,10 @@ def signin(driver):
 
 def question(driver):
     base_url = "https://www.easonfans.com/forum/plugin.php?id=ahome_dayquestion:index"
-    question_count = 0
+    participated = 0
     total = 3
 
-    while question_count < total:
+    while participated < total:
         try:
             driver.get(base_url)
             # 等待页面加载完成并检查参与情况
@@ -163,7 +163,7 @@ def question(driver):
                 EC.presence_of_element_located((By.ID, "inner"))
             )
             matches = re.search(r"\((\d+)/(\d+)\)", participated_element.text)
-            participated, total = matches.groups()
+            participated, total = map(int, matches.groups())
             if participated == total:
                 print("今日答题已完成。")
                 break
@@ -338,8 +338,7 @@ def merge(headless: bool, local: bool, chromedriver_path: str):
             break
         else:
             print("重新尝试登录...")
-            # sleep(5)
-    login(driver)
+            sleep(5)
     initial_money = getMoney(driver)
     signin(driver)
     question(driver)
