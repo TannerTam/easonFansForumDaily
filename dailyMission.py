@@ -173,7 +173,8 @@ def question(driver):
         try:
             answer_question(driver, participated)
         except Exception as e:
-            print(f"答题第f{participated+1}过程中出现错误。")
+            print(f"答题第{participated+1}题过程中出现错误，正在重试。")
+            sleep(10)
             continue
 
 def answer_question(driver, question_number):
