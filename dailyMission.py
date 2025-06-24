@@ -242,6 +242,8 @@ def get_answer_from_api(prompt):
     prompt=prompt)
 
     label = response.output.text
+    match = re.search(r'\ba[1-4]\b', label)
+    label = match.group(0)
     print(f"API 返回的答案标签: {label}")
     return label if label else None
 
