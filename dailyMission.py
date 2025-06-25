@@ -171,10 +171,13 @@ def question(driver):
             break
         
         try:
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
+            )
             answer_question(driver, participated)
         except Exception as e:
             print(f"答题第{participated+1}题过程中出现错误，正在重试。")
-            sleep(10)
+            sleep(5)
             continue
 
 def answer_question(driver, question_number):
@@ -187,7 +190,6 @@ def answer_question(driver, question_number):
         label = 'a2'
 
     # 标准化去除空格，并检查是否合法选项
-    label = label.strip().lower()
     if label not in ['a1', 'a2', 'a3', 'a4']:
         print("API 返回结果不在合法选项中，默认选择 a2")
         label = 'a2'
