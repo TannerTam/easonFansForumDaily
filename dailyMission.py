@@ -202,9 +202,9 @@ def question(driver):
             if final_answer != initial_answer and initial_answer != 0:
                 correct_rate = (final_correct - initial_correct)/(final_answer-initial_answer)
                 correct_rate_percent = correct_rate * 100
-                print(f"今日答题已完成，答题正确率 {correct_rate_percent:.2f}%，总答题数：{final_answer}，总正确数：{final_correct}。")
+                print(f"今日答题已完成，答题正确率 {correct_rate_percent:.2f}%。总正确数/答题数：{final_correct}/{final_answer}。")
             else:
-                print(f"今日答题已完成，总答题数：{final_answer}，总正确数：{final_correct}。")
+                print(f"今日答题已完成。总正确数/答题数：{final_correct}/{final_answer}。")
             break
         
         try:
