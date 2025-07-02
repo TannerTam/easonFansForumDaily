@@ -169,7 +169,7 @@ def question(driver):
         initial_correct = int(total_correct_match.group(1)) if total_correct_match else 0
         # print(f"初始累计答题：{initial_answer}, 初始累计答对：{initial_correct}")
     except Exception as e:
-        # print(f"无法提取初始累计答题信息: {e}")
+        print(f"无法提取初始答题信息: {e}")
         initial_answer = 0
         initial_correct = 0
 
@@ -195,7 +195,7 @@ def question(driver):
                 final_correct = int(total_correct_match.group(1)) if total_correct_match else 0
                 # print(f"初始累计答题：{initial_answer}, 初始累计答对：{initial_correct}")
             except Exception as e:
-                # print(f"无法提取初始累计答题信息: {e}")
+                print(f"无法提取最终答题信息: {e}")
                 initial_answer = 0
                 initial_correct = 0
             
