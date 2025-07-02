@@ -153,6 +153,27 @@ def signin(driver):
 def question(driver):
     base_url = "https://www.easonfans.com/forum/plugin.php?id=ahome_dayquestion:index"
 
+    try:
+        # 等待页面加载完成
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "inner"))
+        )
+    except Exception as e:
+        print(f"页面加载失败: {e}")
+        return
+
+    try:
+        page_source = driver.page_source
+        total_answered_match = re.search(r"累计答题:\s*(\d+)", page_source)
+        total_correct_match = re.search(r"累计答对:\s*(\d+)", page_source)
+        initial_answer = int(total_answered_match.group(1)) if total_answered_match else 0
+        initial_correct = int(total_correct_match.group(1)) if total_correct_match else 0
+        # print(f"初始累计答题：{initial_answer}, 初始累计答对：{initial_correct}")
+    except Exception as e:
+        # print(f"无法提取初始累计答题信息: {e}")
+        initial_answer = 0
+        initial_correct = 0
+
     while True:
         driver.get(base_url)
         try:
@@ -167,7 +188,24 @@ def question(driver):
         matches = re.search(r"\((\d+)/(\d+)\)", participated_element.text)
         participated, total = map(int, matches.groups())
         if participated >= total:
-            print("今日答题已完成。")
+            try:
+                page_source = driver.page_source
+                total_answered_match = re.search(r"累计答题:\s*(\d+)", page_source)
+                total_correct_match = re.search(r"累计答对:\s*(\d+)", page_source)
+                final_answer = int(total_answered_match.group(1)) if total_answered_match else 0
+                final_correct = int(total_correct_match.group(1)) if total_correct_match else 0
+                # print(f"初始累计答题：{initial_answer}, 初始累计答对：{initial_correct}")
+            except Exception as e:
+                # print(f"无法提取初始累计答题信息: {e}")
+                initial_answer = 0
+                initial_correct = 0
+            
+            if final_answer != initial_answer and initial_answer != 0:
+                correct_rate = (final_correct - initial_correct)/(final_answer-initial_answer)
+                correct_rate_percent = correct_rate * 100
+                print(f"今日答题已完成，答题正确率 {correct_rate_percent:.2f}%，总答题数：{final_answer}，总正确数：{final_correct}。")
+            else:
+                print(f"今日答题已完成，总答题数：{final_answer}，总正确数：{final_correct}。")
             break
         
         try:
@@ -182,8 +220,8 @@ def question(driver):
 
 def answer_question(driver, question_number):
     prompt = build_prompt(driver)
-    print("===============")
-    print(prompt)
+    # print("===============")
+    # print(prompt)
     label = get_answer_from_api(prompt)
     if not label or label.strip() == '':
         print("API 未返回结果，默认选择 a2")
@@ -200,7 +238,8 @@ def answer_question(driver, question_number):
     WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
     ).click()
-    print(f"回答第 {question_number + 1} 题成功，提交选项：{label}")
+    # print(f"回答第 {question_number + 1} 题成功，提交选项：{label}")
+    print(f"回答第 {question_number + 1} 题成功")
 
 def build_prompt(driver):
     # 获取页面 HTML 内容
@@ -246,7 +285,7 @@ def get_answer_from_api(prompt):
     label = response.output.text
     match = re.search(r'\ba[1-4]\b', label)
     label = match.group(0)
-    print(f"API 返回的答案标签: {label}")
+    # print(f"API 返回的答案标签: {label}")
     return label if label else None
 
 def check_free_lottery(driver):
