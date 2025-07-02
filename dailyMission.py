@@ -153,14 +153,13 @@ def signin(driver):
 def question(driver):
     base_url = "https://www.easonfans.com/forum/plugin.php?id=ahome_dayquestion:index"
 
+    driver.get(base_url)
     try:
-        # 等待页面加载完成
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "inner"))
         )
     except Exception as e:
         print(f"页面加载失败: {e}")
-        return
 
     try:
         page_source = driver.page_source
