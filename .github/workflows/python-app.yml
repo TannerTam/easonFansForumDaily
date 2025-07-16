@@ -59,9 +59,4 @@ jobs:
         MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
         API_KEY: ${{ secrets.API_KEY }}
       run: |
-        # if [ -n "$USERNAME" ] && [ -n "$PASSWORD" ]; then
-        #   python dailyMission.py --headless
-        # else
-        #   echo "Skipping USER2: USERNAME or PASSWORD not set."
-        # fi
         python dailyMission.py --headless
