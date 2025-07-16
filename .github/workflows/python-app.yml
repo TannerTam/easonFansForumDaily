@@ -50,3 +50,14 @@ jobs:
         API_KEY: ${{ secrets.API_KEY }}
       run: |
         python dailyMission.py --headless
+
+    - name: dailyMission for USER2 (if set)
+      if: ${{ secrets.USERNAME1 != '' && secrets.PASSWORD1 != '' }}
+      env:
+        USERNAME: ${{ secrets.USERNAME1 }}
+        PASSWORD: ${{ secrets.PASSWORD1 }}
+        MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+        MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+        API_KEY: ${{ secrets.API_KEY }}
+      run: |
+        python dailyMission.py --headless

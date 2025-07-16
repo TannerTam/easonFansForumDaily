@@ -373,9 +373,9 @@ def merge(headless: bool, local: bool, chromedriver_path: str):
     beijing_tz = timezone(timedelta(hours=8))
     now_str = datetime.now(beijing_tz).strftime("%Y-%m-%d %H:%M:%S")
     if local:
-        print(f"=== Script started at {now_str} locally===")
+        print(f"=== Script for {username} started at {now_str} locally===")
     else:
-        print(f"=== Script started at {now_str} remotely===")
+        print(f"=== Script for {username} started at {now_str} remotely===")
 
     login_success = False
     while not login_success:
