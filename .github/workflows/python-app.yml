@@ -51,7 +51,7 @@ jobs:
       run: |
         python dailyMission.py --headless
 
-    - name: dailyMission for USER2 (if set)
+    - name: dailyMission for USER2
       env:
         USERNAME: ${{ secrets.USERNAME1 }}
         PASSWORD: ${{ secrets.PASSWORD1 }}
@@ -59,8 +59,9 @@ jobs:
         MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
         API_KEY: ${{ secrets.API_KEY }}
       run: |
-        if [ -n "$USERNAME" ] && [ -n "$PASSWORD" ]; then
-          python dailyMission.py --headless
-        else
-          echo "Skipping USER2: USERNAME or PASSWORD not set."
-        fi
+        # if [ -n "$USERNAME" ] && [ -n "$PASSWORD" ]; then
+        #   python dailyMission.py --headless
+        # else
+        #   echo "Skipping USER2: USERNAME or PASSWORD not set."
+        # fi
+        python dailyMission.py --headless
