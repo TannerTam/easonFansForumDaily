@@ -53,12 +53,12 @@ def login(driver):
         # image.save("debug_verify_code.png")
         # print("[调试] 验证码图片已保存为 debug_verify_code.png")
 
-        code = pytesseract.image_to_string(image)
+        # code = pytesseract.image_to_string(image)
         # print(f"识别的验证码: {code.strip()}")
-        time.sleep(0.5)
+        # time.sleep(10)
 
-        input_box = driver.find_element(By.ID, "intext")
-        input_box.send_keys(code)
+        # input_box = driver.find_element(By.ID, "intext")
+        # input_box.send_keys(code)
 
         # 填写登录表单
         WebDriverWait(driver, 10).until(
@@ -152,10 +152,10 @@ def signin(driver):
 
 def question(driver):
     base_url = "https://www.easonfans.com/forum/plugin.php?id=ahome_dayquestion:index"
-    question_count = 0
+    participated = 0
     total = 3
 
-    while question_count < total:
+    while participated < total:
         try:
             driver.get(base_url)
             # 等待页面加载完成并检查参与情况
@@ -163,7 +163,7 @@ def question(driver):
                 EC.presence_of_element_located((By.ID, "inner"))
             )
             matches = re.search(r"\((\d+)/(\d+)\)", participated_element.text)
-            participated, total = matches.groups()
+            participated, total = map(int, matches.groups())
             if participated == total:
                 print("今日答题已完成。")
                 break
@@ -338,8 +338,7 @@ def merge(headless: bool, local: bool, chromedriver_path: str):
             break
         else:
             print("重新尝试登录...")
-            # sleep(5)
-    login(driver)
+            sleep(5)
     initial_money = getMoney(driver)
     signin(driver)
     question(driver)
@@ -355,7 +354,7 @@ def main():
     parser.add_argument('--local', action='store_true', help='Use local config and chromedriver path')
     parser.add_argument('--headless', action='store_true', help='Enable headless mode')
     args = parser.parse_args()
-    # args.local = True
+    args.local = True
     # 配置加载
     try:
         if args.local:
@@ -388,10 +387,10 @@ def main():
     except KeyError as e:
         raise Exception(f"Missing required configuration: {e}")
 
-    # merge(headless=args.headless, local=args.local, chromedriver_path=chromedriver_path)
-    merge_fn = partial(merge, headless=args.headless, local=args.local, chromedriver_path=chromedriver_path)
-    output_message = capture_output(merge_fn)
-    sendEmail(output_message)
+    merge(headless=args.headless, local=args.local, chromedriver_path=chromedriver_path)
+    # merge_fn = partial(merge, headless=args.headless, local=args.local, chromedriver_path=chromedriver_path)
+    # output_message = capture_output(merge_fn)
+    # sendEmail(output_message)
 
 if __name__ == '__main__':
     main()
