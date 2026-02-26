@@ -27,7 +27,7 @@ import sys
 from functools import partial
 from datetime import datetime, timedelta, timezone
 from bs4 import BeautifulSoup
-from dashscope import Application
+from openai import OpenAI
 
 username = None
 password = None
@@ -39,26 +39,26 @@ def login(driver):
     try:
         driver.get("https://www.easonfans.com/FORUM/member.php?mod=logging&action=login")
 
-        verify_img = WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "verifyimg"))
-        )
+        # verify_img = WebDriverWait(driver, 5).until(
+        #     EC.presence_of_element_located((By.CLASS_NAME, "verifyimg"))
+        # )
 
-        img_url = verify_img.get_attribute("src")
+        # img_url = verify_img.get_attribute("src")
 
-        base64_data = img_url.split(',')[1]
+        # base64_data = img_url.split(',')[1]
 
-        image_data = base64.b64decode(base64_data)
-        image = Image.open(BytesIO(image_data))
+        # image_data = base64.b64decode(base64_data)
+        # image = Image.open(BytesIO(image_data))
 
         # image.save("debug_verify_code.png")
         # print("[调试] 验证码图片已保存为 debug_verify_code.png")
 
-        code = pytesseract.image_to_string(image)
+        # code = pytesseract.image_to_string(image)
         # print(f"识别的验证码: {code.strip()}")
-        time.sleep(0.5)
+        time.sleep(1)
 
-        input_box = driver.find_element(By.ID, "intext")
-        input_box.send_keys(code)
+        # input_box = driver.find_element(By.ID, "intext")
+        # input_box.send_keys(code)
 
         # 填写登录表单
         WebDriverWait(driver, 10).until(
@@ -276,16 +276,32 @@ def build_prompt(driver):
     return prompt
 
 def get_answer_from_api(prompt):
-    response = Application.call(
-    api_key=api_key,
-    app_id='a28c65816de34018acb4dc1a3c19dbab',
-    prompt=prompt)
+    app_id = 'a28c65816de34018acb4dc1a3c19dbab'
+    base_url = f'https://dashscope.aliyuncs.com/api/v2/apps/agent/{app_id}/compatible-mode/v1/'
+    client = OpenAI(api_key=api_key, base_url=base_url)
+    try:
+        response = client.responses.create(input=prompt)
+    except Exception as e:
+        print(f"API 调用失败（{type(e).__name__}），将使用默认选项: {e}")
+        return None
 
-    label = response.output.text
-    match = re.search(r'\ba[1-4]\b', label)
-    label = match.group(0)
-    # print(f"API 返回的答案标签: {label}")
-    return label if label else None
+    # 从响应中提取文本（兼容不同返回结构）
+    raw_text = None
+    if hasattr(response, 'output') and hasattr(response.output, 'text'):
+        raw_text = response.output.text
+    elif hasattr(response, 'output_text'):
+        raw_text = response.output_text
+    elif hasattr(response, 'choices') and response.choices:
+        raw_text = getattr(response.choices[0].message, 'content', None) or getattr(response.choices[0], 'content', None)
+    if not raw_text:
+        return None
+
+    # print(f"API 返回的内容: {raw_text}")
+    match = re.search(r'\ba[1-4]\b', raw_text)
+    label = match.group(0) if match else None
+    if label:
+        print(f"API 返回的答案标签: {label}")
+    return label
 
 def check_free_lottery(driver):
     driver.get("https://www.easonfans.com/forum/plugin.php?id=gplayconstellation:front")
@@ -348,12 +364,32 @@ def sendEmail(msg):
     except smtplib.SMTPException as e:
         print(f"邮件发送失败。")
 
-def capture_output(func):
-    # 重定向标准输出到一个内存缓冲区
+class TeeOutput:
+    """同时写入控制台和缓冲区，实现实时输出且保留内容用于邮件"""
+    def __init__(self, console, buffer):
+        self.console = console
+        self.buffer = buffer
+
+    def write(self, data):
+        self.console.write(data)
+        self.buffer.write(data)
+
+    def flush(self):
+        self.console.flush()
+        self.buffer.flush()
+
+def capture_output(func, tee=False):
+    # tee=True：同时输出到控制台和缓冲区（实时看到 print）
+    # tee=False：只写入缓冲区（用于远程无界面时发邮件）
     buffer = io.StringIO()
-    sys.stdout = buffer
-    func()
-    sys.stdout = sys.__stdout__  # 恢复标准输出
+    if tee:
+        sys.stdout = TeeOutput(sys.__stdout__, buffer)
+    else:
+        sys.stdout = buffer
+    try:
+        func()
+    finally:
+        sys.stdout = sys.__stdout__
     return buffer.getvalue()
     
 def merge(headless: bool, local: bool, chromedriver_path: str):
@@ -366,6 +402,10 @@ def merge(headless: bool, local: bool, chromedriver_path: str):
         chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
+    # 关闭 GCM/推送等后台网络，避免 DEPRECATED_ENDPOINT 等无关报错刷屏
+    chrome_options.add_argument('--disable-background-networking')
+    chrome_options.add_argument('--disable-sync')
+    chrome_options.add_argument('--disable-default-apps')
     
     service = Service(executable_path=chromedriver_path)
     driver = webdriver.Chrome(service=service, options=chrome_options)
@@ -435,7 +475,8 @@ def main():
 
     # merge(headless=args.headless, local=args.local, chromedriver_path=chromedriver_path)
     merge_fn = partial(merge, headless=args.headless, local=args.local, chromedriver_path=chromedriver_path)
-    output_message = capture_output(merge_fn)
+    # local 模式下 tee=True：print 实时显示在控制台，同时写入缓冲区用于发邮件
+    output_message = capture_output(merge_fn, tee=args.local)
     sendEmail(output_message)
 
 if __name__ == '__main__':
