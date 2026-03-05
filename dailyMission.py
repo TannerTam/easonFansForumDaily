@@ -185,6 +185,9 @@ def question(driver):
             break
 
         matches = re.search(r"\((\d+)/(\d+)\)", participated_element.text)
+        if not matches:
+            print("无法解析参与次数，退出答题")
+            break
         participated, total = map(int, matches.groups())
         if participated >= total:
             try:
@@ -193,11 +196,10 @@ def question(driver):
                 total_correct_match = re.search(r"累计答对:\s*(\d+)", page_source)
                 final_answer = int(total_answered_match.group(1)) if total_answered_match else 0
                 final_correct = int(total_correct_match.group(1)) if total_correct_match else 0
-                # print(f"初始累计答题：{initial_answer}, 初始累计答对：{initial_correct}")
             except Exception as e:
                 print(f"无法提取最终答题信息: {e}")
-                initial_answer = 0
-                initial_correct = 0
+                final_answer = initial_answer
+                final_correct = initial_correct
             
             if final_answer != initial_answer and initial_answer != 0:
                 correct_rate = (final_correct - initial_correct)/(final_answer-initial_answer)
@@ -206,38 +208,47 @@ def question(driver):
             else:
                 print(f"今日答题已完成。总正确数/答题数：{final_correct}/{final_answer}。")
             break
-        
-        try:
-            WebDriverWait(driver, 10).until(
-                EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
-            )
-            answer_question(driver, participated)
-        except Exception as e:
-            print(f"答题第{participated+1}题过程中出现错误，正在重试。")
-            sleep(5)
-            continue
 
-def answer_question(driver, question_number):
+        # 当前题目最多回答 3 次，answer_attempt 同时作为 DEFAULT_OPTIONS 的索引
+        max_answer_attempts = 3
+        for answer_attempt in range(max_answer_attempts):
+            try:
+                WebDriverWait(driver, 10).until(
+                    EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
+                )
+                answer_question(driver, participated, answer_attempt)
+            except Exception as e:
+                print(f"答题第{participated+1}题第{answer_attempt+1}次尝试出现错误: {e}")
+                sleep(5)
+                continue
+            # 提交后刷新页面，用新的 participated 判断是否进入下一题
+            driver.get(base_url)
+            try:
+                participated_element = WebDriverWait(driver, 10).until(
+                    EC.presence_of_element_located((By.ID, "inner"))
+                )
+            except Exception:
+                break
+            matches = re.search(r"\((\d+)/(\d+)\)", participated_element.text)
+            if not matches:
+                break
+            new_participated, new_total = map(int, matches.groups())
+            if new_participated > participated or new_participated >= new_total:
+                break  # 进入下一题或已全部完成
+            # 仍为当前题（如答错需重试），继续下一轮 answer_attempt
+
+def answer_question(driver, question_number, default_option_index):
+    """答一题：调用一次 get_answer_from_api，失败时用 DEFAULT_OPTIONS[default_option_index] 作为答案。"""
+    DEFAULT_OPTIONS = ['a1', 'a2', 'a3']
     prompt = build_prompt(driver)
-    # print("===============")
-    # print(prompt)
     label = get_answer_from_api(prompt)
-    if not label or label.strip() == '':
-        print("API 未返回结果，默认选择 a2")
-        label = 'a2'
-
-    # 标准化去除空格，并检查是否合法选项
-    if label not in ['a1', 'a2', 'a3', 'a4']:
-        print("API 返回结果不在合法选项中，默认选择 a2")
-        label = 'a2'
-
-    # 等待选项加载并点击
+    if label is None:
+        label = DEFAULT_OPTIONS[default_option_index % len(DEFAULT_OPTIONS)]
+        print(f"API 返回异常，使用备选选项（第 {default_option_index + 1} 次）: {label}")
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, label))).click()
-    # 提交答案
     WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
     ).click()
-    # print(f"回答第 {question_number + 1} 题成功，提交选项：{label}")
     print(f"回答第 {question_number + 1} 题成功")
 
 def build_prompt(driver):
@@ -276,16 +287,18 @@ def build_prompt(driver):
     return prompt
 
 def get_answer_from_api(prompt):
+    """单次调用 API，成功返回 a1-a4，失败返回 None。"""
     app_id = 'a28c65816de34018acb4dc1a3c19dbab'
     base_url = f'https://dashscope.aliyuncs.com/api/v2/apps/agent/{app_id}/compatible-mode/v1/'
     client = OpenAI(api_key=api_key, base_url=base_url)
+    valid_options = ['a1', 'a2', 'a3', 'a4']
+
     try:
         response = client.responses.create(input=prompt)
     except Exception as e:
-        print(f"API 调用失败（{type(e).__name__}），将使用默认选项: {e}")
+        print(f"API 调用失败（{type(e).__name__}）: {e}")
         return None
 
-    # 从响应中提取文本（兼容不同返回结构）
     raw_text = None
     if hasattr(response, 'output') and hasattr(response.output, 'text'):
         raw_text = response.output.text
@@ -294,14 +307,16 @@ def get_answer_from_api(prompt):
     elif hasattr(response, 'choices') and response.choices:
         raw_text = getattr(response.choices[0].message, 'content', None) or getattr(response.choices[0], 'content', None)
     if not raw_text:
+        print("API 未返回有效内容")
         return None
 
-    # print(f"API 返回的内容: {raw_text}")
     match = re.search(r'\ba[1-4]\b', raw_text)
-    label = match.group(0) if match else None
-    if label:
+    label = (match.group(0).strip() if match else None)
+    if label and label in valid_options:
         print(f"API 返回的答案标签: {label}")
-    return label
+        return label
+    print(f"API 未返回有效结果或结果不在合法选项中（{raw_text[:50] if raw_text else '无'}...）")
+    return None
 
 def check_free_lottery(driver):
     driver.get("https://www.easonfans.com/forum/plugin.php?id=gplayconstellation:front")
