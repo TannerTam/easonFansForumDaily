@@ -152,6 +152,9 @@ def signin(driver):
 
 def question(driver):
     base_url = "https://www.easonfans.com/forum/plugin.php?id=ahome_dayquestion:index"
+    global _api_call_count
+    _api_call_count = 0
+    MAX_API_CALLS = 5  # 单次运行最大 API 调用次数
 
     driver.get(base_url)
     try:
@@ -185,9 +188,6 @@ def question(driver):
             break
 
         matches = re.search(r"\((\d+)/(\d+)\)", participated_element.text)
-        if not matches:
-            print("无法解析参与次数，退出答题")
-            break
         participated, total = map(int, matches.groups())
         if participated >= total:
             try:
@@ -208,38 +208,26 @@ def question(driver):
             else:
                 print(f"今日答题已完成。总正确数/答题数：{final_correct}/{final_answer}。")
             break
+        
+        if _api_call_count >= MAX_API_CALLS:
+            print(f"单次运行 API 调用已达 {MAX_API_CALLS} 次，跳过后续答题")
+            break
+        
+        try:
+            WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
+            )
+            answer_question(driver, participated)
+        except Exception as e:
+            print(f"答题第{participated+1}题过程中出现错误，正在重试。")
+            sleep(5)
+            continue
 
-        # 当前题目最多回答 3 次，answer_attempt 同时作为 DEFAULT_OPTIONS 的索引
-        max_answer_attempts = 3
-        for answer_attempt in range(max_answer_attempts):
-            try:
-                WebDriverWait(driver, 10).until(
-                    EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
-                )
-                answer_question(driver, participated, answer_attempt)
-            except Exception as e:
-                print(f"答题第{participated+1}题第{answer_attempt+1}次尝试出现错误: {e}")
-                sleep(5)
-                continue
-            # 提交后刷新页面，用新的 participated 判断是否进入下一题
-            driver.get(base_url)
-            try:
-                participated_element = WebDriverWait(driver, 10).until(
-                    EC.presence_of_element_located((By.ID, "inner"))
-                )
-            except Exception:
-                break
-            matches = re.search(r"\((\d+)/(\d+)\)", participated_element.text)
-            if not matches:
-                break
-            new_participated, new_total = map(int, matches.groups())
-            if new_participated > participated or new_participated >= new_total:
-                break  # 进入下一题或已全部完成
-            # 仍为当前题（如答错需重试），继续下一轮 answer_attempt
+DEFAULT_OPTIONS = ['a1', 'a2', 'a3']
+_api_call_count = 0
 
-def answer_question(driver, question_number, default_option_index):
+def answer_question(driver, question_number, default_option_index=0):
     """答一题：调用一次 get_answer_from_api，失败时用 DEFAULT_OPTIONS[default_option_index] 作为答案。"""
-    DEFAULT_OPTIONS = ['a1', 'a2', 'a3']
     prompt = build_prompt(driver)
     label = get_answer_from_api(prompt)
     if label is None:
@@ -288,6 +276,9 @@ def build_prompt(driver):
 
 def get_answer_from_api(prompt):
     """单次调用 API，成功返回 a1-a4，失败返回 None。"""
+    global _api_call_count
+    _api_call_count += 1
+
     app_id = 'a28c65816de34018acb4dc1a3c19dbab'
     base_url = f'https://dashscope.aliyuncs.com/api/v2/apps/agent/{app_id}/compatible-mode/v1/'
     client = OpenAI(api_key=api_key, base_url=base_url)
