@@ -154,7 +154,7 @@ def question(driver):
     base_url = "https://www.easonfans.com/forum/plugin.php?id=ahome_dayquestion:index"
     global _api_call_count
     _api_call_count = 0
-    MAX_API_CALLS = 5  # 单次运行最大 API 调用次数
+    MAX_API_CALLS = 3  # 单次运行最大 API 调用次数
 
     driver.get(base_url)
     try:
@@ -176,6 +176,7 @@ def question(driver):
         initial_answer = 0
         initial_correct = 0
 
+    previous_participated = -1
     while True:
         driver.get(base_url)
         try:
@@ -189,6 +190,11 @@ def question(driver):
 
         matches = re.search(r"\((\d+)/(\d+)\)", participated_element.text)
         participated, total = map(int, matches.groups())
+        # 答题成功：当前 participated 比上一轮 +1 时，重置 API 计数
+        if previous_participated >= 0 and participated == previous_participated + 1:
+            _api_call_count = 0
+        previous_participated = participated
+
         if participated >= total:
             try:
                 page_source = driver.page_source
@@ -217,22 +223,20 @@ def question(driver):
             WebDriverWait(driver, 10).until(
                 EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
             )
-            answer_question(driver, participated)
+            answer_question(driver, participated, _api_call_count)
         except Exception as e:
             print(f"答题第{participated+1}题过程中出现错误，正在重试。")
             sleep(5)
             continue
 
-DEFAULT_OPTIONS = ['a1', 'a2', 'a3']
-_api_call_count = 0
-
-def answer_question(driver, question_number, default_option_index=0):
+def answer_question(driver, question_number, option_index=0):
     """答一题：调用一次 get_answer_from_api，失败时用 DEFAULT_OPTIONS[default_option_index] 作为答案。"""
     prompt = build_prompt(driver)
     label = get_answer_from_api(prompt)
+    options = ['a1', 'a2', 'a3', 'a4']
     if label is None:
-        label = DEFAULT_OPTIONS[default_option_index % len(DEFAULT_OPTIONS)]
-        print(f"API 返回异常，使用备选选项（第 {default_option_index + 1} 次）: {label}")
+        label = options[option_index % len(options)]
+        print(f"API 返回异常，使用备选选项（第 {option_index + 1} 次）: {label}")
     WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, label))).click()
     WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
