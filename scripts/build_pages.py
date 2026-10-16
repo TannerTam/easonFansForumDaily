@@ -18,7 +18,16 @@ def main():
         raise ValueError('_site contains unexpected files; refusing to publish them')
     for asset in ASSETS:
         shutil.copyfile(ROOT / 'site' / asset, OUTPUT / asset)
-    shutil.copyfile(ROOT / 'question_bank.json', OUTPUT / 'question_bank.json')
+    # 网页只需要题目、选项和最新确认结果，不发布提交时间、累计统计或记录来源。
+    public_bank = {'version': 1, 'questions': {}}
+    for key, question in bank['questions'].items():
+        attempts = [{field: attempt.get(field) for field in ('options', 'answer', 'correct')}
+                    for attempt in question['attempts'] if isinstance(attempt.get('correct'), bool)]
+        if attempts:
+            public_bank['questions'][key] = {'question': question['question'], 'attempts': attempts}
+    (OUTPUT / 'question_bank.json').write_text(
+        json.dumps(public_bank, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8'
+    )
     (OUTPUT / '.nojekyll').touch()
     print(f'Built {len(bank["questions"])} questions into {OUTPUT}')
 

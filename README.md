@@ -20,11 +20,13 @@ GitHub Actions 中两个账号共享同一个题库。运行结束后（包括�
 ## 使用方法
 ### 网页检索
 
-[打开 Eason 答案簿](https://tannertam.github.io/easonFansForumDaily/)
+部署后的访问地址可在仓库 **Settings → Pages** 中查看。
 
 输入题目片段、多个关键词或答案文字即可检索；较长关键词允许少量错字。点击搜索结果会弹出该题的选项：绿色代表最近一次确认正确，红色代表最近一次确认错误，灰色代表尚未验证。相同题干但不同选项集合会分别显示。
 
-网站是 `site/` 下的纯静态 HTML/CSS/JavaScript，不调用答题 API。`scripts/build_pages.py` 只将网页文件与题库打包到 `_site/`，不会发布仓库中的配置或其他文件。当前导入数据只保留标准题库字段与明确的对错记录，已移除原始导入内容和未知记录；后续自动答题仍按原逻辑记录新尝试，网页只使用已确认结果。
+网站是 `site/` 下的纯静态 HTML/CSS/JavaScript，不调用答题 API。`scripts/build_pages.py` 只将网页文件与公开检索所需的题目、选项、对错打包到 `_site/`；不发布提交时间、累计统计、记录来源、仓库配置或其他文件。仓库题库格式和自动答题逻辑保持不变，网页只使用已确认结果。
+
+网页已移除仓库外链和具名品牌文案，加入 `noindex`、`nofollow`、`nosnippet`、`noimageindex` 及 `no-referrer`。这些设置用于降低被搜索和传播的概率，不是身份隐藏或访问控制；知道网址的人仍可打开页面，默认 GitHub Pages 域名和公开仓库仍能关联到账号。已有搜索结果需要搜索引擎重新抓取后才可能消失。不要通过 robots.txt 禁止抓取此页面，否则搜索引擎可能读不到 noindex。
 
 发布设置：在仓库 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**，再运行 **Publish question bank**。网页或题库变更会触发部署；每日答题 workflow 完成后也会读取 main 的最新题库重新部署。网页部署不会反过来触发答题。
 
