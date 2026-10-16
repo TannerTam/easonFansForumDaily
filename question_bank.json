@@ -81,6 +81,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "7d098c8f33e548438166c79d5690d06f",
+          "submitted_at": "2026-10-16T19:31:15.044444+00:00",
+          "options": {
+            "a3": "梦的可能",
+            "a4": "还有什么可以送给你",
+            "a2": "可以了",
+            "a1": "可一可再"
+          },
+          "label": "a1",
+          "answer": "可一可再",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2425,
+            1335
+          ],
+          "after": [
+            2426,
+            1336
+          ]
         }
       ]
     },
@@ -1573,6 +1596,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "6ccd5be021e344f7b5701246f27b348d",
+          "submitted_at": "2026-10-16T19:33:18.655038+00:00",
+          "options": {
+            "a2": "孤独患者",
+            "a3": "孤独探戈",
+            "a1": "孤勇者",
+            "a4": "孤独者"
+          },
+          "label": "a4",
+          "answer": "孤独者",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1112,
+            825
+          ],
+          "after": [
+            1113,
+            826
+          ]
         }
       ]
     },
@@ -1788,6 +1834,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "2c7eb77429ba4e5db1583d0103f21dc4",
+          "submitted_at": "2026-10-16T19:31:50.848891+00:00",
+          "options": {
+            "a2": "白玫瑰",
+            "a1": "红玫瑰",
+            "a4": "以上都不是",
+            "a3": "爱情转移"
+          },
+          "label": "a1",
+          "answer": "红玫瑰",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2427,
+            1337
+          ],
+          "after": [
+            2428,
+            1338
+          ]
         }
       ]
     },
@@ -3804,6 +3873,90 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        }
+      ]
+    },
+    "f7a1bf2ba8d27bae594832695f1670ba8a36f6528e7569909afb893a8eb6d2a6": {
+      "question": "陈奕迅没有翻唱过张学友哪首歌曲？",
+      "attempts": [
+        {
+          "id": "ac439427c2f248ec95cab72a787ead88",
+          "submitted_at": "2026-10-16T19:31:48.349755+00:00",
+          "options": {
+            "a2": "望月",
+            "a4": "如果这都不算爱",
+            "a3": "遥远的她",
+            "a1": "只愿一生爱一人"
+          },
+          "label": "a1",
+          "answer": "只愿一生爱一人",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2426,
+            1336
+          ],
+          "after": [
+            2427,
+            1337
+          ]
+        }
+      ]
+    },
+    "ea071afde5ff506fbd5f9c4a24243668677091324285d65b60990bf4686867e4": {
+      "question": "以下哪首歌不是陈奕迅翻唱的？",
+      "attempts": [
+        {
+          "id": "497a6af54497447baa152d2264593707",
+          "submitted_at": "2026-10-16T19:33:16.816403+00:00",
+          "options": {
+            "a2": "一生中最爱",
+            "a3": "摘星",
+            "a1": "最冷一天",
+            "a4": "人造卫星"
+          },
+          "label": "a4",
+          "answer": "人造卫星",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1111,
+            824
+          ],
+          "after": [
+            1112,
+            825
+          ]
+        }
+      ]
+    },
+    "73d801341c06a0cf6203db7958c147e749a0111747c0dfc54937990a143af71e": {
+      "question": "以下哪首是谢霆锋作曲陈奕迅演唱的歌？",
+      "attempts": [
+        {
+          "id": "15f2763daa4b48d887d8963bc3db9590",
+          "submitted_at": "2026-10-16T19:33:33.609954+00:00",
+          "options": {
+            "a4": "《改造人》",
+            "a3": "《细路》",
+            "a1": "《起点‧终站》",
+            "a2": "《Better Man》"
+          },
+          "label": "a1",
+          "answer": "《起点‧终站》",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1113,
+            826
+          ],
+          "after": [
+            1114,
+            827
+          ]
         }
       ]
     }
