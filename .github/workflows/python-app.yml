@@ -9,6 +9,12 @@ on:
     branches: [ main ]
     paths-ignore:
       - 'question_bank.json'
+      - 'site/**'
+      - 'scripts/build_pages.py'
+      - 'tests/test_search.mjs'
+      - '.github/workflows/pages.yml'
+      - '.gitignore'
+      - 'README.md'
 
   schedule:
     - cron: '0 16 * * *'

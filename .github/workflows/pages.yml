@@ -1,0 +1,56 @@
+name: Publish question bank
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'scripts/build_pages.py'
+      - 'tests/test_search.mjs'
+      - 'question_bank.json'
+      - '.github/workflows/pages.yml'
+  # GITHUB_TOKEN 推送题库不会触发 push workflow；答题结束后显式重建网页。
+  workflow_run:
+    workflows: ['Python application']
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout latest bank on main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test search
+        run: node --test tests/test_search.mjs
+      - name: Build public files
+        run: python3 scripts/build_pages.py
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="神经研究所每日答题题库。输入题目或关键词，模糊检索已确认的正确答案与错误选项。">
+  <title>Eason 答案簿 · 神经研究所题库</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#search">跳到搜索</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Eason 答案簿首页"><span class="record-mark" aria-hidden="true"></span><span>EASON<span class="brand-light">答案簿</span></span></a>
+      <a class="repo-link" href="https://github.com/TannerTam/easonFansForumDaily" target="_blank" rel="noopener noreferrer">在 GitHub 查看 <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> 神经研究所 · 每日答题题库</p>
+          <h1 id="page-title">熟悉的题，<br>有迹可<span class="accent-word">循。</span></h1>
+          <p class="intro-description">输入一段题目或几个关键词。<br class="mobile-break">让每一次回答，都成为下一次的线索。</p>
+        </div>
+        <aside class="archive-stats" aria-label="题库统计">
+          <span class="stats-label">THE ANSWER ARCHIVE</span>
+          <div class="stat-main"><strong id="total-questions">—</strong><span>道收录题目</span></div>
+          <div class="stat-bottom"><span><strong id="correct-count">—</strong> 个正确答案</span><span><strong id="wrong-count">—</strong> 个排除项</span></div>
+          <p id="updated-at" class="updated-at">正在读取题库…</p>
+        </aside>
+      </section>
+
+      <section class="search-section" aria-label="检索题库">
+        <form id="search-form" class="search-form" role="search">
+          <svg class="search-icon" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+          <label class="sr-only" for="search">输入题目或关键词</label>
+          <input id="search" type="search" placeholder="输入题目、歌词或关键词…" autocomplete="off" disabled>
+          <button id="clear-search" class="clear-search" type="button" aria-label="清空搜索" hidden>×</button>
+          <button class="search-submit" id="search-submit" type="submit" disabled>查找答案 <span aria-hidden="true">↗</span></button>
+        </form>
+        <div class="search-hints"><span>试试搜索</span><button type="button" data-query="专辑">专辑</button><button type="button" data-query="作曲">作曲</button><button type="button" data-query="演唱会">演唱会</button><span class="fuzzy-note">不必输入完整题目，支持模糊匹配</span></div>
+      </section>
+
+      <section class="library" aria-labelledby="results-heading">
+        <div class="library-toolbar">
+          <div class="result-heading"><h2 id="results-heading">题库索引</h2><span id="result-count" aria-live="polite">正在加载</span></div>
+          <div class="filters" aria-label="筛选题目"><button type="button" data-filter="all" class="active" aria-pressed="true">全部</button><button type="button" data-filter="correct" aria-pressed="false">有正确答案</button><button type="button" data-filter="wrong" aria-pressed="false">仅排除项</button></div>
+        </div>
+        <p class="library-note">点击题目查看全部选项。同题干、不同选项的题目会分别列出。</p>
+        <div id="results" class="results-grid" aria-busy="true"></div>
+        <div id="empty-state" class="empty-state" hidden><span aria-hidden="true">⌕</span><h3>还没有找到这道题</h3><p>试着缩短关键词，或只保留人名、歌名、专辑名。</p><button id="reset-search" type="button">查看全部题目</button></div>
+        <div id="error-state" class="empty-state" role="alert" hidden><span aria-hidden="true">!</span><h3>题库暂时没有加载成功</h3><p>请检查网络后重试。</p><button id="retry-load" type="button">重新加载</button></div>
+        <button id="load-more" class="load-more" type="button" hidden>加载更多题目 <span aria-hidden="true">↓</span></button>
+      </section>
+    </main>
+
+    <footer class="site-footer"><p>每一次确认，都值得留下。</p><span><i class="legend-dot correct-dot"></i>正确 <i class="legend-dot wrong-dot"></i>错误 <i class="legend-dot unknown-dot"></i>未验证</span><span>EASON ANSWER ARCHIVE</span></footer>
+  </div>
+
+  <dialog id="answer-dialog" aria-labelledby="dialog-question" aria-describedby="dialog-note">
+    <div class="dialog-top"><span class="eyebrow">题目详情 / ANSWER SHEET</span><button id="close-dialog" class="close-dialog" type="button" aria-label="关闭答案详情">×</button></div>
+    <h2 id="dialog-question"></h2>
+    <p id="dialog-note">绿色为已确认正确，红色为已确认错误；灰色选项尚未验证。</p>
+    <div id="dialog-options" class="dialog-options"></div>
+    <div class="dialog-footer"><span>以题库中的最新确认记录为准</span><button id="dialog-done" type="button">知道了</button></div>
+  </dialog>
+  <noscript><p class="noscript">此网页需要启用 JavaScript 才能搜索题库。</p></noscript>
+</body>
+</html>

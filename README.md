@@ -18,6 +18,28 @@ GitHub Actions 中两个账号共享同一个题库。运行结束后（包括�
 本地运行也会更新脚本同目录下的 `question_bank.json`，可自行随代码提交。不要删除已有题库文件，否则会丢失已积累的答案。运行测试：`python -m unittest discover -s tests -v`（先安装 requirements.txt）。
 
 ## 使用方法
+### 网页检索
+
+[打开 Eason 答案簿](https://tannertam.github.io/easonFansForumDaily/)
+
+输入题目片段、多个关键词或答案文字即可检索；较长关键词允许少量错字。点击搜索结果会弹出该题的选项：绿色代表最近一次确认正确，红色代表最近一次确认错误，灰色代表尚未验证。相同题干但不同选项集合会分别显示。
+
+网站是 `site/` 下的纯静态 HTML/CSS/JavaScript，不调用答题 API。`scripts/build_pages.py` 只将网页文件与题库打包到 `_site/`，不会发布仓库中的配置或其他文件。当前导入数据只保留标准题库字段与明确的对错记录，已移除原始导入内容和未知记录；后续自动答题仍按原逻辑记录新尝试，网页只使用已确认结果。
+
+发布设置：在仓库 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**，再运行 **Publish question bank**。网页或题库变更会触发部署；每日答题 workflow 完成后也会读取 main 的最新题库重新部署。网页部署不会反过来触发答题。
+
+本地预览与搜索测试（Node.js 22+，Python 3）：
+
+```bash
+node --test tests/test_search.mjs
+python3 scripts/build_pages.py
+python3 -m http.server 8000 --directory _site
+```
+
+浏览器打开 `http://localhost:8000`。
+
+### 自动答题配置
+
 fork本repositroy后，在Settings->Secrets中新建仓库密码（New repository secret）。
 - 添加Name为`USERNAME`和`PASSWORD`的环境变量，分别添加自己神经研究所的账号和密码。
 - 添加Name为`MAIL_USERNAME`和`MAIL_PASSWORD`的环境变量，分别添加自己邮箱的SMTP账号和密码。
