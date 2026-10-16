@@ -4,8 +4,11 @@
 name: Python application
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'question_bank.json'
 
   schedule:
     - cron: '0 16 * * *'
@@ -13,7 +16,12 @@ on:
     # - cron: '*/1 * * * *'
 
 permissions:
-  contents: read
+  contents: write
+
+# 两个账号共享题库；同一分支的多个运行串行，避免覆盖彼此的记录。
+concurrency:
+  group: daily-mission-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -22,6 +30,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        ref: ${{ github.ref_name }}
+        fetch-depth: 0
 
     - name: Set up Python 3.11
       uses: actions/setup-python@v3
@@ -60,3 +71,33 @@ jobs:
         API_KEY: ${{ secrets.API_KEY }}
       run: |
         python dailyMission.py --headless
+
+    - name: Back up question bank
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: question-bank-${{ github.run_id }}-${{ github.run_attempt }}
+        path: question_bank.json
+        if-no-files-found: warn
+
+    - name: Commit question bank to current repository
+      if: always()
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add -- question_bank.json
+        if git diff --cached --quiet -- question_bank.json; then
+          echo "题库没有变化，无需提交。"
+          exit 0
+        fi
+        git commit -m "chore: update question bank [skip ci]" -- question_bank.json
+        for attempt in 1 2 3; do
+          git fetch origin "$GITHUB_REF_NAME"
+          git rebase FETCH_HEAD
+          if git push origin "HEAD:$GITHUB_REF_NAME"; then
+            exit 0
+          fi
+          sleep 2
+        done
+        echo "题库推送失败，可从本次运行的 artifact 下载备份。"
+        exit 1

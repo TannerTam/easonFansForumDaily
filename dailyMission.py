@@ -28,6 +28,7 @@ from functools import partial
 from datetime import datetime, timedelta, timezone
 from bs4 import BeautifulSoup
 from openai import OpenAI
+from question_bank import QuestionBank
 
 username = None
 password = None
@@ -155,6 +156,8 @@ def question(driver):
     global _api_call_count
     _api_call_count = 0
     MAX_API_CALLS = 3  # 单次运行最大 API 调用次数
+    bank = QuestionBank()
+    pending_attempt = None
 
     driver.get(base_url)
     try:
@@ -165,11 +168,7 @@ def question(driver):
         print(f"页面加载失败: {e}")
 
     try:
-        page_source = driver.page_source
-        total_answered_match = re.search(r"累计答题:\s*(\d+)", page_source)
-        total_correct_match = re.search(r"累计答对:\s*(\d+)", page_source)
-        initial_answer = int(total_answered_match.group(1)) if total_answered_match else 0
-        initial_correct = int(total_correct_match.group(1)) if total_correct_match else 0
+        initial_answer, initial_correct = read_answer_stats(driver.page_source) or (0, 0)
         # print(f"初始累计答题：{initial_answer}, 初始累计答对：{initial_correct}")
     except Exception as e:
         print(f"无法提取初始答题信息: {e}")
@@ -188,6 +187,14 @@ def question(driver):
             print(f"页面加载失败: {e}")
             break
 
+        if pending_attempt is not None:
+            correct = bank.resolve(pending_attempt, read_answer_stats(driver.page_source))
+            print("上一题结果：" + ("正确" if correct is True else "错误" if correct is False else "未确认"))
+            pending_attempt = None
+            if correct is None:
+                print("无法确认提交结果，已保留记录并停止本次答题，避免重复提交。")
+                break
+
         matches = re.search(r"\((\d+)/(\d+)\)", participated_element.text)
         participated, total = map(int, matches.groups())
         # 答题成功：当前 participated 比上一轮 +1 时，重置 API 计数
@@ -197,11 +204,7 @@ def question(driver):
 
         if participated >= total:
             try:
-                page_source = driver.page_source
-                total_answered_match = re.search(r"累计答题:\s*(\d+)", page_source)
-                total_correct_match = re.search(r"累计答对:\s*(\d+)", page_source)
-                final_answer = int(total_answered_match.group(1)) if total_answered_match else 0
-                final_correct = int(total_correct_match.group(1)) if total_correct_match else 0
+                final_answer, final_correct = read_answer_stats(driver.page_source) or (initial_answer, initial_correct)
             except Exception as e:
                 print(f"无法提取最终答题信息: {e}")
                 final_answer = initial_answer
@@ -215,41 +218,87 @@ def question(driver):
                 print(f"今日答题已完成。总正确数/答题数：{final_correct}/{final_answer}。")
             break
         
-        if _api_call_count >= MAX_API_CALLS:
-            print(f"单次运行 API 调用已达 {MAX_API_CALLS} 次，跳过后续答题")
-            break
-        
         try:
             WebDriverWait(driver, 10).until(
                 EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
             )
-            answer_question(driver, participated, _api_call_count)
+            pending_attempt = answer_question(driver, participated, _api_call_count, bank, MAX_API_CALLS)
+            if pending_attempt is None:
+                break
         except Exception as e:
             print(f"答题第{participated+1}题过程中出现错误，正在重试。")
             sleep(5)
             continue
 
-def answer_question(driver, question_number, option_index=0):
-    """答一题：调用一次 get_answer_from_api，失败时用 DEFAULT_OPTIONS[default_option_index] 作为答案。"""
-    prompt = build_prompt(driver)
-    label = get_answer_from_api(prompt)
-    options = ['a1', 'a2', 'a3', 'a4']
-    if label is None:
-        label = options[option_index % len(options)]
-        print(f"API 返回异常，使用备选选项（第 {option_index + 1} 次）: {label}")
-    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, label))).click()
-    WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
-    ).click()
-    print(f"回答第 {question_number + 1} 题成功")
+def read_answer_stats(html):
+    text = BeautifulSoup(html, 'html.parser').get_text(' ', strip=True)
+    answered = re.search(r"累计答题\s*[:：]\s*(\d+)", text)
+    correct = re.search(r"累计答对\s*[:：]\s*(\d+)", text)
+    if answered is None or correct is None:
+        return None
+    return [int(answered.group(1)), int(correct.group(1))]
 
-def build_prompt(driver):
+
+def answer_question(driver, question_number, option_index=0, bank=None, max_api_calls=3):
+    """优先复用正确答案，否则排除已知错误选项后沿用原 API 和备选逻辑。"""
+    if bank is None:
+        bank = QuestionBank()
+    question_text, options = extract_question(driver)
+    label, remaining = bank.lookup(question_text, options)
+    source = "question_bank"
+    if label is not None:
+        print(f"命中题库正确答案: {label}")
+    else:
+        if not remaining:
+            print("当前题目的所有选项均有错误记录，停止答题，请检查题库。")
+            return None
+        if globals().get('_api_call_count', 0) >= max_api_calls:
+            print(f"API 调用已达 {max_api_calls} 次，跳过后续答题")
+            return None
+        if len(remaining) != len(options):
+            print(f"题库已排除 {len(options) - len(remaining)} 个错误选项。")
+        label = get_answer_from_api(build_prompt(question_text=question_text, options=remaining))
+        source = "api"
+        allowed_labels = [option_label for option_label, _ in remaining]
+        if label not in allowed_labels:
+            label = allowed_labels[option_index % len(allowed_labels)]
+            source = "fallback"
+            print(f"API 返回异常或已排除的选项，使用备选选项（第 {option_index + 1} 次）: {label}")
+    WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, label))).click()
+    submit = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, "//button[@name='submit'][@value='true']"))
+    )
+    attempt = bank.record(question_text, options, label, source, read_answer_stats(driver.page_source))
+    try:
+        submit.click()
+    except Exception:
+        # 点击异常也可能已发出请求；保留未知记录，交给下一轮刷新确认。
+        print("提交点击出现异常，将刷新页面确认结果。")
+        return attempt
+    try:
+        # 等待跳转或 AJAX 统计刷新，避免立即导航打断提交请求。
+        WebDriverWait(driver, 10).until(
+            lambda current: EC.staleness_of(submit)(current)
+            or (attempt["before"] is not None
+                and (stats := read_answer_stats(current.page_source)) is not None
+                and stats[0] > attempt["before"][0])
+        )
+    except TimeoutException:
+        pass  # 下一轮重新加载页面后以累计统计判定。
+    except Exception as e:
+        print(f"等待提交结果时出现异常（{type(e).__name__}），将刷新确认。")
+    print(f"已提交第 {question_number + 1} 题，等待确认结果")
+    return attempt
+
+def extract_question(driver):
     # 获取页面 HTML 内容
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
 
     # 1. 提取题目内容
     b_tag = soup.find('b', string=lambda s: s and '【题目】' in s)
+    if b_tag is None:
+        raise ValueError("页面中未找到题目")
 
     # b标签的父节点通常是font或span，拿父节点的所有文本内容
     parent_tag = b_tag.parent
@@ -266,12 +315,21 @@ def build_prompt(driver):
         label = input_tag.get('id') if input_tag else 'unknown'
         # 取整段文本，剔除 &nbsp;&nbsp; 或空格
         raw_text = div.get_text(strip=True).replace('\xa0', ' ')
-        # 去掉可能的前缀（如 “a1. ”）
-        text = raw_text.split(' ', 1)[-1] if ' ' in raw_text else raw_text
+        # 只去掉标签前缀，保留英文答案等内容中的空格。
+        text = re.sub(r'^(?:a[1-4]|[A-Da-d]|[1-4])[.、:：)）]\s*|^'
+                      + re.escape(label) + r'\s+', '', raw_text).strip()
         options.append((label, text))
 
+    if not options or any(label not in ('a1', 'a2', 'a3', 'a4') for label, _ in options):
+        raise ValueError("页面中未找到有效选项")
+    return full_text, options
+
+
+def build_prompt(driver=None, *, question_text=None, options=None):
+    if driver is not None:
+        question_text, options = extract_question(driver)
     # 3. 构建 prompt
-    prompt = f"题目：{full_text}\n\n选项：\n"
+    prompt = f"题目：{question_text}\n\n选项：\n"
     for label, text in options:
         prompt += f"{label}. {text}\n"
     prompt += "\n请从上述选项中选择一个最合理的答案，并只返回选项标签。"
