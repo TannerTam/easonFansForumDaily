@@ -529,6 +529,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "b36c1f561ef04b4095f4c54e8c314eae",
+          "submitted_at": "2026-10-17T18:25:10.085120+00:00",
+          "options": {
+            "a2": "地下城与勇士",
+            "a3": "英雄联盟",
+            "a4": "勇者斗恶龙",
+            "a1": "王者荣耀"
+          },
+          "label": "a3",
+          "answer": "英雄联盟",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1116,
+            827
+          ],
+          "after": [
+            1117,
+            828
+          ]
         }
       ]
     },
@@ -3433,6 +3456,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "380e57e1b7d54e18adb9ba2e86be4f6f",
+          "submitted_at": "2026-10-17T18:22:45.178967+00:00",
+          "options": {
+            "a4": "幸福摩天轮",
+            "a1": "时代巨轮",
+            "a3": "陀飞轮",
+            "a2": "爱情巨轮"
+          },
+          "label": "a2",
+          "answer": "爱情巨轮",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2429,
+            1338
+          ],
+          "after": [
+            2430,
+            1339
+          ]
         }
       ]
     },
@@ -3955,6 +4001,118 @@
           ],
           "after": [
             1114,
+            827
+          ]
+        }
+      ]
+    },
+    "67c5de94c14f16b6314e68210039ce92ca350e62bfa3130b81329cb7a2208487": {
+      "question": "以下哪句歌词不是陈奕迅演唱的歌曲？",
+      "attempts": [
+        {
+          "id": "2b4fe167d6a64ed49f21e059b99f51eb",
+          "submitted_at": "2026-10-17T18:22:41.956342+00:00",
+          "options": {
+            "a2": "我的美酒 跑车 相机 金表也讲究",
+            "a3": "就散席了 人客急将美酒喝掉",
+            "a4": "又到结尾 有些金句未讲 许多美酒未喝光",
+            "a1": "美酒 那独自醉 佳人 那落下泪"
+          },
+          "label": "a2",
+          "answer": "我的美酒 跑车 相机 金表也讲究",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2428,
+            1338
+          ],
+          "after": [
+            2429,
+            1338
+          ]
+        }
+      ]
+    },
+    "e7b6f322fdf562268d9f5c89319c9049e8afa05041f58e61520b40902c801905": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "459a18cf70474f26bb797eb33d36729e",
+          "submitted_at": "2026-10-17T18:23:02.837047+00:00",
+          "options": {
+            "a2": "谢谢",
+            "a1": "亲亲",
+            "a4": "听听",
+            "a3": "绵绵"
+          },
+          "label": "a2",
+          "answer": "谢谢",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2430,
+            1339
+          ],
+          "after": [
+            2431,
+            1339
+          ]
+        }
+      ]
+    },
+    "6c68c03816dd436109189c50572e582b701bb4fe4cd5ce1c88a1ad9ba1f628a7": {
+      "question": "由DUO团队的结他手卢凯彤及钢琴师孙伟明共同打造的《海里睡人》是在DUO巡回到哪个城市创作出来？",
+      "attempts": [
+        {
+          "id": "d40a7e87b0b145d1a6bf2bf3faaa2353",
+          "submitted_at": "2026-10-17T18:24:44.318125+00:00",
+          "options": {
+            "a1": "福州",
+            "a4": "北京",
+            "a2": "广州",
+            "a3": "成都"
+          },
+          "label": "a1",
+          "answer": "福州",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1114,
+            827
+          ],
+          "after": [
+            1115,
+            827
+          ]
+        }
+      ]
+    },
+    "c99ca663261945a16488f873d57bd7358b452fd68d3e64887ebc7baf70ad48b4": {
+      "question": "根据采访记录，陈奕迅承认哪一年是自己的巅峰时期？",
+      "attempts": [
+        {
+          "id": "892bd1a0f5014290a8681fbe596ae6d1",
+          "submitted_at": "2026-10-17T18:25:07.929320+00:00",
+          "options": {
+            "a2": "1998",
+            "a1": "1996",
+            "a3": "2002",
+            "a4": "2000"
+          },
+          "label": "a4",
+          "answer": "2000",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1115,
+            827
+          ],
+          "after": [
+            1116,
             827
           ]
         }
