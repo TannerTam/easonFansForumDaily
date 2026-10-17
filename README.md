@@ -13,35 +13,9 @@
 
 ## 网页检索
 
-部署后的访问地址可在仓库 **Settings → Pages** 中查看。
+[https://tannertam.github.io/easonFansForumDaily/](https://tannertam.github.io/easonFansForumDaily/)
 
-输入题目片段、多个关键词或答案文字即可检索；较长关键词允许少量错字。点击搜索结果会弹出该题的全部选项：
-
-- 绿色：最近一次确认正确。
-- 红色：最近一次确认错误。
-- 灰色：尚未验证。
-
-相同题干但选项集合不同的题目会分别显示。
-
-网站是 `site/` 下的纯静态 HTML、CSS 和 JavaScript，不会调用答题 API。`scripts/build_pages.py` 只把网页文件及检索所需的题目、选项和对错结果打包到 `_site/`，不会发布提交时间、累计统计、记录来源、仓库配置或其他文件。
-
-网页已移除仓库外链和具名品牌文案，并加入 `noindex`、`nofollow`、`nosnippet`、`noimageindex` 和 `no-referrer`。这些设置只能降低被搜索和传播的概率，不能提供身份隐藏或访问控制；知道网址的人仍然可以打开页面，默认 GitHub Pages 域名和公开仓库也仍可能关联到账号。已有搜索结果需要等待搜索引擎重新抓取后才可能消失。不要使用 `robots.txt` 禁止抓取页面，否则搜索引擎可能无法读取 `noindex`。
-
-### 发布网页
-
-在仓库 **Settings → Pages → Build and deployment → Source** 中选择 **GitHub Actions**，然后运行 **Publish question bank**。
-
-网页文件或题库发生变化时会自动部署；每日答题 workflow 完成后，也会读取 `main` 分支的最新题库重新部署。网页部署不会触发自动答题。
-
-本地预览和测试需要 Node.js 22+ 与 Python 3：
-
-```bash
-node --test tests/test_search.mjs
-python3 scripts/build_pages.py
-python3 -m http.server 8000 --directory _site
-```
-
-浏览器打开 `http://localhost:8000`。
+支持模糊检索题目和答案。搜索结果中，绿色表示正确答案，红色表示错误答案。
 
 ## GitHub Actions 配置
 
@@ -150,16 +124,6 @@ API 调用方式、响应解析和调用次数限制保持不变。API 返回异
 - 统计缺失、没有更新或变化异常：记录为未确认，并停止本次答题以避免重复提交。
 
 题库不会保存账号、密码或 API Key。
-
-### 自动备份、提交与网页更新
-
-GitHub Actions 中的两个账号共享同一个题库。两个账号运行结束后，即使任务中途失败，也会把 `question_bank.json` 上传为 artifact 备份；题库有变化时，再由 `github-actions[bot]` 自动提交并推送到当前运行分支。
-
-相同分支的任务会串行执行，避免并发覆盖。题库自动提交不会再次触发每日答题，因此不会形成循环；每日任务结束后会单独触发网页发布流程，使网页读取 `main` 分支中的最新题库。
-
-Workflow 已声明 `contents: write` 并使用默认 `GITHUB_TOKEN`，无需新增 token secret。如果仓库或组织策略禁止 Actions 写入，或者分支保护不允许 bot 直接推送，需要在 GitHub 设置中允许相应写入；推送失败时仍可从本次 Actions 运行的 artifact 下载题库备份。
-
-本地运行同样会更新脚本目录下的 `question_bank.json`。不要删除已有题库文件，否则会丢失已积累的答案。
 
 运行 Python 测试：
 
