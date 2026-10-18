@@ -4117,6 +4117,173 @@
           ]
         }
       ]
+    },
+    "96fd193310ace3e3cf0fc26e527c4cb79e2d23fb4625ebe1c3527a3ac62d5c06": {
+      "question": "陈奕迅最新专辑《L.O.V.E》哪首歌是已故歌手卢凯彤作曲的？",
+      "attempts": [
+        {
+          "id": "57a3b3029503423faa280f2534cf2690",
+          "submitted_at": "2026-10-18T18:34:58.234858+00:00",
+          "options": {
+            "a4": "敬烟",
+            "a2": "龙舌兰",
+            "a1": "渐渐",
+            "a3": "海里睡人"
+          },
+          "label": "a3",
+          "answer": "海里睡人",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2431,
+            1339
+          ],
+          "after": [
+            2432,
+            1340
+          ]
+        }
+      ]
+    },
+    "a5df077a6ff84440673744312635e918824d6582ae9a77ed90043dccbb2ff658": {
+      "question": "以下哪首歌是陈奕迅作曲的？",
+      "attempts": [
+        {
+          "id": "2c0ab46e1f144c4792d962a7fa9736f5",
+          "submitted_at": "2026-10-18T18:35:06.027036+00:00",
+          "options": {
+            "a4": "时光倒流二十年",
+            "a1": "时代曲",
+            "a3": "时光隧道",
+            "a2": "时代巨轮"
+          },
+          "label": "a1",
+          "answer": "时代曲",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2432,
+            1340
+          ],
+          "after": [
+            2433,
+            1341
+          ]
+        }
+      ]
+    },
+    "7fff466b7698710d4880efc78fd9f41677ccbe09d65809158d10cd41ee7310cc": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "17dec300f0ca4efebfb8553eef0bbc3c",
+          "submitted_at": "2026-10-18T18:35:42.919983+00:00",
+          "options": {
+            "a4": "起点车站",
+            "a3": "人车志",
+            "a1": "单车",
+            "a2": "滑铁卢车站"
+          },
+          "label": "a3",
+          "answer": "人车志",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2433,
+            1341
+          ],
+          "after": [
+            2434,
+            1341
+          ]
+        }
+      ]
+    },
+    "c794ee2b0770216ffd9698169917dbfd58ebd021e627719d68effdb91978c0f8": {
+      "question": "在《陈鲁豫·慢谈》中。鲁豫问陈奕迅演唱会完放松之后会不会有小失落，陈奕迅提到了其中一个主题会有，是哪个主题？",
+      "attempts": [
+        {
+          "id": "f9e111c187fd482e9d5fa7ef5b4dbd12",
+          "submitted_at": "2026-10-18T18:37:18.013762+00:00",
+          "options": {
+            "a2": "DUO",
+            "a1": "Fear And Dreams",
+            "a3": "Eason's life",
+            "a4": "Eason's Moving On Stage"
+          },
+          "label": "a1",
+          "answer": "Fear And Dreams",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1117,
+            828
+          ],
+          "after": [
+            1118,
+            828
+          ]
+        }
+      ]
+    },
+    "9c0f0676773bf0a6777666dbb652824a795035c974327b68ba3d5955bcf98dec": {
+      "question": "在Fear and Dreams澳门终极尾场中，分别唱了以下哪些安可？",
+      "attempts": [
+        {
+          "id": "8c5275387a0948438455c1805bc60af2",
+          "submitted_at": "2026-10-18T18:37:37.719748+00:00",
+          "options": {
+            "a2": "K歌之王/防不胜防/粤语残片/沙龙/你的背包/黑暗中漫舞/人来人往/之外/浮夸/黄金时代/时代曲/绵绵（清唱）",
+            "a1": "K歌之王/防不胜防/粤语残片/沙龙/富士山下/人来人往/之外/浮夸/热带雨林/黄金时代/时代曲/绵绵（清唱）",
+            "a3": "K歌之王/防不胜防/粤语残片/陀飞轮/是但求其爱/失忆蝴蝶/打回原形/单车/黄金时代/时代曲/浮夸/绵绵（清唱）"
+          },
+          "label": "a2",
+          "answer": "K歌之王/防不胜防/粤语残片/沙龙/你的背包/黑暗中漫舞/人来人往/之外/浮夸/黄金时代/时代曲/绵绵（清唱）",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1118,
+            828
+          ],
+          "after": [
+            1119,
+            829
+          ]
+        }
+      ]
+    },
+    "0afd188cf7d5d486721febdc185cc1c0127b1cd9d1193911d7a110cba39c6774": {
+      "question": "在《陈鲁豫·慢谈》中，鲁豫说在演唱会上收到几万人的掌声，会有什么样的状态和想法呢？",
+      "attempts": [
+        {
+          "id": "78e0825307a14a3396d44af6d9ea7a3b",
+          "submitted_at": "2026-10-18T18:37:57.225779+00:00",
+          "options": {
+            "a4": "会觉得非常满意，自己演绎的不错",
+            "a2": "会很享受当下的感觉，觉得自己的状态很不错",
+            "a1": "会很开心 大家都在为我鼓掌喝彩",
+            "a3": "我觉得这些欢呼声 掌声会让我更有信心去把演出做好"
+          },
+          "label": "a4",
+          "answer": "会觉得非常满意，自己演绎的不错",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1119,
+            829
+          ],
+          "after": [
+            1120,
+            829
+          ]
+        }
+      ]
     }
   }
 }
