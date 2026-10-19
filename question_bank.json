@@ -1575,6 +1575,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "7c04623c8307450a8b6e976c56411710",
+          "submitted_at": "2026-10-19T21:01:31.015535+00:00",
+          "options": {
+            "a4": "地产大亨叶伟信",
+            "a3": "警探叶伟信",
+            "a1": "房东叶伟信",
+            "a2": "的士司机叶伟信"
+          },
+          "label": "a3",
+          "answer": "警探叶伟信",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1120,
+            829
+          ],
+          "after": [
+            1121,
+            830
+          ]
         }
       ]
     },
@@ -4281,6 +4304,146 @@
           "after": [
             1120,
             829
+          ]
+        }
+      ]
+    },
+    "de549dd05eaf3a3de0692e29a3fd21e7bcc7c0d4710ab05536711ca0e98bef6f": {
+      "question": "哪一年他推出首张个人同名专辑《陈奕迅》？",
+      "attempts": [
+        {
+          "id": "6ca059b4f6ae4af7b6c95cdeca11bbe0",
+          "submitted_at": "2026-10-19T20:59:47.932707+00:00",
+          "options": {
+            "a2": "1995",
+            "a4": "1997",
+            "a1": "1994",
+            "a3": "1996"
+          },
+          "label": "a3",
+          "answer": "1996",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2434,
+            1341
+          ],
+          "after": [
+            2435,
+            1342
+          ]
+        }
+      ]
+    },
+    "4f73630d5bc932ccd1ddcda370f9077e6d4b461555439db8a3a031b52ff30210": {
+      "question": "陈奕迅 FEAR AND DREAMS 巡回演唱会澳门终极尾场Encore的最后一首歌是什么？",
+      "attempts": [
+        {
+          "id": "3210ed1139c94b4bb77962363743d032",
+          "submitted_at": "2026-10-19T20:59:55.727860+00:00",
+          "options": {
+            "a1": "时代曲",
+            "a4": "K歌之王",
+            "a2": "黄金时代",
+            "a3": "浮夸"
+          },
+          "label": "a1",
+          "answer": "时代曲",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2435,
+            1342
+          ],
+          "after": [
+            2436,
+            1343
+          ]
+        }
+      ]
+    },
+    "6af69ce240cfd8e323e1283b8f165dcc4faa7e61dccd5ee55b36c00d75cb269f": {
+      "question": "陈奕迅与哪位艺人合作演出感人的音乐剧《蓝宝石的夜空》？",
+      "attempts": [
+        {
+          "id": "50e191e0989d4573b746e987ed41e664",
+          "submitted_at": "2026-10-19T21:00:07.861310+00:00",
+          "options": {
+            "a1": "卢巧音",
+            "a4": "张佳佳",
+            "a3": "蔡卓妍",
+            "a2": "钟欣桐"
+          },
+          "label": "a3",
+          "answer": "蔡卓妍",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2436,
+            1343
+          ],
+          "after": [
+            2437,
+            1344
+          ]
+        }
+      ]
+    },
+    "480cb0551fd5757dfa50114bf56274bb78f058f314627ae31dcdc308c4841150": {
+      "question": "以下哪首歌不是陈奕迅翻唱的？",
+      "attempts": [
+        {
+          "id": "91c39b6fc7914c11987bdccbb90c106e",
+          "submitted_at": "2026-10-19T21:02:33.364222+00:00",
+          "options": {
+            "a3": "New Order",
+            "a2": "Mr. Cab Driver",
+            "a4": "PG家长指引",
+            "a1": "Mr. Lonely"
+          },
+          "label": "a2",
+          "answer": "Mr. Cab Driver",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1121,
+            830
+          ],
+          "after": [
+            1122,
+            830
+          ]
+        }
+      ]
+    },
+    "e1f66a17413fbaff1ea57439b02ab6377dd794ded68cf0fb17fb8b90bd82742e": {
+      "question": "陈奕迅翻唱过以下哪首歌曲？",
+      "attempts": [
+        {
+          "id": "2a497f27c34b477db3e134f01fedb616",
+          "submitted_at": "2026-10-19T21:02:47.003342+00:00",
+          "options": {
+            "a3": "拜访",
+            "a2": "飘",
+            "a1": "奋斗",
+            "a4": "偷故事的人"
+          },
+          "label": "a1",
+          "answer": "奋斗",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1122,
+            830
+          ],
+          "after": [
+            1123,
+            831
           ]
         }
       ]
