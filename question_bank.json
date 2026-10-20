@@ -911,6 +911,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "b01b1bb5f80f4c67ad4df57e906f9404",
+          "submitted_at": "2026-10-20T19:58:47.821486+00:00",
+          "options": {
+            "a1": "没有故事",
+            "a2": "7",
+            "a3": "11",
+            "a4": "13"
+          },
+          "label": "a4",
+          "answer": "13",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2439,
+            1346
+          ],
+          "after": [
+            2440,
+            1347
+          ]
         }
       ]
     },
@@ -4444,6 +4467,146 @@
           "after": [
             1123,
             831
+          ]
+        }
+      ]
+    },
+    "bedbb02a1ba071fb548b38b32a14b252bb3887af85be9652c7aedbecd54722fa": {
+      "question": "2012年1月4日，陈奕迅登上央视龙年春晚，表演了什么节目？",
+      "attempts": [
+        {
+          "id": "94c6ee6a459b46c38a4bbe5153eebdc7",
+          "submitted_at": "2026-10-20T19:58:36.180672+00:00",
+          "options": {
+            "a3": "跟成龙、容祖儿、谭晶一起演唱歌曲《站起来》",
+            "a2": "跟谭晶演唱歌曲《龙文》",
+            "a1": "跟王菲演唱歌曲《因为爱情》",
+            "a4": "大合唱歌曲《同一个梦想》"
+          },
+          "label": "a1",
+          "answer": "跟王菲演唱歌曲《因为爱情》",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2437,
+            1344
+          ],
+          "after": [
+            2438,
+            1345
+          ]
+        }
+      ]
+    },
+    "17b3096b4a231257bb145872b7631e564477ac941005b1e70015a83be9ff111e": {
+      "question": "陈奕迅哪张大碟里面的歌曲名字全是四字词？",
+      "attempts": [
+        {
+          "id": "0ee69e84b73f46b89d1e03e3b15c885f",
+          "submitted_at": "2026-10-20T19:58:44.983385+00:00",
+          "options": {
+            "a1": "《打得火热》",
+            "a3": "《反正是我》",
+            "a2": "《The Line Up》",
+            "a4": "《The Easy Ride 》"
+          },
+          "label": "a4",
+          "answer": "《The Easy Ride 》",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2438,
+            1345
+          ],
+          "after": [
+            2439,
+            1346
+          ]
+        }
+      ]
+    },
+    "3249cacc4b206f18ea7a346e61ce01c60ae82217c6e125d2c2256024ec0ded1d": {
+      "question": "以下哪首歌是陈奕迅作曲的？",
+      "attempts": [
+        {
+          "id": "ed96a56a430f4b4bb3d897f133210a96",
+          "submitted_at": "2026-10-20T20:00:32.301670+00:00",
+          "options": {
+            "a3": "林榆涵 - 那一天蓝蓝的天空",
+            "a4": "杨千嬅 - 那一天还未到",
+            "a1": "张涛 - 那一天来临",
+            "a2": "杨坤 - 那一天"
+          },
+          "label": "a3",
+          "answer": "林榆涵 - 那一天蓝蓝的天空",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1123,
+            831
+          ],
+          "after": [
+            1124,
+            831
+          ]
+        }
+      ]
+    },
+    "e6fe450a37d93c50798e848c1de5cc04c7c79941a29b344db8e7fce1eb2a1e10": {
+      "question": "名为「Eason's Duo」的世界巡迴演唱会一共举办了多少场？",
+      "attempts": [
+        {
+          "id": "69b135ddd8eb43c387cf79394e88c1a7",
+          "submitted_at": "2026-10-20T20:00:42.461449+00:00",
+          "options": {
+            "a3": "67",
+            "a1": "66",
+            "a2": "65",
+            "a4": "68"
+          },
+          "label": "a1",
+          "answer": "66",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1124,
+            831
+          ],
+          "after": [
+            1125,
+            832
+          ]
+        }
+      ]
+    },
+    "d98d31b167802d379d2398680c6a7db977dff2e8dd5e6a1aaa6fc670969522be": {
+      "question": "陈奕迅第一张国语专辑名称是？",
+      "attempts": [
+        {
+          "id": "265a04b17dc8462c8f3259091ce5a59c",
+          "submitted_at": "2026-10-20T20:00:51.730407+00:00",
+          "options": {
+            "a3": "婚礼的祝福",
+            "a1": "酝酿",
+            "a2": "一滴眼泪",
+            "a4": "反正是我"
+          },
+          "label": "a2",
+          "answer": "一滴眼泪",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1125,
+            832
+          ],
+          "after": [
+            1126,
+            833
           ]
         }
       ]
