@@ -3993,6 +3993,29 @@
             2427,
             1337
           ]
+        },
+        {
+          "id": "6969307421f040b88636abefaecbbf20",
+          "submitted_at": "2026-10-21T20:04:09.429399+00:00",
+          "options": {
+            "a4": "如果这都不算爱",
+            "a1": "只愿一生爱一人",
+            "a3": "遥远的她",
+            "a2": "望月"
+          },
+          "label": "a1",
+          "answer": "只愿一生爱一人",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2442,
+            1348
+          ],
+          "after": [
+            2443,
+            1349
+          ]
         }
       ]
     },
@@ -4607,6 +4630,146 @@
           "after": [
             1126,
             833
+          ]
+        }
+      ]
+    },
+    "f1b6bc7ad1d5ada2f1d4f99416dec19cf178abb724f0011bbecfc921892ef9da": {
+      "question": "以下哪首歌陈奕迅有参与作曲？",
+      "attempts": [
+        {
+          "id": "16b7e04b3a1646bab290ef2f1f1d4ded",
+          "submitted_at": "2026-10-21T20:03:17.976390+00:00",
+          "options": {
+            "a3": "天下太平",
+            "a1": "太阳照常升起",
+            "a2": "失恋太少",
+            "a4": "2001太空漫游"
+          },
+          "label": "a4",
+          "answer": "2001太空漫游",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2440,
+            1347
+          ],
+          "after": [
+            2441,
+            1348
+          ]
+        }
+      ]
+    },
+    "e0334ad15cbb5fe4027849db47ec0c05589c7fb3fa3a045be07d619fbf8089df": {
+      "question": "在2026年九五至尊无限枫骚演唱会中，胡枫提起70岁演唱会嘉宾陈奕迅唱的一首歌[Shall We Talk]，记得的关键词是哪个？",
+      "attempts": [
+        {
+          "id": "0808529e1000407fa3870bcf0874c212",
+          "submitted_at": "2026-10-21T20:04:06.419644+00:00",
+          "options": {
+            "a1": "蟋蟀",
+            "a3": "螳螂",
+            "a4": "月光",
+            "a2": "吗喽"
+          },
+          "label": "a4",
+          "answer": "月光",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2441,
+            1348
+          ],
+          "after": [
+            2442,
+            1348
+          ]
+        }
+      ]
+    },
+    "937cb07188217427508a2efa07c1f7669c408ee5651e55b53e43597837a63a87": {
+      "question": "陈奕迅小时候看选美比赛，最佩服哪个职位？",
+      "attempts": [
+        {
+          "id": "1dcf3295cbb34177914795cb745bb25c",
+          "submitted_at": "2026-10-21T20:05:40.543329+00:00",
+          "options": {
+            "a1": "翻译",
+            "a3": "冠军得主",
+            "a4": "评委",
+            "a2": "主持人"
+          },
+          "label": "a1",
+          "answer": "翻译",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1126,
+            833
+          ],
+          "after": [
+            1127,
+            834
+          ]
+        }
+      ]
+    },
+    "2c97a91b57ea669a16ba4044599842504ad3ff9eadd302514cf4bb13c885fa53": {
+      "question": "以下哪首歌是陈奕迅作曲的？",
+      "attempts": [
+        {
+          "id": "ba8fd803267344bdaeff414fabe6b7b8",
+          "submitted_at": "2026-10-21T20:05:49.441881+00:00",
+          "options": {
+            "a3": "演唱会",
+            "a1": "你会不会",
+            "a2": "学会爱",
+            "a4": "爱拼才会嬴"
+          },
+          "label": "a1",
+          "answer": "你会不会",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1127,
+            834
+          ],
+          "after": [
+            1128,
+            835
+          ]
+        }
+      ]
+    },
+    "ca549578c53c8bb7c23ba57557798858161094d73ceadcd8da86dad0dbc48d55": {
+      "question": "“快乐”两个字在以下陈奕迅哪首歌的歌词中出现的次数最多？",
+      "attempts": [
+        {
+          "id": "20bc10eef37f4230b10d4c2b9ab2a455",
+          "submitted_at": "2026-10-21T20:06:14.121614+00:00",
+          "options": {
+            "a3": "寂寞让你更快乐",
+            "a2": "阴天快乐",
+            "a4": "乐园",
+            "a1": "快乐男生"
+          },
+          "label": "a1",
+          "answer": "快乐男生",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1128,
+            835
+          ],
+          "after": [
+            1129,
+            836
           ]
         }
       ]
