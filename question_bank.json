@@ -3547,6 +3547,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "b31da0915c954ef596387fb2c584835d",
+          "submitted_at": "2026-10-22T19:59:58.772830+00:00",
+          "options": {
+            "a4": "不知所谓",
+            "a1": "不求人",
+            "a3": "不能再等了",
+            "a2": "不睡"
+          },
+          "label": "a3",
+          "answer": "不能再等了",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1130,
+            836
+          ],
+          "after": [
+            1131,
+            837
+          ]
         }
       ]
     },
@@ -3767,6 +3790,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "10a9f38027614a92935461a6c0420643",
+          "submitted_at": "2026-10-22T19:57:10.470899+00:00",
+          "options": {
+            "a3": "香港伊利沙伯医院",
+            "a2": "威尔斯亲王医院",
+            "a4": "养和医院",
+            "a1": "香港玛丽医院"
+          },
+          "label": "a1",
+          "answer": "香港玛丽医院",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2443,
+            1349
+          ],
+          "after": [
+            2444,
+            1350
+          ]
         }
       ]
     },
@@ -4770,6 +4816,118 @@
           "after": [
             1129,
             836
+          ]
+        }
+      ]
+    },
+    "987d30c2322510cf26f9d1cd294b645aee30c2a74b86c5bdf9d1786d9538e53f": {
+      "question": "陈奕迅的lucky number是？",
+      "attempts": [
+        {
+          "id": "6241aae59a5d4b2081029195edbd0745",
+          "submitted_at": "2026-10-22T19:57:36.397053+00:00",
+          "options": {
+            "a3": "8",
+            "a1": "6",
+            "a4": "1",
+            "a2": "7"
+          },
+          "label": "a3",
+          "answer": "8",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2444,
+            1350
+          ],
+          "after": [
+            2445,
+            1350
+          ]
+        }
+      ]
+    },
+    "3e32efe2168a16b2fd2ca0c6df9d273f74f32790d1a03e1ae663b6d8d0b11454": {
+      "question": "陈奕迅是第几个站在高雄巨蛋的香港歌手？",
+      "attempts": [
+        {
+          "id": "fc76d7f783064fc6bf431a2404781cfc",
+          "submitted_at": "2026-10-22T19:57:45.423558+00:00",
+          "options": {
+            "a2": "第二个",
+            "a3": "第三个",
+            "a1": "第一个",
+            "a4": "第四个"
+          },
+          "label": "a1",
+          "answer": "第一个",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2445,
+            1350
+          ],
+          "after": [
+            2446,
+            1351
+          ]
+        }
+      ]
+    },
+    "c3b2739ff7e8fa297bf0caa1abccc6275ae7551d1b146648374aa362bf83305f": {
+      "question": "以下是哪一首歌获得了98年《至尊儿歌金曲》",
+      "attempts": [
+        {
+          "id": "58acb5a49bda4901b884b39e12772fbc",
+          "submitted_at": "2026-10-22T19:59:55.548370+00:00",
+          "options": {
+            "a4": "《单车》",
+            "a2": "超人迪迦-《超人的主题曲》",
+            "a1": "钢之炼金术师-《不死传说》",
+            "a3": "卡拉OK战士《我的理想》"
+          },
+          "label": "a3",
+          "answer": "卡拉OK战士《我的理想》",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1129,
+            836
+          ],
+          "after": [
+            1130,
+            836
+          ]
+        }
+      ]
+    },
+    "cf91b12ef419762110f712bb1e05a6cca9b95f136225d7f017b51adc209927c1": {
+      "question": "歌曲《天使的礼物》女和音是谁？",
+      "attempts": [
+        {
+          "id": "b8d44cb5fcc14ab9af8112d869fc1106",
+          "submitted_at": "2026-10-22T20:00:10.109862+00:00",
+          "options": {
+            "a2": "杨千嬅",
+            "a3": "冯颖琪",
+            "a4": "林晞",
+            "a1": "容祖儿"
+          },
+          "label": "a3",
+          "answer": "冯颖琪",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1131,
+            837
+          ],
+          "after": [
+            1132,
+            837
           ]
         }
       ]
