@@ -4931,6 +4931,174 @@
           ]
         }
       ]
+    },
+    "ae4541bd140936a06435c842a9b1276db6b4f6266ec744b3f3d3a243b7f06bed": {
+      "question": "2026年4月26日，陈奕迅惊喜现身在谁的演唱会上?",
+      "attempts": [
+        {
+          "id": "bfbfe34521004f1189c2f87d344e1ec1",
+          "submitted_at": "2026-10-23T19:55:12.839480+00:00",
+          "options": {
+            "a1": "胡枫",
+            "a4": "草蜢",
+            "a2": "张学友",
+            "a3": "刘德华"
+          },
+          "label": "a4",
+          "answer": "草蜢",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2446,
+            1351
+          ],
+          "after": [
+            2447,
+            1352
+          ]
+        }
+      ]
+    },
+    "71807e4d81c425258e0fe25fd4704978ab89917512209af250fd94e1c988270a": {
+      "question": "陈奕迅的《十年》发行日期是哪一年？",
+      "attempts": [
+        {
+          "id": "aa05e52fa43b46328fc955b80631e9a5",
+          "submitted_at": "2026-10-23T19:55:21.944896+00:00",
+          "options": {
+            "a3": "2003",
+            "a4": "2002",
+            "a2": "2001",
+            "a1": "2000"
+          },
+          "label": "a3",
+          "answer": "2003",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2447,
+            1352
+          ],
+          "after": [
+            2448,
+            1353
+          ]
+        }
+      ]
+    },
+    "a3681eca3da85ea37c086189e6bddc66ef3f4f4e2012eba3df17df9107e51a68": {
+      "question": "《CHIN UP!》里的8首歌曲由哪几种语言组成？",
+      "attempts": [
+        {
+          "id": "d3a52d3d770c4082ba47272df25c15b4",
+          "submitted_at": "2026-10-23T19:55:44.158815+00:00",
+          "options": {
+            "a1": "5首粤语和3首国语",
+            "a2": "6首粤语、1首国语、1首英语",
+            "a4": "一半粤语和一半国语",
+            "a3": "6首粤语和2首国语"
+          },
+          "label": "a3",
+          "answer": "6首粤语和2首国语",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2448,
+            1353
+          ],
+          "after": [
+            2449,
+            1354
+          ]
+        }
+      ]
+    },
+    "20351caafb2293d881aaebe60c1f9c0ce273588da6729fabc38cb4e351b7e91d": {
+      "question": "在《陈鲁豫·慢谈》中，鲁豫问陈奕迅当年录哪首歌的时候是在流泪的？",
+      "attempts": [
+        {
+          "id": "d4046fe5367a4088ae1d77613f5eee80",
+          "submitted_at": "2026-10-23T19:57:13.638481+00:00",
+          "options": {
+            "a3": "K歌之王",
+            "a4": "淘汰",
+            "a1": "天下无双",
+            "a2": "陀飞轮"
+          },
+          "label": "a3",
+          "answer": "K歌之王",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1132,
+            837
+          ],
+          "after": [
+            1133,
+            838
+          ]
+        }
+      ]
+    },
+    "3cbb800d2d97a019081a3e5e908a5bb5410273e86b087329827be8c12f6b782a": {
+      "question": "陈奕迅与太太徐濠萦在香港哪一年举行婚礼的？",
+      "attempts": [
+        {
+          "id": "8f3c76a065504812b56a9f8eb32d5596",
+          "submitted_at": "2026-10-23T19:57:27.771685+00:00",
+          "options": {
+            "a3": "2005年3月23日",
+            "a1": "2003年3月23日",
+            "a2": "2004年3月23日",
+            "a4": "2006年3月23日"
+          },
+          "label": "a4",
+          "answer": "2006年3月23日",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1133,
+            838
+          ],
+          "after": [
+            1134,
+            839
+          ]
+        }
+      ]
+    },
+    "25454cdee30e40651efa56435ce21c49be515d8aa3d3b24b4739db2ebc9628ad": {
+      "question": "以下是誰由于档期原因没有参演电影《兄弟之生死同盟》最后由陈奕迅顶替了？",
+      "attempts": [
+        {
+          "id": "d68dfe110ae34df8a16618668ed7e5d2",
+          "submitted_at": "2026-10-23T19:57:40.175761+00:00",
+          "options": {
+            "a4": "张学友",
+            "a1": "梁朝伟",
+            "a3": "黎明",
+            "a2": "郑伊健"
+          },
+          "label": "a1",
+          "answer": "梁朝伟",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1134,
+            839
+          ],
+          "after": [
+            1135,
+            840
+          ]
+        }
+      ]
     }
   }
 }
