@@ -5099,6 +5099,174 @@
           ]
         }
       ]
+    },
+    "e322558ad996b4696580d24f0759d7dda8634b7d0dd1aaba03f398c9a9d0e90d": {
+      "question": "陈奕迅主演的电影《神经侠侣》中，他饰演的角色名字是？",
+      "attempts": [
+        {
+          "id": "400bcf6b67a04c02a30562a2752d885c",
+          "submitted_at": "2026-10-24T18:45:01.957276+00:00",
+          "options": {
+            "a1": "陈俊杰",
+            "a3": "李志强",
+            "a4": "林俊杰",
+            "a2": "王智威"
+          },
+          "label": "a1",
+          "answer": "陈俊杰",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2449,
+            1354
+          ],
+          "after": [
+            2450,
+            1355
+          ]
+        }
+      ]
+    },
+    "f1ac39c091603167f0803eb47139f65475665386a01d6ca58bed58b2b4f262d4": {
+      "question": "以下哪首歌的歌词不包含“陈奕迅”？(part4)",
+      "attempts": [
+        {
+          "id": "662240118d954372952d635662b2ed67",
+          "submitted_at": "2026-10-24T18:45:19.311604+00:00",
+          "options": {
+            "a2": "不是我",
+            "a1": "俗",
+            "a4": "听陈奕迅的歌",
+            "a3": "全情关注"
+          },
+          "label": "a2",
+          "answer": "不是我",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2450,
+            1355
+          ],
+          "after": [
+            2451,
+            1356
+          ]
+        }
+      ]
+    },
+    "0ae33337ef90dd71c56bc3c7783aa71a920a7efbc72ce2dadd7c0f7a179b31e3": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "a33f4b476e85406abb0a09b1a2801907",
+          "submitted_at": "2026-10-24T18:46:01.269575+00:00",
+          "options": {
+            "a3": "没有手机的日子",
+            "a2": "寂寞让你更快乐",
+            "a1": "我不想一错再错",
+            "a4": "一个灵魂的独白"
+          },
+          "label": "a2",
+          "answer": "寂寞让你更快乐",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2451,
+            1356
+          ],
+          "after": [
+            2452,
+            1356
+          ]
+        }
+      ]
+    },
+    "e7e0fd4f5bf7a404a794bd51f1444e3a69e7d9d01332d54143cbe885638b0eb9": {
+      "question": "陈奕迅的《K歌之王》中，“我唱得不够动人，你别____”横线填？",
+      "attempts": [
+        {
+          "id": "7636da9fa553413d94e8836659b395b5",
+          "submitted_at": "2026-10-24T18:47:30.390427+00:00",
+          "options": {
+            "a2": "嫌弃",
+            "a3": "皱眉",
+            "a1": "哭泣",
+            "a4": "难过"
+          },
+          "label": "a3",
+          "answer": "皱眉",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1135,
+            840
+          ],
+          "after": [
+            1136,
+            841
+          ]
+        }
+      ]
+    },
+    "163aaa07c433c93635e9d81ba4fad9989c34d6859ab8eabc9e957ed473d09065": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "8913deda090c4e89a67e670362f502c6",
+          "submitted_at": "2026-10-24T18:47:52.579023+00:00",
+          "options": {
+            "a2": "天空中最亮的星",
+            "a3": "梦想天空分外蓝",
+            "a1": "当这地球没有花",
+            "a4": "那一夜有没有说"
+          },
+          "label": "a2",
+          "answer": "天空中最亮的星",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1136,
+            841
+          ],
+          "after": [
+            1137,
+            842
+          ]
+        }
+      ]
+    },
+    "659e0df3ebff5a2eadc2ff5bbf6b8794bc3165c4422d248219bf5de9cf4bc547": {
+      "question": "陈奕迅翻唱歌曲《尼古丁》的原唱是谁？",
+      "attempts": [
+        {
+          "id": "c6caf52690c2475588192433b79a7ca7",
+          "submitted_at": "2026-10-24T18:48:01.436606+00:00",
+          "options": {
+            "a2": "梁汉文",
+            "a1": "陈冠希",
+            "a3": "苏永康",
+            "a4": "许志安"
+          },
+          "label": "a1",
+          "answer": "陈冠希",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1137,
+            842
+          ],
+          "after": [
+            1138,
+            843
+          ]
+        }
+      ]
     }
   }
 }
