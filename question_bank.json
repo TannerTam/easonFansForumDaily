@@ -3282,6 +3282,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "2c5bb4bb2c214dc5b269c8812e30d09c",
+          "submitted_at": "2026-10-25T18:53:08.235794+00:00",
+          "options": {
+            "a2": "不能再等待",
+            "a3": "等你爱我",
+            "a4": "等我先说",
+            "a1": "今天等我来"
+          },
+          "label": "a4",
+          "answer": "等我先说",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2452,
+            1356
+          ],
+          "after": [
+            2453,
+            1357
+          ]
         }
       ]
     },
@@ -4593,6 +4616,29 @@
             2439,
             1346
           ]
+        },
+        {
+          "id": "7dc49217b02b4b908fd16c5b8ed04242",
+          "submitted_at": "2026-10-25T18:53:20.906656+00:00",
+          "options": {
+            "a1": "《打得火热》",
+            "a3": "《反正是我》",
+            "a4": "《The Easy Ride 》",
+            "a2": "《The Line Up》"
+          },
+          "label": "a4",
+          "answer": "《The Easy Ride 》",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2454,
+            1358
+          ],
+          "after": [
+            2455,
+            1359
+          ]
         }
       ]
     },
@@ -5153,6 +5199,29 @@
             2451,
             1356
           ]
+        },
+        {
+          "id": "44f39d32c8a54484ba69006ecdf641fd",
+          "submitted_at": "2026-10-25T18:55:18.936663+00:00",
+          "options": {
+            "a1": "俗",
+            "a4": "听陈奕迅的歌",
+            "a3": "全情关注",
+            "a2": "不是我"
+          },
+          "label": "a2",
+          "answer": "不是我",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1140,
+            844
+          ],
+          "after": [
+            1141,
+            845
+          ]
         }
       ]
     },
@@ -5264,6 +5333,90 @@
           "after": [
             1138,
             843
+          ]
+        }
+      ]
+    },
+    "4ae4e4c669266871beb2b4dc42eae183bb4df75a37904a29842bb31c77a5d129": {
+      "question": "”应该怎么爱，可惜书里从没记载，终于摸出来，但岁月却不回来。“是哪首歌的歌词？",
+      "attempts": [
+        {
+          "id": "43eb1bfeb1044be6bd6b8caaf780eb1b",
+          "submitted_at": "2026-10-25T18:53:19.262739+00:00",
+          "options": {
+            "a3": "今天只做一件事",
+            "a4": "时代巨轮",
+            "a2": "葡萄成熟时",
+            "a1": "岁月如歌"
+          },
+          "label": "a2",
+          "answer": "葡萄成熟时",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2453,
+            1357
+          ],
+          "after": [
+            2454,
+            1358
+          ]
+        }
+      ]
+    },
+    "8d20449433d204c45edd68f507694a77c6b6e8c12b324d7589f66c68c55dbe2e": {
+      "question": "以下哪句不是《孤勇者》的歌词？",
+      "attempts": [
+        {
+          "id": "f4a093d4ab2d4154bd14db94423ca552",
+          "submitted_at": "2026-10-25T18:54:50.244832+00:00",
+          "options": {
+            "a3": "爱你来自于蛮荒",
+            "a1": "爱你破烂的衣裳",
+            "a2": "爱你不跪的模样",
+            "a4": "爱你和她那么像"
+          },
+          "label": "a4",
+          "answer": "爱你和她那么像",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1138,
+            843
+          ],
+          "after": [
+            1139,
+            844
+          ]
+        }
+      ]
+    },
+    "b48e7b05e366cdfe87441c48d1f1ce2cc0595db7b320702206e786f4d68c5234": {
+      "question": "以下哪首歌的歌词里面不包含“我爱你”三个字？",
+      "attempts": [
+        {
+          "id": "dc39707a5671435ea8401e4d324c6cb4",
+          "submitted_at": "2026-10-25T18:55:15.420453+00:00",
+          "options": {
+            "a2": "淘汰",
+            "a4": "我什么都没有",
+            "a3": "伤心证明书",
+            "a1": "一滴眼泪"
+          },
+          "label": "a2",
+          "answer": "淘汰",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1139,
+            844
+          ],
+          "after": [
+            1140,
+            844
           ]
         }
       ]
