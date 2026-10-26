@@ -806,6 +806,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "800f5fed934543639a8787efe780dcbb",
+          "submitted_at": "2026-10-26T21:01:26.530834+00:00",
+          "options": {
+            "a1": "大得太快",
+            "a4": "爱得太快",
+            "a3": "愚人快乐",
+            "a2": "快高长大"
+          },
+          "label": "a4",
+          "answer": "爱得太快",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1141,
+            845
+          ],
+          "after": [
+            1142,
+            846
+          ]
         }
       ]
     },
@@ -1000,6 +1023,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "e28a674fa3874084be27dd394926540c",
+          "submitted_at": "2026-10-26T20:59:41.476196+00:00",
+          "options": {
+            "a1": "富士山下",
+            "a3": "七百年后",
+            "a2": "明年今日",
+            "a4": "幸福摩天轮"
+          },
+          "label": "a4",
+          "answer": "幸福摩天轮",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2455,
+            1359
+          ],
+          "after": [
+            2456,
+            1360
+          ]
         }
       ]
     },
@@ -5417,6 +5463,118 @@
           "after": [
             1140,
             844
+          ]
+        }
+      ]
+    },
+    "4713c7acc6742fe965ac936a4cffe690216a64ae68d508214d79e89c59ca84c7": {
+      "question": "陈奕迅代言过哪个啤酒品牌并携手推出限量版铝瓶？",
+      "attempts": [
+        {
+          "id": "169c4beab47c474bb6eea81baeee21e8",
+          "submitted_at": "2026-10-26T20:59:49.459615+00:00",
+          "options": {
+            "a4": "哈尔滨",
+            "a1": "百威",
+            "a3": "雪花",
+            "a2": "青岛"
+          },
+          "label": "a1",
+          "answer": "百威",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2456,
+            1360
+          ],
+          "after": [
+            2457,
+            1361
+          ]
+        }
+      ]
+    },
+    "e3e6d8dbc10600b198e6b6033856e8e7e02683d3fd33be7c1e0b58d8eff79097": {
+      "question": "在【一个人/对话】系列访谈中陈奕迅觉得音乐人的责任是什么？",
+      "attempts": [
+        {
+          "id": "0d4b8bc2b5dc471eb7bb6b055e5f8ce8",
+          "submitted_at": "2026-10-26T20:59:57.873871+00:00",
+          "options": {
+            "a2": "把每首歌高音都唱好",
+            "a4": "做好自己就可以了",
+            "a1": "要诚恳的表达你想表达的东西",
+            "a3": "每一首歌好好去玩"
+          },
+          "label": "a1",
+          "answer": "要诚恳的表达你想表达的东西",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2457,
+            1361
+          ],
+          "after": [
+            2458,
+            1362
+          ]
+        }
+      ]
+    },
+    "3193263d8d01ce33402f451a6206dddf4847e88318141d526c501e6ac6ef515b": {
+      "question": "以下哪首歌的歌词里面没有“宝贝”？",
+      "attempts": [
+        {
+          "id": "ba3d7b60518f46d9a6c1018d9ba906dd",
+          "submitted_at": "2026-10-26T21:02:02.373583+00:00",
+          "options": {
+            "a1": "跳蚤市场",
+            "a3": "冤气",
+            "a4": "远在咫尺",
+            "a2": "贝多芬与我"
+          },
+          "label": "a1",
+          "answer": "跳蚤市场",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1142,
+            846
+          ],
+          "after": [
+            1143,
+            846
+          ]
+        }
+      ]
+    },
+    "8dc9f941aa957aabaf72ee134c2a41ab75935a49746578d33d35a72ca41839f9": {
+      "question": "由流行天王、歌剧天后、国际钢琴大师携手演绎的单曲《I Want…》中没有谁参与？",
+      "attempts": [
+        {
+          "id": "eae7e9e071974406bf5a8e88164dae85",
+          "submitted_at": "2026-10-26T21:02:14.051608+00:00",
+          "options": {
+            "a1": "陈奕迅",
+            "a3": "郎朗",
+            "a2": "弗莱明",
+            "a4": "凯瑟琳"
+          },
+          "label": "a4",
+          "answer": "凯瑟琳",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1143,
+            846
+          ],
+          "after": [
+            1144,
+            847
           ]
         }
       ]
