@@ -5578,6 +5578,118 @@
           ]
         }
       ]
+    },
+    "9da51d145e64ea5fe340243f34ecbc5b8e81bf7c8906ba3bfe65c7508cd2c56d": {
+      "question": "以下哪首歌的歌词里面没有“空白”？",
+      "attempts": [
+        {
+          "id": "823fcff033fa43b18fa19430bf68d8b9",
+          "submitted_at": "2026-10-27T20:35:45.971617+00:00",
+          "options": {
+            "a1": "给你",
+            "a3": "谎言",
+            "a2": "忘记歌词",
+            "a4": "一个灵魂的独白"
+          },
+          "label": "a1",
+          "answer": "给你",
+          "source": "fallback",
+          "correct": null,
+          "result": "unconfirmed",
+          "before": [
+            2458,
+            1362
+          ],
+          "after": [
+            2458,
+            1362
+          ]
+        }
+      ]
+    },
+    "95873b0341bbcf882b6213a4a0e6dec74a4a2967ee071957480864689db68a69": {
+      "question": "以下哪首歌陈奕迅有参与作曲？",
+      "attempts": [
+        {
+          "id": "a2c5c73d5a90468dbc6fb7bcd2030347",
+          "submitted_at": "2026-10-27T20:37:22.002902+00:00",
+          "options": {
+            "a2": "打回原形",
+            "a1": "冲口而出",
+            "a4": "和平饭店",
+            "a3": "心深伤透"
+          },
+          "label": "a1",
+          "answer": "冲口而出",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1144,
+            847
+          ],
+          "after": [
+            1145,
+            848
+          ]
+        }
+      ]
+    },
+    "b4b2ee096fae433b4a28319d2215d5708386ab1109fbeba0dc3ece57fbf9ae6f": {
+      "question": "《夕阳无限好》（只是近黄昏）首次收录于U87那个CD版本？",
+      "attempts": [
+        {
+          "id": "e4fd9dbfbf6240718100b3e377f649fd",
+          "submitted_at": "2026-10-27T20:37:41.872578+00:00",
+          "options": {
+            "a2": "第二版",
+            "a3": "10X10我至爱唱片版",
+            "a4": "SACD版",
+            "a1": "首版"
+          },
+          "label": "a1",
+          "answer": "首版",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1145,
+            848
+          ],
+          "after": [
+            1146,
+            848
+          ]
+        }
+      ]
+    },
+    "69cbfd2199d9db80ee61b47298517297fb2ae543a9c5e4762ac2a3268a861663": {
+      "question": "以下哪首歌陈奕迅有参与作曲？",
+      "attempts": [
+        {
+          "id": "0869fadb5a124e8cb4db3fb40577de36",
+          "submitted_at": "2026-10-27T20:37:52.170403+00:00",
+          "options": {
+            "a4": "李克勤 - 原谅我不懂说话",
+            "a1": "罗嘉良 - 真说话",
+            "a3": "杜德伟 - 真心的说话",
+            "a2": "刘若英 - 说话"
+          },
+          "label": "a1",
+          "answer": "罗嘉良 - 真说话",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1146,
+            848
+          ],
+          "after": [
+            1147,
+            849
+          ]
+        }
+      ]
     }
   }
 }
