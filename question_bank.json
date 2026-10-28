@@ -3042,6 +3042,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "132673138c0f4cb5bb9cc3dba3c647c5",
+          "submitted_at": "2026-10-28T20:58:26.032735+00:00",
+          "options": {
+            "a4": "广州",
+            "a2": "北京",
+            "a3": "上海",
+            "a1": "香港"
+          },
+          "label": "a1",
+          "answer": "香港",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1147,
+            849
+          ],
+          "after": [
+            1148,
+            850
+          ]
         }
       ]
     },
@@ -5743,6 +5766,90 @@
           "after": [
             2461,
             1362
+          ]
+        }
+      ]
+    },
+    "8220621c3d4b641ed117c8f59e13a407ba9d7e5d06331da767d40b948d84cd58": {
+      "question": "下列哪部广播剧是陈奕迅和谢霆锋声演的？",
+      "attempts": [
+        {
+          "id": "8593a39063844a12ae0979c2e8300ca1",
+          "submitted_at": "2026-10-28T20:57:01.731058+00:00",
+          "options": {
+            "a3": "蓝宝石的夜空",
+            "a4": "来不及听你说爱我",
+            "a2": "黄金少年",
+            "a1": "一路顺风"
+          },
+          "label": "a1",
+          "answer": "一路顺风",
+          "source": "api",
+          "correct": null,
+          "result": "unconfirmed",
+          "before": [
+            2461,
+            1362
+          ],
+          "after": [
+            2461,
+            1362
+          ]
+        }
+      ]
+    },
+    "1f639462903826e61a511a4fb5203c0b68ba17d2618184f2585d32aae8eb90d9": {
+      "question": "陈奕迅发行的第一张黑胶唱片专辑是哪一张？",
+      "attempts": [
+        {
+          "id": "7967ec10eb314b2aa8497670ba76b58d",
+          "submitted_at": "2026-10-28T20:58:41.613612+00:00",
+          "options": {
+            "a1": "The Line Up",
+            "a2": "U87",
+            "a3": "L.O.V.E",
+            "a4": "Listen To Eason Chan"
+          },
+          "label": "a1",
+          "answer": "The Line Up",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1148,
+            850
+          ],
+          "after": [
+            1149,
+            850
+          ]
+        }
+      ]
+    },
+    "f95aebb088b5f53f08df3c595aa91d11d92b1414d3ca766c6be35c4c57293b43": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "397d06e7256c4dca8cdc4907e8deeda0",
+          "submitted_at": "2026-10-28T20:58:58.742482+00:00",
+          "options": {
+            "a1": "新的心跳",
+            "a3": "新曲+精选",
+            "a2": "新广告歌",
+            "a4": "新美人主义"
+          },
+          "label": "a3",
+          "answer": "新曲+精选",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1149,
+            850
+          ],
+          "after": [
+            1150,
+            850
           ]
         }
       ]
