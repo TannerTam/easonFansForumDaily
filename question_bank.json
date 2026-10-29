@@ -104,6 +104,29 @@
             2426,
             1336
           ]
+        },
+        {
+          "id": "f29d0993cfdd402ea94d0b040bd90d3a",
+          "submitted_at": "2026-10-29T21:03:40.743576+00:00",
+          "options": {
+            "a3": "梦的可能",
+            "a4": "还有什么可以送给你",
+            "a2": "可以了",
+            "a1": "可一可再"
+          },
+          "label": "a1",
+          "answer": "可一可再",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1151,
+            851
+          ],
+          "after": [
+            1152,
+            852
+          ]
         }
       ]
     },
@@ -1384,6 +1407,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "ade25cd66ddb41d59da2e6fd7164c6b0",
+          "submitted_at": "2026-10-29T21:03:39.046312+00:00",
+          "options": {
+            "a2": "张之臻",
+            "a4": "费德勒",
+            "a3": "王俊凯",
+            "a1": "樊振东"
+          },
+          "label": "a1",
+          "answer": "樊振东",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1150,
+            850
+          ],
+          "after": [
+            1151,
+            851
+          ]
         }
       ]
     },
@@ -5924,6 +5970,118 @@
           "after": [
             2464,
             1365
+          ]
+        }
+      ]
+    },
+    "877137013b178add017a4df286e45bc7d34a440203d7031c12a3e6d61d4dd865": {
+      "question": "以下哪部电影不是陈奕迅和杨千嬅有份参演的？",
+      "attempts": [
+        {
+          "id": "901f6c48d0c74abba1f42071028fe79c",
+          "submitted_at": "2026-10-29T21:00:57.532958+00:00",
+          "options": {
+            "a4": "百分百感觉2003",
+            "a2": "每当变幻时",
+            "a1": "烈火青春1998",
+            "a3": "悭钱家族"
+          },
+          "label": "a4",
+          "answer": "百分百感觉2003",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2464,
+            1365
+          ],
+          "after": [
+            2465,
+            1366
+          ]
+        }
+      ]
+    },
+    "c0d0fdfbdfd8ac8f1c3c2c4b6a5f833f24e6fd0659b37e28d896dc57e713cfbf": {
+      "question": "陈奕迅没有翻唱过张国荣哪首歌曲？",
+      "attempts": [
+        {
+          "id": "8dd033e0b9014178a719627866d15cd3",
+          "submitted_at": "2026-10-29T21:01:20.420707+00:00",
+          "options": {
+            "a4": "有谁共鸣",
+            "a2": "寂寞夜晚",
+            "a3": "春夏秋冬",
+            "a1": "最冷一天"
+          },
+          "label": "a4",
+          "answer": "有谁共鸣",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2465,
+            1366
+          ],
+          "after": [
+            2466,
+            1367
+          ]
+        }
+      ]
+    },
+    "42081009eae655b9357927b24a0557dd3d1851dcbbfff0f32acd4eb7c53f018e": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "539ad8e3ccff48ba8dd6fd0ae9c6ec18",
+          "submitted_at": "2026-10-29T21:02:06.810560+00:00",
+          "options": {
+            "a4": "Special Thanks To...",
+            "a3": "Special Thanks To 3",
+            "a1": "Special Thanks To 1",
+            "a2": "Special Thanks To 2"
+          },
+          "label": "a1",
+          "answer": "Special Thanks To 1",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2466,
+            1367
+          ],
+          "after": [
+            2467,
+            1367
+          ]
+        }
+      ]
+    },
+    "7a4496fbb186e576c8967de79aba77853f2a4c8d600f7eef8ef1ab8ede4ce9db": {
+      "question": "2026 Eason生日会的主题是什么？",
+      "attempts": [
+        {
+          "id": "9b98953d28024413b267406f236ef14b",
+          "submitted_at": "2026-10-29T21:03:50.869429+00:00",
+          "options": {
+            "a2": "It's About Time",
+            "a4": "About Life",
+            "a1": "About Time",
+            "a3": "It's About Life"
+          },
+          "label": "a2",
+          "answer": "It's About Time",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1152,
+            852
+          ],
+          "after": [
+            1153,
+            853
           ]
         }
       ]
