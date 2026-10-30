@@ -464,6 +464,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "c51caa6d058740768c0f1253b87bb406",
+          "submitted_at": "2026-10-30T20:39:08.048250+00:00",
+          "options": {
+            "a1": "岁月如歌",
+            "a3": "遗失的国度",
+            "a4": "今天等我来",
+            "a2": "冲上云霄"
+          },
+          "label": "a1",
+          "answer": "岁月如歌",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2467,
+            1367
+          ],
+          "after": [
+            2468,
+            1368
+          ]
         }
       ]
     },
@@ -6082,6 +6105,146 @@
           "after": [
             1153,
             853
+          ]
+        }
+      ]
+    },
+    "7971c121800d5c0358b029f077ac7989287a4b1b162cc1d458ddadce5ba08366": {
+      "question": "以下哪首歌是英文歌曲？",
+      "attempts": [
+        {
+          "id": "85bbe7144be2445cb38bd7786d2f1732",
+          "submitted_at": "2026-10-30T20:39:29.736762+00:00",
+          "options": {
+            "a4": "Mr.lonely",
+            "a3": "Stranger under my skin",
+            "a1": "Just between the two of us",
+            "a2": "Aren’t you glad"
+          },
+          "label": "a4",
+          "answer": "Mr.lonely",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2468,
+            1368
+          ],
+          "after": [
+            2469,
+            1368
+          ]
+        }
+      ]
+    },
+    "10ca9f0981dbc91204974836de9dcff87e5cdf95c8d9e92ab36fe8f1d9c590a4": {
+      "question": "2026 Eason《It's About Time》生日会内地场最后大合唱了什么歌曲？",
+      "attempts": [
+        {
+          "id": "4b4d1268f1674c3cae9fa8da34ff83b5",
+          "submitted_at": "2026-10-30T20:39:46.200503+00:00",
+          "options": {
+            "a2": "天下无双",
+            "a4": "粤语残片",
+            "a3": "与你常在",
+            "a1": "沙龙"
+          },
+          "label": "a3",
+          "answer": "与你常在",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2469,
+            1368
+          ],
+          "after": [
+            2470,
+            1368
+          ]
+        }
+      ]
+    },
+    "a5e90adde0656808ae9181223e57f03ae6ac79b3eb63664ad31e87f42883f8bf": {
+      "question": "以下哪首歌不是陈奕迅翻唱的？",
+      "attempts": [
+        {
+          "id": "2a8b9e2d3ea04eddab5c0f2700518f76",
+          "submitted_at": "2026-10-30T20:41:40.895043+00:00",
+          "options": {
+            "a2": "几许风雨",
+            "a4": "芳华绝代",
+            "a1": "和平饭店",
+            "a3": "春光乍泄"
+          },
+          "label": "a1",
+          "answer": "和平饭店",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1153,
+            853
+          ],
+          "after": [
+            1154,
+            854
+          ]
+        }
+      ]
+    },
+    "8dc6517ba7e99ca0507dcc07a7a716d79f7a6ad685e6d646cb8ce2d15dbb9757": {
+      "question": "在《陈鲁豫·慢谈》中，陈奕迅说Fear And Dreams的创意总监说你是有影响力的，你应该有责任去传递一些东西，但陈奕迅感觉很有压力，他是如何解释的？",
+      "attempts": [
+        {
+          "id": "62ca695c8d0c47d1bddafd4c35abaa21",
+          "submitted_at": "2026-10-30T20:41:51.935843+00:00",
+          "options": {
+            "a4": "我应该去做一些自己力所能及的事情",
+            "a3": "我会好好加油传递一些美好的信息",
+            "a2": "我应该要把好的一些概念，要分享出去",
+            "a1": "我应该做一些正能量的东西分享出去"
+          },
+          "label": "a4",
+          "answer": "我应该去做一些自己力所能及的事情",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1154,
+            854
+          ],
+          "after": [
+            1155,
+            854
+          ]
+        }
+      ]
+    },
+    "0b2b494df6e9fd2a0c0f0e2df16548ccfbe0bc264a931c7376af5e58f3d8761f": {
+      "question": "（陈奕迅采访回答）用一首歌形容2026年第一次到澳网的感受？",
+      "attempts": [
+        {
+          "id": "3e9772332936421189fe7b8c6438a001",
+          "submitted_at": "2026-10-30T20:42:14.628331+00:00",
+          "options": {
+            "a4": "《天使的礼物》：在夜空翱翔一趟，陪你看城市亮光",
+            "a2": "《十面埋伏》：轨迹改变角度交错，寂寞城市又再探戈",
+            "a3": "《好久不见》：我来到你的城市，走过你来时的路",
+            "a1": "《圣诞结》：我住的城市从不下雪，记忆却堆满冷的感觉"
+          },
+          "label": "a4",
+          "answer": "《天使的礼物》：在夜空翱翔一趟，陪你看城市亮光",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1155,
+            854
+          ],
+          "after": [
+            1156,
+            854
           ]
         }
       ]
