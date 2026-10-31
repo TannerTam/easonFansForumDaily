@@ -703,6 +703,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "bb35ce7806db4efb909e3bfed3339fa6",
+          "submitted_at": "2026-10-31T19:52:43.571356+00:00",
+          "options": {
+            "a1": "改造人",
+            "a4": "爱后余生",
+            "a3": "末世纪的呼声",
+            "a2": "非走不可"
+          },
+          "label": "a4",
+          "answer": "爱后余生",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2471,
+            1369
+          ],
+          "after": [
+            2472,
+            1370
+          ]
         }
       ]
     },
@@ -3576,6 +3599,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "c2c26a2de78043f4a3feec6eb5dc93b9",
+          "submitted_at": "2026-10-31T19:54:38.469085+00:00",
+          "options": {
+            "a3": "林海峰",
+            "a4": "林家谦、陈奕迅",
+            "a2": "李荣浩",
+            "a1": "林家谦"
+          },
+          "label": "a3",
+          "answer": "林海峰",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1156,
+            854
+          ],
+          "after": [
+            1157,
+            855
+          ]
         }
       ]
     },
@@ -4273,6 +4319,29 @@
           "after": [
             1112,
             825
+          ]
+        },
+        {
+          "id": "6145b28481794d5785d60678ff50127b",
+          "submitted_at": "2026-10-31T19:54:48.201395+00:00",
+          "options": {
+            "a4": "人造卫星",
+            "a2": "一生中最爱",
+            "a1": "最冷一天",
+            "a3": "摘星"
+          },
+          "label": "a4",
+          "answer": "人造卫星",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1158,
+            856
+          ],
+          "after": [
+            1159,
+            857
           ]
         }
       ]
@@ -6245,6 +6314,90 @@
           "after": [
             1156,
             854
+          ]
+        }
+      ]
+    },
+    "b8f64f0eb24b65fdf424c48eb48a55ed2a2aecd4d8e3fb78863d18738ba0d8e6": {
+      "question": "（陈奕迅采访回答）开演唱会的准备期最喜欢的运动是什么？",
+      "attempts": [
+        {
+          "id": "992c4a5bbc9f4e519bf2f4d2885348ae",
+          "submitted_at": "2026-10-31T19:52:41.755341+00:00",
+          "options": {
+            "a3": "跑步",
+            "a2": "滑雪",
+            "a4": "唱K",
+            "a1": "网球"
+          },
+          "label": "a1",
+          "answer": "网球",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2470,
+            1368
+          ],
+          "after": [
+            2471,
+            1369
+          ]
+        }
+      ]
+    },
+    "7d2d066629347490b4442a4587f8fc5ad45c87fba679c3041cadf19d3d660e07": {
+      "question": "陈奕迅在电台访问中被问及，如果以后人生只可以选择一种食物，会选什么：",
+      "attempts": [
+        {
+          "id": "b66e5d31a5c14f8398a9562410360479",
+          "submitted_at": "2026-10-31T19:52:58.399325+00:00",
+          "options": {
+            "a3": "车仔面",
+            "a2": "鱼蛋粉",
+            "a1": "牛腩面",
+            "a4": "猪肠粉"
+          },
+          "label": "a3",
+          "answer": "车仔面",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2472,
+            1370
+          ],
+          "after": [
+            2473,
+            1370
+          ]
+        }
+      ]
+    },
+    "f58164b1a58d053ac483b3ecc5088fede1a7e0bdeb811c5cf486452fd6a2a5bb": {
+      "question": "陈奕迅《我们万岁》歌曲MV女主角是谁？",
+      "attempts": [
+        {
+          "id": "5c0728d2e1414f9a8ba5045bf088405b",
+          "submitted_at": "2026-10-31T19:54:46.449158+00:00",
+          "options": {
+            "a3": "高海宁",
+            "a4": "蔡思贝",
+            "a1": "佘诗曼",
+            "a2": "杨怡"
+          },
+          "label": "a1",
+          "answer": "佘诗曼",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1157,
+            855
+          ],
+          "after": [
+            1158,
+            856
           ]
         }
       ]
