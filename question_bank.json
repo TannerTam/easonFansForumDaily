@@ -227,6 +227,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "c37f9b290267483c9532d67012879aed",
+          "submitted_at": "2026-11-01T20:26:40.640035+00:00",
+          "options": {
+            "a2": "还要不要走",
+            "a1": "跟我走好吗",
+            "a3": "非走不可",
+            "a4": "今天等我来"
+          },
+          "label": "a3",
+          "answer": "非走不可",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2475,
+            1372
+          ],
+          "after": [
+            2476,
+            1373
+          ]
         }
       ]
     },
@@ -2275,6 +2298,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "9a97ffb3c81040588c74ab23fb1d4858",
+          "submitted_at": "2026-11-01T20:25:57.088436+00:00",
+          "options": {
+            "a2": "天公地道",
+            "a4": "月黑风高",
+            "a1": "黑择明",
+            "a3": "粤语残片"
+          },
+          "label": "a4",
+          "answer": "月黑风高",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2473,
+            1370
+          ],
+          "after": [
+            2474,
+            1371
+          ]
         }
       ]
     },
@@ -5233,6 +5279,29 @@
             2447,
             1352
           ]
+        },
+        {
+          "id": "48731715b8f641b59d5672c2c9075e1d",
+          "submitted_at": "2026-11-01T20:28:08.889899+00:00",
+          "options": {
+            "a2": "张学友",
+            "a3": "刘德华",
+            "a4": "草蜢",
+            "a1": "胡枫"
+          },
+          "label": "a4",
+          "answer": "草蜢",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1160,
+            858
+          ],
+          "after": [
+            1161,
+            859
+          ]
         }
       ]
     },
@@ -5900,6 +5969,29 @@
             2460,
             1362
           ]
+        },
+        {
+          "id": "9f74682d01e74ba88f64d99710a5a782",
+          "submitted_at": "2026-11-01T20:26:37.750542+00:00",
+          "options": {
+            "a2": "宠物情缘",
+            "a3": "当四叶草碰上剑尖时",
+            "a4": "为爱而生",
+            "a1": "冲上云霄"
+          },
+          "label": "a2",
+          "answer": "宠物情缘",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2474,
+            1371
+          ],
+          "after": [
+            2475,
+            1372
+          ]
         }
       ]
     },
@@ -6398,6 +6490,62 @@
           "after": [
             1158,
             856
+          ]
+        }
+      ]
+    },
+    "a63ada4eb8bb55f8e8b3909f4aef45e8deba317e158b6826893000c30cb0e92d": {
+      "question": "“谈恋爱，游天地，做喜欢的工作和享受游戏”是哪首歌的歌词？",
+      "attempts": [
+        {
+          "id": "fe4b37b9d7914b549c3eb003bb08df07",
+          "submitted_at": "2026-11-01T20:28:06.694215+00:00",
+          "options": {
+            "a1": "怕死",
+            "a4": "猜情寻",
+            "a3": "闪",
+            "a2": "大人"
+          },
+          "label": "a1",
+          "answer": "怕死",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1159,
+            857
+          ],
+          "after": [
+            1160,
+            858
+          ]
+        }
+      ]
+    },
+    "91681e6ccd369fd88e4ffbff2e0efb671cbe455099d5538d1b912e914e4f9eda": {
+      "question": "陈奕迅的国语专辑《怎么样》发行于哪一年？",
+      "attempts": [
+        {
+          "id": "6122a3bdc207402b955cd20c698ffac7",
+          "submitted_at": "2026-11-01T20:28:17.133267+00:00",
+          "options": {
+            "a4": "2007",
+            "a2": "2005",
+            "a1": "2004",
+            "a3": "2006"
+          },
+          "label": "a2",
+          "answer": "2005",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1161,
+            859
+          ],
+          "after": [
+            1162,
+            860
           ]
         }
       ]
