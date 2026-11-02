@@ -2409,6 +2409,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "f924bad0e95b42ab920339a026662f80",
+          "submitted_at": "2026-11-02T23:27:54.288616+00:00",
+          "options": {
+            "a1": "零食",
+            "a4": "香口胶",
+            "a3": "饮品",
+            "a2": "雪糕"
+          },
+          "label": "a4",
+          "answer": "香口胶",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1164,
+            862
+          ],
+          "after": [
+            1165,
+            862
+          ]
         }
       ]
     },
@@ -4999,6 +5022,29 @@
             1126,
             833
           ]
+        },
+        {
+          "id": "ba2ff950a6cd4d06979d970d0f99e7ac",
+          "submitted_at": "2026-11-02T23:25:37.584844+00:00",
+          "options": {
+            "a2": "一滴眼泪",
+            "a1": "酝酿",
+            "a4": "反正是我",
+            "a3": "婚礼的祝福"
+          },
+          "label": "a2",
+          "answer": "一滴眼泪",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2477,
+            1373
+          ],
+          "after": [
+            2478,
+            1374
+          ]
         }
       ]
     },
@@ -6546,6 +6592,118 @@
           "after": [
             1162,
             860
+          ]
+        }
+      ]
+    },
+    "13e889c331d2356e8394db4e38c47ba160febb95127b7eabb7e2adc9b344c49e": {
+      "question": "2020年7月11号陈奕迅在「Live is so much better with Music Eason Chan Charity Concert」线上慈善音乐会总共演唱了多少首歌？",
+      "attempts": [
+        {
+          "id": "ad7b204a1c7247a0ad5b72cf97f0f38d",
+          "submitted_at": "2026-11-02T23:25:34.099123+00:00",
+          "options": {
+            "a1": "10",
+            "a2": "11",
+            "a3": "12",
+            "a4": "13"
+          },
+          "label": "a1",
+          "answer": "10",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2476,
+            1373
+          ],
+          "after": [
+            2477,
+            1373
+          ]
+        }
+      ]
+    },
+    "9bfaade22461090af40b796121f8e95ad7a59ea1addc29ebc6da8c9e5a9bf118": {
+      "question": "”让大家只差半步成诗。“是哪首歌的歌词？",
+      "attempts": [
+        {
+          "id": "58481aeeb7d94b72aa0939f3fa75b7ad",
+          "submitted_at": "2026-11-02T23:25:45.450911+00:00",
+          "options": {
+            "a2": "路...一直都在",
+            "a3": "失忆蝴蝶",
+            "a4": "八里公路",
+            "a1": "吟游诗人"
+          },
+          "label": "a3",
+          "answer": "失忆蝴蝶",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2478,
+            1374
+          ],
+          "after": [
+            2479,
+            1375
+          ]
+        }
+      ]
+    },
+    "e6a2260eee8f4d6bbb4e8e94c37fcf1d2ef67fdf2a754b611d4140eb629b8805": {
+      "question": "以下哪首歌是陈奕迅作曲的？",
+      "attempts": [
+        {
+          "id": "998c805b62f64a92980205c36b7597c9",
+          "submitted_at": "2026-11-02T23:27:29.410105+00:00",
+          "options": {
+            "a1": "一个灵魂的独白",
+            "a2": "今天只做一件事",
+            "a3": "我也不会那么做",
+            "a4": "在这个世界相遇"
+          },
+          "label": "a3",
+          "answer": "我也不会那么做",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1162,
+            860
+          ],
+          "after": [
+            1163,
+            861
+          ]
+        }
+      ]
+    },
+    "f117bdb73ea614c17ce47904201dc81144b866ad07e019527470491f94e71a9f": {
+      "question": "陈奕迅的歌曲《多一点》是以下哪部无线剧集的主题曲？",
+      "attempts": [
+        {
+          "id": "172a2672460543f2809a744c6ab2dc67",
+          "submitted_at": "2026-11-02T23:27:41.070670+00:00",
+          "options": {
+            "a2": "洗冤录",
+            "a3": "雷霆第一关",
+            "a4": "离岛特警",
+            "a1": "吾系差人"
+          },
+          "label": "a4",
+          "answer": "离岛特警",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1163,
+            861
+          ],
+          "after": [
+            1164,
+            862
           ]
         }
       ]
