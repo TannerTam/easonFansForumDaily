@@ -2343,6 +2343,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "84e3bd00e88d4925949c57bbc7554cbd",
+          "submitted_at": "2026-11-03T21:40:49.275222+00:00",
+          "options": {
+            "a3": "酝酿",
+            "a2": "与我常在",
+            "a1": "一滴眼泪",
+            "a4": "我的快乐时代"
+          },
+          "label": "a4",
+          "answer": "我的快乐时代",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2479,
+            1375
+          ],
+          "after": [
+            2480,
+            1376
+          ]
         }
       ]
     },
@@ -6704,6 +6727,146 @@
           "after": [
             1164,
             862
+          ]
+        }
+      ]
+    },
+    "d9c648679b58e9d507ca051df9384110fb2a3cd8f78a6c691fee27f7c03e2e6f": {
+      "question": "以下哪张专辑不是2006年发行的？",
+      "attempts": [
+        {
+          "id": "f710a834471744f9bb93d543d8a3e2e0",
+          "submitted_at": "2026-11-03T21:41:21.075425+00:00",
+          "options": {
+            "a3": "我的最好时代",
+            "a1": "What's Going On...?",
+            "a2": "Life Continues",
+            "a4": "我的快乐时代"
+          },
+          "label": "a3",
+          "answer": "我的最好时代",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2480,
+            1376
+          ],
+          "after": [
+            2481,
+            1376
+          ]
+        }
+      ]
+    },
+    "181ba73ac32839182902d625ca5c8df880ccb4375af5def642117bce31e15b8e": {
+      "question": "以下一曲两词国粤语配对错误的是？(part3)",
+      "attempts": [
+        {
+          "id": "c623d075694547d48b2ebdd111ebdf37",
+          "submitted_at": "2026-11-03T21:42:19.479568+00:00",
+          "options": {
+            "a1": "岁月如歌-兄妹",
+            "a2": "心深伤透-爱是一本书",
+            "a4": "Lonely Christmas-寂寞让你更快乐",
+            "a3": "粤语残片-白色球鞋"
+          },
+          "label": "a4",
+          "answer": "Lonely Christmas-寂寞让你更快乐",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2481,
+            1376
+          ],
+          "after": [
+            2482,
+            1377
+          ]
+        }
+      ]
+    },
+    "13a26ba2127febac5cc1022793b944add39d229ed99c5604717c5e73f4a3a59d": {
+      "question": "陈奕迅于2023年3月10日发行的歌曲是？",
+      "attempts": [
+        {
+          "id": "d46186aad2ed4d8286b098446b7c33d0",
+          "submitted_at": "2026-11-03T21:43:45.922644+00:00",
+          "options": {
+            "a1": "陈大师",
+            "a3": "尘太师",
+            "a2": "尘大师",
+            "a4": "尖大师"
+          },
+          "label": "a2",
+          "answer": "尘大师",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1165,
+            862
+          ],
+          "after": [
+            1166,
+            863
+          ]
+        }
+      ]
+    },
+    "c5bcc33a1c5e438f1213fa0532aaaf5862f4e93381d434db1f8a0586fb700793": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "4abe01f88a7d49d281544d5be578b399",
+          "submitted_at": "2026-11-03T21:44:08.981894+00:00",
+          "options": {
+            "a1": "阴天快乐",
+            "a2": "快乐女孩",
+            "a3": "愚人快乐",
+            "a4": "快乐男生"
+          },
+          "label": "a4",
+          "answer": "快乐男生",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1166,
+            863
+          ],
+          "after": [
+            1167,
+            863
+          ]
+        }
+      ]
+    },
+    "eedb5fb509697763b76f7301cac553f099205c7fb69564343774bf07330146d4": {
+      "question": "”烧完美好青春换一个老伴。“是哪首歌的歌词？",
+      "attempts": [
+        {
+          "id": "9e743ef053db453e97ae2932bbd74cce",
+          "submitted_at": "2026-11-03T21:44:19.142993+00:00",
+          "options": {
+            "a1": "爱情转移",
+            "a2": "可以了",
+            "a4": "红玫瑰",
+            "a3": "圣诞结"
+          },
+          "label": "a1",
+          "answer": "爱情转移",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1167,
+            863
+          ],
+          "after": [
+            1168,
+            864
           ]
         }
       ]
