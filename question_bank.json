@@ -206,6 +206,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "78fafbdef21d4e5aa4929459ff2905a6",
+          "submitted_at": "2026-11-06T16:18:53.388958+00:00",
+          "options": {
+            "a3": "杨千嬅",
+            "a1": "那英",
+            "a2": "范晓萱",
+            "a4": "韩红"
+          },
+          "label": "a2",
+          "answer": "范晓萱",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1175,
+            869
+          ],
+          "after": [
+            1176,
+            870
+          ]
         }
       ]
     },
@@ -4639,6 +4662,29 @@
             1115,
             827
           ]
+        },
+        {
+          "id": "3b802a855d5142aebf9b6806a12e3ded",
+          "submitted_at": "2026-11-06T16:15:34.956552+00:00",
+          "options": {
+            "a4": "北京",
+            "a3": "成都",
+            "a2": "广州",
+            "a1": "福州"
+          },
+          "label": "a4",
+          "answer": "北京",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2490,
+            1381
+          ],
+          "after": [
+            2491,
+            1381
+          ]
         }
       ]
     },
@@ -6893,6 +6939,29 @@
             2481,
             1376
           ]
+        },
+        {
+          "id": "de82d00be7634a04940c42e34f2157af",
+          "submitted_at": "2026-11-06T16:18:49.434360+00:00",
+          "options": {
+            "a4": "我的快乐时代",
+            "a2": "Life Continues",
+            "a3": "我的最好时代",
+            "a1": "What's Going On...?"
+          },
+          "label": "a2",
+          "answer": "Life Continues",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1174,
+            869
+          ],
+          "after": [
+            1175,
+            869
+          ]
         }
       ]
     },
@@ -7172,6 +7241,90 @@
           "after": [
             1174,
             869
+          ]
+        }
+      ]
+    },
+    "e75f35edf7eb92b6d2b2dc285eb18213cac3e9feafdf40a6fef55d542ea36f77": {
+      "question": "陈奕迅以下哪一张专辑出版过黑胶唱片？",
+      "attempts": [
+        {
+          "id": "6aa8acc6a012415f8dba30f7a580c69c",
+          "submitted_at": "2026-11-06T16:15:02.174457+00:00",
+          "options": {
+            "a3": "U87",
+            "a4": "The Key",
+            "a2": "？",
+            "a1": "米闪"
+          },
+          "label": "a2",
+          "answer": "？",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2488,
+            1381
+          ],
+          "after": [
+            2489,
+            1381
+          ]
+        }
+      ]
+    },
+    "e6a88d1486c5ba1a3cca7cc21189141879cc45659f0346427a6fd87756d81337": {
+      "question": "（陈奕迅采访回答）你最想和哪位网球运动员搭档打双打?",
+      "attempts": [
+        {
+          "id": "766a419e81124ee087f5ef05e033564a",
+          "submitted_at": "2026-11-06T16:15:15.048435+00:00",
+          "options": {
+            "a2": "李娜",
+            "a1": "张德培",
+            "a3": "费德勒",
+            "a4": "阿尔卡拉斯"
+          },
+          "label": "a3",
+          "answer": "费德勒",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2489,
+            1381
+          ],
+          "after": [
+            2490,
+            1381
+          ]
+        }
+      ]
+    },
+    "f839c85925c63e770387f5acc8f78f66ce4b30026b45d9d5fe172a7c5b3c0038": {
+      "question": "陈奕迅没有参与演出以下哪部电影？",
+      "attempts": [
+        {
+          "id": "99adb39851044d69a41ec86eff6971af",
+          "submitted_at": "2026-11-06T16:19:08.961116+00:00",
+          "options": {
+            "a4": "一碌蔗",
+            "a2": "烈火青春",
+            "a3": "魂魄唔齐",
+            "a1": "贱精先生"
+          },
+          "label": "a4",
+          "answer": "一碌蔗",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1176,
+            870
+          ],
+          "after": [
+            1177,
+            871
           ]
         }
       ]
