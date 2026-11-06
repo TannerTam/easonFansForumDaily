@@ -127,6 +127,29 @@
             1152,
             852
           ]
+        },
+        {
+          "id": "f717defa61db45db9484e3ab1399d151",
+          "submitted_at": "2026-11-06T02:35:33.601216+00:00",
+          "options": {
+            "a1": "可一可再",
+            "a3": "梦的可能",
+            "a4": "还有什么可以送给你",
+            "a2": "可以了"
+          },
+          "label": "a1",
+          "answer": "可一可再",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2485,
+            1379
+          ],
+          "after": [
+            2486,
+            1380
+          ]
         }
       ]
     },
@@ -2731,6 +2754,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "2398aedd45924f21b773f7eb694c8e48",
+          "submitted_at": "2026-11-06T02:36:18.670068+00:00",
+          "options": {
+            "a4": "吹神——12金币",
+            "a1": "陈奕迅所长——100金币",
+            "a2": "尘大师——10金币",
+            "a3": "陈英俊——20金币"
+          },
+          "label": "a4",
+          "answer": "吹神——12金币",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2487,
+            1381
+          ],
+          "after": [
+            2488,
+            1381
+          ]
         }
       ]
     },
@@ -4620,6 +4666,29 @@
           "after": [
             1116,
             827
+          ]
+        },
+        {
+          "id": "7211ec0767094beebab73c6d8580f5b3",
+          "submitted_at": "2026-11-06T02:38:55.395154+00:00",
+          "options": {
+            "a2": "1998",
+            "a1": "1996",
+            "a3": "2002",
+            "a4": "2000"
+          },
+          "label": "a2",
+          "answer": "1998",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1172,
+            867
+          ],
+          "after": [
+            1173,
+            868
           ]
         }
       ]
@@ -7019,6 +7088,90 @@
           "after": [
             1171,
             866
+          ]
+        }
+      ]
+    },
+    "f08dbcb4127a392d919bb65053b244114389861ddfd5db7476a08bd79e24bcf2": {
+      "question": "下面哪部TVB剧集的主题曲由陈奕迅演唱？",
+      "attempts": [
+        {
+          "id": "d6daf815c8f840989a5e462f303c18a7",
+          "submitted_at": "2026-11-06T02:35:46.085419+00:00",
+          "options": {
+            "a4": "洗冤录",
+            "a1": "O记实录",
+            "a3": "勇探实录",
+            "a2": "鉴证实录"
+          },
+          "label": "a4",
+          "answer": "洗冤录",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2486,
+            1380
+          ],
+          "after": [
+            2487,
+            1381
+          ]
+        }
+      ]
+    },
+    "a4ab3fce487814961bb4ffd2b88eaf146a85358cf56300e4c9d1b9dadb1aa1e8": {
+      "question": "以下哪首歌名是错误的？",
+      "attempts": [
+        {
+          "id": "a38fbcc3d68a4e36a0c6f12a9749b2c8",
+          "submitted_at": "2026-11-06T02:38:39.514187+00:00",
+          "options": {
+            "a4": "一个人",
+            "a2": "喜欢一个人",
+            "a1": "一个人失眠",
+            "a3": "他一个人"
+          },
+          "label": "a1",
+          "answer": "一个人失眠",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1171,
+            866
+          ],
+          "after": [
+            1172,
+            867
+          ]
+        }
+      ]
+    },
+    "b8c0037a034884af4c95bc11a2ba564b949b7465ad5cd3e9f66370a1325d7340": {
+      "question": "1999年，陈奕迅凭借其金曲______横扫各大颁奖典礼？",
+      "attempts": [
+        {
+          "id": "301aab0b66f24037b79b68aad67bc123",
+          "submitted_at": "2026-11-06T02:39:06.468304+00:00",
+          "options": {
+            "a2": "天下无双",
+            "a3": "幸福摩天轮",
+            "a1": "我的快乐时代",
+            "a4": "时光倒流二十年"
+          },
+          "label": "a3",
+          "answer": "幸福摩天轮",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1173,
+            868
+          ],
+          "after": [
+            1174,
+            869
           ]
         }
       ]
