@@ -3407,6 +3407,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "2ae3eb782b454832bf79806ff9abaa4d",
+          "submitted_at": "2026-11-13T03:20:49.224809+00:00",
+          "options": {
+            "a3": "佘诗曼",
+            "a1": "郭碧婷",
+            "a4": "蔡卓妍",
+            "a2": "林嘉欣"
+          },
+          "label": "a2",
+          "answer": "林嘉欣",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2493,
+            1382
+          ],
+          "after": [
+            2494,
+            1383
+          ]
         }
       ]
     },
@@ -4426,6 +4449,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "dddb384e9225474399a27234ad599980",
+          "submitted_at": "2026-11-13T03:21:21.745111+00:00",
+          "options": {
+            "a1": "活着多好",
+            "a4": "活跃症",
+            "a3": "伴游",
+            "a2": "热带雨林"
+          },
+          "label": "a1",
+          "answer": "活着多好",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1178,
+            871
+          ],
+          "after": [
+            1179,
+            872
+          ]
         }
       ]
     },
@@ -7325,6 +7371,118 @@
           "after": [
             1177,
             871
+          ]
+        }
+      ]
+    },
+    "a46ad16f442e7959633ff2d7643a31b6c15eda5d6b52f4a9d5d1a819878a4542": {
+      "question": "以下哪句《放弃治疗》的歌词是错误的？",
+      "attempts": [
+        {
+          "id": "c1ed350843d244149ad2d5963ab7a50c",
+          "submitted_at": "2026-11-13T03:20:09.840445+00:00",
+          "options": {
+            "a1": "忽然想到 原来忘了吃药",
+            "a4": "急得跳脚 就放弃治疗",
+            "a2": "我睡不着 我好想睡觉",
+            "a3": "只想睡觉 怎么都睡不着"
+          },
+          "label": "a4",
+          "answer": "急得跳脚 就放弃治疗",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2491,
+            1381
+          ],
+          "after": [
+            2492,
+            1382
+          ]
+        }
+      ]
+    },
+    "ebb71611240f32e3dc60dffc9e21ea5e176401153f0e23084df16d0a98e23c5f": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "6fb20efe99e64cbda7d168f8ce651e84",
+          "submitted_at": "2026-11-13T03:20:47.440920+00:00",
+          "options": {
+            "a4": "讲男讲女",
+            "a1": "男人不容易",
+            "a2": "男人的错",
+            "a3": "快乐男生"
+          },
+          "label": "a3",
+          "answer": "快乐男生",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2492,
+            1382
+          ],
+          "after": [
+            2493,
+            1382
+          ]
+        }
+      ]
+    },
+    "6e311bb1de4a5752f39ebb3b5c2221c6925456fe68522a69dc4f8c4680be9fea": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "070ae42a7795452b89cceca5480d9efa",
+          "submitted_at": "2026-11-13T03:21:20.330158+00:00",
+          "options": {
+            "a4": "飘",
+            "a3": "7",
+            "a2": "完",
+            "a1": "一"
+          },
+          "label": "a1",
+          "answer": "一",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1177,
+            871
+          ],
+          "after": [
+            1178,
+            871
+          ]
+        }
+      ]
+    },
+    "18f61a2a579134c9877d8c1d124e61c4fd12b3ab2f4b026cf316803444caf144": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "1fc8f6ffdd5c493ebd77cc22ae1a84e7",
+          "submitted_at": "2026-11-13T03:21:49.259715+00:00",
+          "options": {
+            "a1": "小孩不懂怕",
+            "a4": "不要害怕",
+            "a3": "怕死",
+            "a2": "我怕你不肯"
+          },
+          "label": "a3",
+          "answer": "怕死",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1179,
+            872
+          ],
+          "after": [
+            1180,
+            872
           ]
         }
       ]
