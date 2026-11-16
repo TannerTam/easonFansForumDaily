@@ -8121,6 +8121,108 @@
             1189,
             880
           ]
+        },
+        {
+          "id": "8f2de886cef64101a88901f35e35cdeb",
+          "submitted_at": "2026-11-16T16:06:34.586926+00:00",
+          "options": {
+            "a3": "佳亚",
+            "a2": "帝拿",
+            "a4": "布欧",
+            "a1": "迪迦"
+          },
+          "label": "a1",
+          "answer": "迪迦",
+          "source": "api",
+          "correct": null,
+          "result": "unconfirmed",
+          "before": [
+            1189,
+            880
+          ],
+          "after": [
+            1189,
+            880
+          ]
+        },
+        {
+          "id": "13b6261bf9fb48a6bb76a4bc997d1a99",
+          "submitted_at": "2026-11-16T16:07:51.139413+00:00",
+          "options": {
+            "a4": "布欧",
+            "a1": "迪迦",
+            "a3": "佳亚",
+            "a2": "帝拿"
+          },
+          "label": "a4",
+          "answer": "布欧",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1189,
+            880
+          ],
+          "after": [
+            1190,
+            880
+          ]
+        }
+      ]
+    },
+    "1c5f587c208c2e87edef6f2f9ba16cae58782249c9f49e2872574681614f8566": {
+      "question": "陈奕迅2013年曾经因为Eason's Life红馆演唱会加场开心得手舞足蹈，并写了多张感谢字条：“唔好意思，我再加鸟！woo...hoo...”、“你地好嘢...我加！”、“衷心感谢大家，嘻嘻，我再加啦！”、“大家好，等我嚟自我介绍，我叫_________！又可以叫我Gar Gar, 要购票既朋友请打2345678。多谢”。",
+      "attempts": [
+        {
+          "id": "174580ac87a747f78a730db24a14fd80",
+          "submitted_at": "2026-11-16T16:08:03.082543+00:00",
+          "options": {
+            "a2": "加加",
+            "a4": "陈再加",
+            "a1": "陈奕加",
+            "a3": "陈加加"
+          },
+          "label": "a2",
+          "answer": "加加",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1190,
+            880
+          ],
+          "after": [
+            1191,
+            880
+          ]
+        }
+      ]
+    },
+    "629d50b4d9b4719a481d4eb3f776152a94de0635fbab0174d48504f517ab1fd1": {
+      "question": "2019年被迫取消的香港巡回演唱会主题是什么？",
+      "attempts": [
+        {
+          "id": "fdc14755013e43db81304ea8efeaf3a2",
+          "submitted_at": "2026-11-16T16:08:15.620441+00:00",
+          "options": {
+            "a3": "Eason's Life",
+            "a4": "Another Eason's Life",
+            "a2": "Eason's  C'mon in～Tour",
+            "a1": "Fear And Dreams"
+          },
+          "label": "a1",
+          "answer": "Fear And Dreams",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1191,
+            880
+          ],
+          "after": [
+            1192,
+            881
+          ]
         }
       ]
     }
