@@ -8011,6 +8011,118 @@
           ]
         }
       ]
+    },
+    "acfd2246d63bbaa37c6bb2cbbe07e8bf1381305fa17543c8605869ba00666098": {
+      "question": "《人啊人》作曲人是谁？",
+      "attempts": [
+        {
+          "id": "a433d1ddd9b7418baf46f19e3332de1d",
+          "submitted_at": "2026-11-16T16:01:44.008677+00:00",
+          "options": {
+            "a4": "李荣浩",
+            "a2": "林家谦",
+            "a1": "周耀辉",
+            "a3": "黄伟文"
+          },
+          "label": "a2",
+          "answer": "林家谦",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2503,
+            1391
+          ],
+          "after": [
+            2504,
+            1392
+          ]
+        }
+      ]
+    },
+    "190e831e426ef401fb4a55fc669f4e7634ad538a763993e121741e447671f0ee": {
+      "question": "以下哪首歌没得到过叱咤乐坛我最喜愛的歌曲大奖？",
+      "attempts": [
+        {
+          "id": "7c10b5e0ac66494ba9651cd89793f0a2",
+          "submitted_at": "2026-11-16T16:02:36.839274+00:00",
+          "options": {
+            "a1": "夕阳无限好",
+            "a4": "任我行",
+            "a2": "富士山下",
+            "a3": "陀飞轮"
+          },
+          "label": "a2",
+          "answer": "富士山下",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2504,
+            1392
+          ],
+          "after": [
+            2505,
+            1393
+          ]
+        }
+      ]
+    },
+    "77a4204717a152aec4cf43b8fe3133d4a747efcca60414d33c8c06eb47dbcd21": {
+      "question": "“一个人”三个字在以下陈奕迅哪首歌的歌词中出现的次数最多？",
+      "attempts": [
+        {
+          "id": "b979bba406ed45adb66c7e107293cba0",
+          "submitted_at": "2026-11-16T16:02:56.037686+00:00",
+          "options": {
+            "a2": "喜欢一个人",
+            "a4": "与我常在",
+            "a3": "一个人",
+            "a1": "他一个人"
+          },
+          "label": "a3",
+          "answer": "一个人",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2505,
+            1393
+          ],
+          "after": [
+            2506,
+            1393
+          ]
+        }
+      ]
+    },
+    "0373c2d7497495f20989c9348027ff2619f3876272b948a56615ad493be6ab69": {
+      "question": "吴启超&陈奕迅《怪兽受难时》DEMO原本是给哪部奥特曼作粤语版主题曲的？",
+      "attempts": [
+        {
+          "id": "6c5946928b62417eadad226958762d3d",
+          "submitted_at": "2026-11-16T16:04:35.415334+00:00",
+          "options": {
+            "a3": "佳亚",
+            "a1": "迪迦",
+            "a2": "帝拿",
+            "a4": "布欧"
+          },
+          "label": "a3",
+          "answer": "佳亚",
+          "source": "api",
+          "correct": null,
+          "result": "unconfirmed",
+          "before": [
+            1189,
+            880
+          ],
+          "after": [
+            1189,
+            880
+          ]
+        }
+      ]
     }
   }
 }
