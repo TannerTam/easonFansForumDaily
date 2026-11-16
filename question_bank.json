@@ -59,6 +59,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "13a5318dd34a44f080d6993348ed3118",
+          "submitted_at": "2026-11-13T16:03:25.549479+00:00",
+          "options": {
+            "a3": "8",
+            "a4": "9",
+            "a2": "7",
+            "a1": "6"
+          },
+          "label": "a1",
+          "answer": "6",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1180,
+            872
+          ],
+          "after": [
+            1181,
+            872
+          ]
         }
       ]
     },
@@ -1734,6 +1757,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "24cf9a3d24b540ed9cca82d8af9531e9",
+          "submitted_at": "2026-11-14T16:02:14.128373+00:00",
+          "options": {
+            "a2": "那些让你死去活来的女孩",
+            "a1": "大个女",
+            "a3": "讲男讲女",
+            "a4": "女人的选择"
+          },
+          "label": "a4",
+          "answer": "女人的选择",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2499,
+            1388
+          ],
+          "after": [
+            2500,
+            1389
+          ]
         }
       ]
     },
@@ -2285,6 +2331,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "f65d4640d2064335b292459977ff8c42",
+          "submitted_at": "2026-11-13T16:02:06.177659+00:00",
+          "options": {
+            "a2": "纸张",
+            "a4": "专辑",
+            "a1": "书本",
+            "a3": "车窗"
+          },
+          "label": "a3",
+          "answer": "车窗",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2496,
+            1385
+          ],
+          "after": [
+            2497,
+            1386
+          ]
         }
       ]
     },
@@ -7537,6 +7606,29 @@
       "question": "神经研究所是在哪一天正式成立的？",
       "attempts": [
         {
+          "id": "1c74597863444a6693a75ce2cad8a459",
+          "submitted_at": "2026-11-15T16:04:05.469549+00:00",
+          "options": {
+            "a3": "20120727",
+            "a1": "20100727",
+            "a2": "20110727",
+            "a4": "20130727"
+          },
+          "label": "a3",
+          "answer": "20120727",
+          "source": "api",
+          "correct": null,
+          "result": "unconfirmed",
+          "before": [
+            1186,
+            877
+          ],
+          "after": [
+            1186,
+            877
+          ]
+        },
+        {
           "id": "358e69beb5e74e53a232a2f9934a4266",
           "submitted_at": "2026-11-15T20:59:35.562488+00:00",
           "options": {
@@ -7580,6 +7672,342 @@
           "after": [
             1187,
             878
+          ]
+        }
+      ]
+    },
+    "cd7e3165b7b22612c71f2d26296f7ff3c9e6a2b224862ba79ccd7f82c5e7703d": {
+      "question": "《孤勇者》的作曲人是谁？",
+      "attempts": [
+        {
+          "id": "cc9d3b0a1a6e4ef8bef4ce000c287f11",
+          "submitted_at": "2026-11-13T16:01:52.028431+00:00",
+          "options": {
+            "a1": "钱雷",
+            "a3": "金克丝",
+            "a2": "唐恬",
+            "a4": "林家谦"
+          },
+          "label": "a1",
+          "answer": "钱雷",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2494,
+            1383
+          ],
+          "after": [
+            2495,
+            1384
+          ]
+        }
+      ]
+    },
+    "fe401c956ba59208575b25471b1ab07822f27dee7c408e5ac1eec1cdb1b9f5e8": {
+      "question": "以下哪首歌是陈奕迅作曲的？",
+      "attempts": [
+        {
+          "id": "ec33b98c5d804ae4881881ca64772a53",
+          "submitted_at": "2026-11-13T16:02:01.143381+00:00",
+          "options": {
+            "a2": "张韶涵 - 第五季",
+            "a3": "张含韵 - 最想念的季节",
+            "a4": "李克勤 - 换季",
+            "a1": "梁汉文 - 淡季"
+          },
+          "label": "a4",
+          "answer": "李克勤 - 换季",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2495,
+            1384
+          ],
+          "after": [
+            2496,
+            1385
+          ]
+        }
+      ]
+    },
+    "132308659a2c06d04bfb64d8c17baed4a129b50272879725efaff9fdf634354c": {
+      "question": "陈奕迅没有翻唱过陈百强哪首歌曲？",
+      "attempts": [
+        {
+          "id": "a02e84fba9dd4f59a6f0062dec3f5679",
+          "submitted_at": "2026-11-13T16:04:13.748115+00:00",
+          "options": {
+            "a1": "等",
+            "a4": "深爱着你",
+            "a3": "一生何求",
+            "a2": "不再问究竟"
+          },
+          "label": "a3",
+          "answer": "一生何求",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1181,
+            872
+          ],
+          "after": [
+            1182,
+            873
+          ]
+        }
+      ]
+    },
+    "360711cc288892b5f39db1b43b3e41d6c311fec2af86b3d00e4dcd9942e3ecd8": {
+      "question": "《夕阳无限好》开头的一句“多经典的歌后，一霎眼已走”中的“歌后”指的是？",
+      "attempts": [
+        {
+          "id": "65ef587d3008413eb032173f345b6c20",
+          "submitted_at": "2026-11-13T16:04:20.594383+00:00",
+          "options": {
+            "a1": "梅艳芳",
+            "a2": "邓丽君",
+            "a3": "凤飞飞",
+            "a4": "红线女"
+          },
+          "label": "a1",
+          "answer": "梅艳芳",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1182,
+            873
+          ],
+          "after": [
+            1183,
+            874
+          ]
+        }
+      ]
+    },
+    "75d7177a1522a80b17190141eee0be8c4871ae8d02b66dc305b697182e04f532": {
+      "question": "2010年在香港举行的演唱会，主题是什么?",
+      "attempts": [
+        {
+          "id": "c3e356a0d8314b88af711105bf502d69",
+          "submitted_at": "2026-11-14T16:01:50.305181+00:00",
+          "options": {
+            "a1": "Get a life",
+            "a2": "Eason‘s life",
+            "a4": "Another Eason‘s life",
+            "a3": "DUO"
+          },
+          "label": "a3",
+          "answer": "DUO",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2497,
+            1386
+          ],
+          "after": [
+            2498,
+            1387
+          ]
+        }
+      ]
+    },
+    "8cbebb336affd95db1d4db1a6860e21f2b268032db7039aa7f926956dfad4a13": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "c309a6a3d0064138911e21357346d53e",
+          "submitted_at": "2026-11-14T16:02:12.226986+00:00",
+          "options": {
+            "a1": "谢谢侬",
+            "a2": "谢谢你",
+            "a3": "谢谢",
+            "a4": "对不起 谢谢"
+          },
+          "label": "a2",
+          "answer": "谢谢你",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2498,
+            1387
+          ],
+          "after": [
+            2499,
+            1388
+          ]
+        }
+      ]
+    },
+    "e873977949d665eae09fd58f6fbc340285ca1117c70414b0ec096dcf7463bea8": {
+      "question": "以下哪句不是《白玫瑰》的歌词？",
+      "attempts": [
+        {
+          "id": "0ba047297d6c45ed9985105cd011997c",
+          "submitted_at": "2026-11-14T16:03:40.387241+00:00",
+          "options": {
+            "a1": "白如白蛾潜回红尘俗世",
+            "a4": "白如白雪一个小公主",
+            "a2": "白如白忙莫名被摧毁",
+            "a3": "白如白糖误投红尘俗世"
+          },
+          "label": "a4",
+          "answer": "白如白雪一个小公主",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1183,
+            874
+          ],
+          "after": [
+            1184,
+            875
+          ]
+        }
+      ]
+    },
+    "926b297a99a74565e2c90c5327abf7c00a274d501595048da98ecaa16fb3d047": {
+      "question": "2008年5月，陈奕迅决定取消原本在马来西亚的宣传活动，立即赶机到北京出席赈灾活动，和王菲合作演唱了哪首歌曲？",
+      "attempts": [
+        {
+          "id": "10736cf9867a4476944726abf315b832",
+          "submitted_at": "2026-11-14T16:03:56.849718+00:00",
+          "options": {
+            "a4": "爱与希望",
+            "a1": "但愿人长久",
+            "a3": "心心相连",
+            "a2": "与你同在"
+          },
+          "label": "a1",
+          "answer": "但愿人长久",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1184,
+            875
+          ],
+          "after": [
+            1185,
+            876
+          ]
+        }
+      ]
+    },
+    "48f1e376cae85f66cc51ae4e75ac4bc21c4aa2035a8453ef06de0dbcafafadb4": {
+      "question": "以下不是陈奕迅主唱主题曲的电影是？",
+      "attempts": [
+        {
+          "id": "6cf24cbcb5ef4a8589fcc21a28acf559",
+          "submitted_at": "2026-11-14T16:04:33.955995+00:00",
+          "options": {
+            "a3": "刘畅&唐艺昕主演《陪安东尼度过漫长岁月》",
+            "a2": "金城武&陈慧琳主演《薰衣草》",
+            "a4": "井柏然&周冬雨主演《后来的我们》",
+            "a1": "刘青云&黄晓明主演《暴风雨》"
+          },
+          "label": "a2",
+          "answer": "金城武&陈慧琳主演《薰衣草》",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1185,
+            876
+          ],
+          "after": [
+            1186,
+            877
+          ]
+        }
+      ]
+    },
+    "7a25a1fae608e17070b0dcf64715f683750e4aa4319a4edbcaa71ea88143de20": {
+      "question": "《_____》主题曲是基于86版《西游记》片尾曲《敢问路在何方》进行二次创作，许镜清谱曲，林夕填词，陈奕迅演唱。",
+      "attempts": [
+        {
+          "id": "fa8341bdbd1a4deabead3e5c5ad0d9a2",
+          "submitted_at": "2026-11-15T16:02:05.605860+00:00",
+          "options": {
+            "a2": "不死传说",
+            "a3": "斗战神",
+            "a1": "我的理想",
+            "a4": "新的世界"
+          },
+          "label": "a2",
+          "answer": "不死传说",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2500,
+            1389
+          ],
+          "after": [
+            2501,
+            1389
+          ]
+        }
+      ]
+    },
+    "5813d108aafd40b88c04cbd51a906d8f6429eab140a69d33af5b3286d72da8e8": {
+      "question": "2023年3月25日，陈奕迅在香港铜锣湾为《尘大馆》开幕仪式亲手题与了哪几个大字？",
+      "attempts": [
+        {
+          "id": "263ae848e4fb4821866aa265ec08612c",
+          "submitted_at": "2026-11-15T16:02:13.801447+00:00",
+          "options": {
+            "a3": "尘大师",
+            "a4": "我OK冇事",
+            "a1": "係咁咦",
+            "a2": "艾东喼雅斯"
+          },
+          "label": "a1",
+          "answer": "係咁咦",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2501,
+            1389
+          ],
+          "after": [
+            2502,
+            1390
+          ]
+        }
+      ]
+    },
+    "5c201ca4a3e27ad93e7b3612ee10935a8c1e36203cf3a0ba2af84a25474ad41e": {
+      "question": "以下哪首不是专辑《The Line-up》里的歌曲？",
+      "attempts": [
+        {
+          "id": "e35ae2234c6f457cb74113dd38e70abc",
+          "submitted_at": "2026-11-15T16:02:27.364712+00:00",
+          "options": {
+            "a4": "1874",
+            "a1": "明年今日",
+            "a3": "人来人往",
+            "a2": "大开眼界"
+          },
+          "label": "a2",
+          "answer": "大开眼界",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2502,
+            1390
+          ],
+          "after": [
+            2503,
+            1391
           ]
         }
       ]
