@@ -1623,6 +1623,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "f8e2dd7b44054c4cae232e0161c3f838",
+          "submitted_at": "2026-11-16T06:43:27.821929+00:00",
+          "options": {
+            "a2": "恐龙进化论",
+            "a4": "龙争虎斗",
+            "a1": "变色龙",
+            "a3": "龙舌兰"
+          },
+          "label": "a4",
+          "answer": "龙争虎斗",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1188,
+            879
+          ],
+          "after": [
+            1189,
+            880
+          ]
         }
       ]
     },
@@ -1850,6 +1873,29 @@
           "after": [
             1121,
             830
+          ]
+        },
+        {
+          "id": "af53ae33b6f6463bba7e2b1a2d8f1cca",
+          "submitted_at": "2026-11-16T06:43:25.575462+00:00",
+          "options": {
+            "a3": "警探叶伟信",
+            "a2": "的士司机叶伟信",
+            "a4": "地产大亨叶伟信",
+            "a1": "房东叶伟信"
+          },
+          "label": "a3",
+          "answer": "警探叶伟信",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1187,
+            878
+          ],
+          "after": [
+            1188,
+            879
           ]
         }
       ]
@@ -7511,6 +7557,29 @@
           "after": [
             1186,
             877
+          ]
+        },
+        {
+          "id": "b7c5d5deaa8640a7b7d7267b5c7afd34",
+          "submitted_at": "2026-11-16T06:43:19.297171+00:00",
+          "options": {
+            "a2": "20110727",
+            "a3": "20120727",
+            "a4": "20130727",
+            "a1": "20100727"
+          },
+          "label": "a2",
+          "answer": "20110727",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1186,
+            877
+          ],
+          "after": [
+            1187,
+            878
           ]
         }
       ]
