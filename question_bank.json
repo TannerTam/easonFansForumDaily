@@ -341,6 +341,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "a151880cbfa047f2ba42c3ddb1bf08e0",
+          "submitted_at": "2026-11-17T16:01:39.689327+00:00",
+          "options": {
+            "a2": "黑的夜白的雪",
+            "a1": "黑夜不再来",
+            "a4": "月黑风高",
+            "a3": "黑暗中漫舞"
+          },
+          "label": "a2",
+          "answer": "黑的夜白的雪",
+          "source": "question_bank",
+          "correct": null,
+          "result": "unconfirmed",
+          "before": [
+            2506,
+            1393
+          ],
+          "after": [
+            2506,
+            1393
+          ]
         }
       ]
     },
@@ -8222,6 +8245,88 @@
           "after": [
             1192,
             881
+          ]
+        }
+      ]
+    },
+    "253275e207ebde13d1414c7c6d02aca3ad3f0199408d67f81b50bfef15124ab0": {
+      "question": "《明年今日》和《十年》哪个先发行？",
+      "attempts": [
+        {
+          "id": "ed4a2231928f45859063e72bb414e703",
+          "submitted_at": "2026-11-17T16:03:00.536407+00:00",
+          "options": {
+            "a1": "明年今日",
+            "a2": "十年"
+          },
+          "label": "a1",
+          "answer": "明年今日",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1192,
+            881
+          ],
+          "after": [
+            1193,
+            882
+          ]
+        }
+      ]
+    },
+    "d528e30dd400ef6e9eadf029372696bfa6612eeca5217a66a74eb6d34eae945a": {
+      "question": "陈奕迅在2026年九五至尊无限枫骚演唱会中没有演唱以下哪首歌曲？",
+      "attempts": [
+        {
+          "id": "7efd77c7eeee488abfd907307e0d6df8",
+          "submitted_at": "2026-11-17T16:03:41.576935+00:00",
+          "options": {
+            "a2": "Shall We Talk",
+            "a4": "你的背包",
+            "a1": "旧欢如梦",
+            "a3": "岁月如歌"
+          },
+          "label": "a4",
+          "answer": "你的背包",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1193,
+            882
+          ],
+          "after": [
+            1194,
+            883
+          ]
+        }
+      ]
+    },
+    "1bed8564a6966b9a06dd0bf7ef0daec263c796be477001da510c205737565ad2": {
+      "question": "以下哪一首歌不是陈奕迅作曲的？",
+      "attempts": [
+        {
+          "id": "ca54a4ec72664ac0a0b23f380873c843",
+          "submitted_at": "2026-11-17T16:03:56.897989+00:00",
+          "options": {
+            "a4": "谢霆锋《改造人》",
+            "a1": "郑秀文《肖邦写过的歌》",
+            "a2": "罗嘉良《真说话》",
+            "a3": "郭富城《我会好好过》"
+          },
+          "label": "a3",
+          "answer": "郭富城《我会好好过》",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1194,
+            883
+          ],
+          "after": [
+            1195,
+            884
           ]
         }
       ]
