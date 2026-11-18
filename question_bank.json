@@ -3071,6 +3071,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "c8e9cf8ae7c843168f0a7be62c8ce695",
+          "submitted_at": "2026-11-18T16:01:46.369004+00:00",
+          "options": {
+            "a2": "人啊",
+            "a3": "一抹尘",
+            "a1": "人啊人",
+            "a4": "一个人"
+          },
+          "label": "a1",
+          "answer": "人啊人",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2509,
+            1396
+          ],
+          "after": [
+            2510,
+            1397
+          ]
         }
       ]
     },
@@ -6255,6 +6278,29 @@
             2458,
             1362
           ]
+        },
+        {
+          "id": "3c7d188987324067ae5e14d6124ec4cb",
+          "submitted_at": "2026-11-18T16:01:48.410279+00:00",
+          "options": {
+            "a1": "要诚恳的表达你想表达的东西",
+            "a4": "做好自己就可以了",
+            "a2": "把每首歌高音都唱好",
+            "a3": "每一首歌好好去玩"
+          },
+          "label": "a1",
+          "answer": "要诚恳的表达你想表达的东西",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2510,
+            1397
+          ],
+          "after": [
+            2511,
+            1398
+          ]
         }
       ]
     },
@@ -8401,6 +8447,118 @@
           "after": [
             2508,
             1395
+          ]
+        }
+      ]
+    },
+    "c10a863756e65e5b3f98e2c7656f084589eaa33be430f69cb623f13421b9b186": {
+      "question": "陈奕迅以下哪首歌不是陈小霞作曲的？",
+      "attempts": [
+        {
+          "id": "7bcc093ef56e44d291bf8ea1ba1a0708",
+          "submitted_at": "2026-11-18T16:03:00.580206+00:00",
+          "options": {
+            "a3": "世界",
+            "a1": "好久不见",
+            "a4": "圣诞结",
+            "a2": "十年"
+          },
+          "label": "a3",
+          "answer": "世界",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2511,
+            1398
+          ],
+          "after": [
+            2512,
+            1398
+          ]
+        }
+      ]
+    },
+    "3d75d4488b17df683f7f00806ae0d82b0d90a604032d527c62925eb48453df6c": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "1e724be305c441ddbff02e29805d2a75",
+          "submitted_at": "2026-11-18T16:04:56.692648+00:00",
+          "options": {
+            "a4": "没有你",
+            "a1": "爱没有左右",
+            "a2": "我什么都没有",
+            "a3": "没有喝够"
+          },
+          "label": "a3",
+          "answer": "没有喝够",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1195,
+            884
+          ],
+          "after": [
+            1196,
+            885
+          ]
+        }
+      ]
+    },
+    "86990a4aaca7434b241ca9ed247f0cc4b566a64cb1446df442b5678a6d4828eb": {
+      "question": "以下哪句《重口味》的歌词是错误的？",
+      "attempts": [
+        {
+          "id": "6df2fc56e1644f57a38b3de05ebf933d",
+          "submitted_at": "2026-11-18T16:05:24.342203+00:00",
+          "options": {
+            "a3": "我有的病 我会医病 我会攞诺贝尔奖",
+            "a1": "每次杀不死你 杀不死你 也医好你",
+            "a2": "爱也是场硬仗 挫折练成大将",
+            "a4": "眼泪里含有止痛药 要治本必须重口味"
+          },
+          "label": "a4",
+          "answer": "眼泪里含有止痛药 要治本必须重口味",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1196,
+            885
+          ],
+          "after": [
+            1197,
+            886
+          ]
+        }
+      ]
+    },
+    "b06219057891f5418a60c4739c78d8f7a5bc95213273366113ddc79601ecbd8f": {
+      "question": "陈奕迅曾被美国哪一本杂志形容为影响香港乐坛风格的人物？",
+      "attempts": [
+        {
+          "id": "3b92598931c7468db4984fcd0bff5f49",
+          "submitted_at": "2026-11-18T16:05:33.647259+00:00",
+          "options": {
+            "a2": "《Newsweek》",
+            "a4": "《The New York Times》",
+            "a1": "《TIME》",
+            "a3": "《U.S.News&WorldReport》"
+          },
+          "label": "a1",
+          "answer": "《TIME》",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1197,
+            886
+          ],
+          "after": [
+            1198,
+            887
           ]
         }
       ]
