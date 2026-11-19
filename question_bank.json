@@ -319,6 +319,29 @@
             2476,
             1373
           ]
+        },
+        {
+          "id": "4d1e84c91e9c433e9c6c94475c6dbcda",
+          "submitted_at": "2026-11-19T16:01:57.925439+00:00",
+          "options": {
+            "a4": "今天等我来",
+            "a1": "跟我走好吗",
+            "a2": "还要不要走",
+            "a3": "非走不可"
+          },
+          "label": "a3",
+          "answer": "非走不可",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2513,
+            1399
+          ],
+          "after": [
+            2514,
+            1400
+          ]
         }
       ]
     },
@@ -3724,6 +3747,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "8de1c39d43444b7cb4280e11f4d9dc9f",
+          "submitted_at": "2026-11-19T16:01:50.549602+00:00",
+          "options": {
+            "a3": "富士山下",
+            "a1": "一丝不挂",
+            "a2": "低等动物",
+            "a4": "时空隧道"
+          },
+          "label": "a1",
+          "answer": "一丝不挂",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2512,
+            1398
+          ],
+          "after": [
+            2513,
+            1399
+          ]
         }
       ]
     },
@@ -4345,6 +4391,29 @@
           "after": [
             2509,
             1396
+          ]
+        },
+        {
+          "id": "856add4bca77428a805c734853baaf20",
+          "submitted_at": "2026-11-19T16:03:47.299161+00:00",
+          "options": {
+            "a4": "2003",
+            "a2": "2001",
+            "a3": "2002",
+            "a1": "2000"
+          },
+          "label": "a4",
+          "answer": "2003",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1199,
+            888
+          ],
+          "after": [
+            1200,
+            889
           ]
         }
       ]
@@ -7788,6 +7857,29 @@
             1187,
             878
           ]
+        },
+        {
+          "id": "62205073500d415bb0d890c67b7b4572",
+          "submitted_at": "2026-11-19T16:03:43.832815+00:00",
+          "options": {
+            "a3": "20120727",
+            "a2": "20110727",
+            "a4": "20130727",
+            "a1": "20100727"
+          },
+          "label": "a2",
+          "answer": "20110727",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1198,
+            887
+          ],
+          "after": [
+            1199,
+            888
+          ]
         }
       ]
     },
@@ -8559,6 +8651,62 @@
           "after": [
             1198,
             887
+          ]
+        }
+      ]
+    },
+    "c5fc2634cd8e7b0b69c62ed1eba628ef6929f7f7821d4994771c8e77c36bd091": {
+      "question": "在《陈鲁豫·慢谈》中，陈奕迅说哪张专辑是他人生中最阴暗最黑暗的时刻？",
+      "attempts": [
+        {
+          "id": "d68890ba86fd4de89e02a6cf78037653",
+          "submitted_at": "2026-11-19T16:02:26.450701+00:00",
+          "options": {
+            "a1": "反正是我",
+            "a4": "准备中",
+            "a3": "THE KEY",
+            "a2": "天佑爱人"
+          },
+          "label": "a3",
+          "answer": "THE KEY",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2514,
+            1400
+          ],
+          "after": [
+            2515,
+            1401
+          ]
+        }
+      ]
+    },
+    "6714e534b38d2162879f17dc2a6d96cc72cfc3c8d7a7c4199f2378a5e935c69c": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "4eb12aceb08a4e76abb3f2bac62a50f5",
+          "submitted_at": "2026-11-19T16:04:27.124172+00:00",
+          "options": {
+            "a3": "Nothing Ever Happened",
+            "a1": "Life Goes On",
+            "a2": "Made in Hong Kong",
+            "a4": "Let's Fall In Love"
+          },
+          "label": "a3",
+          "answer": "Nothing Ever Happened",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1200,
+            889
+          ],
+          "after": [
+            1201,
+            889
           ]
         }
       ]
