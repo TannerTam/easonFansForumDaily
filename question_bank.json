@@ -252,6 +252,29 @@
             1176,
             870
           ]
+        },
+        {
+          "id": "7ada7f577a9f4fd4897c30fd64f84618",
+          "submitted_at": "2026-11-20T16:01:37.795638+00:00",
+          "options": {
+            "a2": "范晓萱",
+            "a1": "那英",
+            "a4": "韩红",
+            "a3": "杨千嬅"
+          },
+          "label": "a2",
+          "answer": "范晓萱",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2515,
+            1401
+          ],
+          "after": [
+            2516,
+            1402
+          ]
         }
       ]
     },
@@ -4659,6 +4682,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "47bc0bab251c4070a426c119ce57403c",
+          "submitted_at": "2026-11-20T16:02:08.946178+00:00",
+          "options": {
+            "a2": "1999",
+            "a1": "1998",
+            "a4": "2001",
+            "a3": "2000"
+          },
+          "label": "a2",
+          "answer": "1999",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2517,
+            1403
+          ],
+          "after": [
+            2518,
+            1404
+          ]
         }
       ]
     },
@@ -8707,6 +8753,118 @@
           "after": [
             1201,
             889
+          ]
+        }
+      ]
+    },
+    "da09996bb4822be62a822eb3bc91395582561afce759aeb1814e01154bf62d83": {
+      "question": "陈奕迅2018年为止没有参加过以下哪个节目(Part2)？",
+      "attempts": [
+        {
+          "id": "6cf6059b3aac4c58b0bd484ce6dbe7a6",
+          "submitted_at": "2026-11-20T16:02:06.597027+00:00",
+          "options": {
+            "a3": "鲁豫有约",
+            "a2": "快乐大本营",
+            "a4": "蒙面歌王",
+            "a1": "十二道锋味"
+          },
+          "label": "a4",
+          "answer": "蒙面歌王",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2516,
+            1402
+          ],
+          "after": [
+            2517,
+            1403
+          ]
+        }
+      ]
+    },
+    "cc6ccc0daff330b1d7890ea82caa6cb02826646287f29d98e5530343f2794cbd": {
+      "question": "《打得火热》这张专辑发行的时间是？",
+      "attempts": [
+        {
+          "id": "544803561b134abca6232a4ec026a155",
+          "submitted_at": "2026-11-20T16:03:24.009237+00:00",
+          "options": {
+            "a1": "1998年9月",
+            "a4": "2001年9月",
+            "a2": "1999年9月",
+            "a3": "2000年9月"
+          },
+          "label": "a3",
+          "answer": "2000年9月",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1201,
+            889
+          ],
+          "after": [
+            1202,
+            890
+          ]
+        }
+      ]
+    },
+    "0fbef773aca41bef518ca72f8ca0b4938f5394d016394f3b8630b894ef9b8bf6": {
+      "question": "以下哪首歌的歌词里面没有“花花”？",
+      "attempts": [
+        {
+          "id": "0368ee22ffd542b0baec453057ec6878",
+          "submitted_at": "2026-11-20T16:04:25.227686+00:00",
+          "options": {
+            "a3": "叶问风中转",
+            "a1": "当这地球没有花",
+            "a4": "花花世界",
+            "a2": "一疋布"
+          },
+          "label": "a1",
+          "answer": "当这地球没有花",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1202,
+            890
+          ],
+          "after": [
+            1203,
+            891
+          ]
+        }
+      ]
+    },
+    "aa082a3181edc370b62f61f3f0a2f89d1fa5449c83d60472edcfc517bd2ba9c8": {
+      "question": "陈奕迅演唱的《金氏纪录》包括以下哪首歌？",
+      "attempts": [
+        {
+          "id": "429d39c6acd54aa7b75f905d0330d81b",
+          "submitted_at": "2026-11-20T16:04:33.427420+00:00",
+          "options": {
+            "a1": "蔡健雅《双栖动物》",
+            "a2": "周杰伦《告白气球》",
+            "a3": "黄明志《飘向北方》",
+            "a4": "薛之谦《演员》"
+          },
+          "label": "a1",
+          "answer": "蔡健雅《双栖动物》",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1203,
+            891
+          ],
+          "after": [
+            1204,
+            892
           ]
         }
       ]
