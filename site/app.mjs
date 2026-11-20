@@ -43,19 +43,16 @@ function render() {
   $('#empty-state').hidden = matches.length > 0;
   $('#load-more').hidden = matches.length <= visibleCount;
   results.replaceChildren();
-  for (const [index, item] of matches.slice(0, visibleCount).entries()) {
+  for (const item of matches.slice(0, visibleCount)) {
     const card = element('button', 'question-card');
     card.type = 'button';
     card.setAttribute('aria-label', `查看选项：${item.question}`);
-    const top = element('div', 'card-top');
     const hasCorrect = item.correctOptions.length > 0;
-    top.append(element('span', 'card-index', `Q / ${String(index + 1).padStart(3, '0')}`),
-      element('span', `card-status${hasCorrect ? '' : ' only-wrong'}`, hasCorrect ? '已确认答案' : '已有排除项'));
     const bottom = element('div', 'card-bottom');
     bottom.append(element('span', `answer-preview${hasCorrect ? '' : ' only-wrong'}`, hasCorrect
       ? item.correctOptions.map(option => option.text).join(' / ') : `已排除 ${item.wrongOptions.length} 个错误选项`),
     element('span', 'card-arrow', '↗'));
-    card.append(top, element('h3', '', item.question), bottom);
+    card.append(element('h3', '', item.question), bottom);
     card.addEventListener('click', () => showAnswer(item));
     results.append(card);
   }
@@ -79,8 +76,6 @@ async function loadBank() {
     $('#total-questions').textContent = questions.length;
     $('#correct-count').textContent = questions.reduce((sum, item) => sum + item.correctOptions.length, 0);
     $('#wrong-count').textContent = questions.reduce((sum, item) => sum + item.wrongOptions.length, 0);
-    const latest = questions.map(item => new Date(item.updatedAt)).filter(date => !Number.isNaN(+date)).sort((a, b) => b - a)[0];
-    $('#updated-at').textContent = latest ? `最近记录 · ${latest.toLocaleDateString('zh-CN', { timeZone: 'Asia/Shanghai' })}` : '题库已就绪';
     search.disabled = false;
     $('#search-submit').disabled = false;
     ready = true;
@@ -88,7 +83,6 @@ async function loadBank() {
   } catch (error) {
     $('#error-state').hidden = false;
     $('#result-count').textContent = '加载失败';
-    $('#updated-at').textContent = '暂时无法读取题库';
   } finally {
     clearTimeout(timeout);
     results.setAttribute('aria-busy', 'false');
@@ -107,11 +101,6 @@ $('#reset-search').addEventListener('click', () => {
   document.querySelector('[data-filter="all"]').click();
   clearSearch();
 });
-document.querySelectorAll('[data-query]').forEach(button => button.addEventListener('click', () => {
-  search.value = button.dataset.query;
-  refresh();
-  search.focus();
-}));
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
   currentFilter = button.dataset.filter;
   document.querySelectorAll('[data-filter]').forEach(item => {
@@ -129,7 +118,6 @@ $('#load-more').addEventListener('click', () => {
 });
 $('#retry-load').addEventListener('click', loadBank);
 $('#close-dialog').addEventListener('click', () => dialog.close());
-$('#dialog-done').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', event => {
   const rect = dialog.getBoundingClientRect();
   if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right
