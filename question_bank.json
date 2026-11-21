@@ -1488,6 +1488,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "1ee46f4733e4442ebf48bb8962992d17",
+          "submitted_at": "2026-11-21T16:01:45.848731+00:00",
+          "options": {
+            "a2": "美术",
+            "a3": "音乐",
+            "a1": "建筑",
+            "a4": "土木工程"
+          },
+          "label": "a1",
+          "answer": "建筑",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2518,
+            1404
+          ],
+          "after": [
+            2519,
+            1405
+          ]
         }
       ]
     },
@@ -4326,6 +4349,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "2e1a1da5eb3c41a185e429aa3269b77b",
+          "submitted_at": "2026-11-21T16:01:47.716477+00:00",
+          "options": {
+            "a3": "人人爱",
+            "a4": "处处吻",
+            "a2": "渐渐",
+            "a1": "飘飘飘飘"
+          },
+          "label": "a4",
+          "answer": "处处吻",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2519,
+            1405
+          ],
+          "after": [
+            2520,
+            1406
+          ]
         }
       ]
     },
@@ -6635,6 +6681,29 @@
             2475,
             1372
           ]
+        },
+        {
+          "id": "d9c07e09aa5e440ea44f6220cd343d40",
+          "submitted_at": "2026-11-21T16:03:30.911726+00:00",
+          "options": {
+            "a2": "宠物情缘",
+            "a1": "冲上云霄",
+            "a3": "当四叶草碰上剑尖时",
+            "a4": "为爱而生"
+          },
+          "label": "a2",
+          "answer": "宠物情缘",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1205,
+            892
+          ],
+          "after": [
+            1206,
+            893
+          ]
         }
       ]
     },
@@ -8346,6 +8415,29 @@
             2506,
             1393
           ]
+        },
+        {
+          "id": "4a0a0b8bc28843548a34b0c578f536df",
+          "submitted_at": "2026-11-21T16:03:57.481154+00:00",
+          "options": {
+            "a4": "与我常在",
+            "a3": "一个人",
+            "a2": "喜欢一个人",
+            "a1": "他一个人"
+          },
+          "label": "a1",
+          "answer": "他一个人",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1206,
+            893
+          ],
+          "after": [
+            1207,
+            894
+          ]
         }
       ]
     },
@@ -8864,6 +8956,62 @@
           ],
           "after": [
             1204,
+            892
+          ]
+        }
+      ]
+    },
+    "7c587c57dfb9fb07e69e268c87833c3359aeca97ada133be8b1f61a4fd3fb0c7": {
+      "question": "2023年新专《CHIN UP!》社交恐惧癌MV客串开锁工的是？",
+      "attempts": [
+        {
+          "id": "aed420cf16db4a1f9385ed3f5887b9a3",
+          "submitted_at": "2026-11-21T16:01:56.809367+00:00",
+          "options": {
+            "a1": "张学友",
+            "a3": "周润发",
+            "a2": "梁朝伟",
+            "a4": "朱一龙"
+          },
+          "label": "a2",
+          "answer": "梁朝伟",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2520,
+            1406
+          ],
+          "after": [
+            2521,
+            1407
+          ]
+        }
+      ]
+    },
+    "21128b5561aea88aabb8639a77c3c15a7d0f6db21d3104de5b95b4ab1f69cb80": {
+      "question": "陈奕迅第一首录音室作品是什么歌？",
+      "attempts": [
+        {
+          "id": "907a61d32e004f858bb5d28d55689892",
+          "submitted_at": "2026-11-21T16:03:29.249324+00:00",
+          "options": {
+            "a3": "《By My Side》-快乐的歌",
+            "a2": "《我们不哭了EP》-我们不哭了",
+            "a4": "《巨星儿歌》-我的理想",
+            "a1": "《陈奕迅》-游离份子"
+          },
+          "label": "a1",
+          "answer": "《陈奕迅》-游离份子",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1204,
+            892
+          ],
+          "after": [
+            1205,
             892
           ]
         }
