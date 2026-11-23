@@ -1171,6 +1171,29 @@
             2463,
             1364
           ]
+        },
+        {
+          "id": "fe33162a6e794873bcfbeec0048b9667",
+          "submitted_at": "2026-11-23T16:01:51.561065+00:00",
+          "options": {
+            "a2": "上华",
+            "a3": "滚石",
+            "a4": "新艺宝",
+            "a1": "正东"
+          },
+          "label": "a4",
+          "answer": "新艺宝",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2526,
+            1409
+          ],
+          "after": [
+            2527,
+            1410
+          ]
         }
       ]
     },
@@ -3075,6 +3098,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "30054c2cd7d5431d9620e56944087e97",
+          "submitted_at": "2026-11-23T16:03:33.696783+00:00",
+          "options": {
+            "a2": "新的世界",
+            "a1": "新美人主义",
+            "a4": "新闻女郎",
+            "a3": "新广告歌"
+          },
+          "label": "a4",
+          "answer": "新闻女郎",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1210,
+            897
+          ],
+          "after": [
+            1211,
+            898
+          ]
         }
       ]
     },
@@ -3750,6 +3796,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "a5b2a179dfb041b59b5de7c4cb006b68",
+          "submitted_at": "2026-11-23T16:01:49.432510+00:00",
+          "options": {
+            "a3": "爱若为了永不失去",
+            "a2": "爱若能够永不失去",
+            "a4": "爱若遗失所得几多",
+            "a1": "爱若难以放进手里"
+          },
+          "label": "a4",
+          "answer": "爱若遗失所得几多",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2525,
+            1408
+          ],
+          "after": [
+            2526,
+            1409
+          ]
         }
       ]
     },
@@ -3906,6 +3975,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "566dd783c0464aca84f8f2490fe24c03",
+          "submitted_at": "2026-11-23T16:03:35.323476+00:00",
+          "options": {
+            "a2": "之外",
+            "a1": "存在",
+            "a3": "可以",
+            "a4": "对面"
+          },
+          "label": "a3",
+          "answer": "可以",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1211,
+            898
+          ],
+          "after": [
+            1212,
+            899
+          ]
         }
       ]
     },
@@ -9156,6 +9248,62 @@
           "after": [
             2524,
             1408
+          ]
+        }
+      ]
+    },
+    "2dab3b77a7e3d9457fb71aefc8a7fe05fe816a6d46b745be4c619f3ea08a55d2": {
+      "question": "陈奕迅 FEAR AND DREAMS 巡回演唱会澳门终极尾场Encore了几首歌曲？",
+      "attempts": [
+        {
+          "id": "6d06adbeeea845e3af8fe86f82542719",
+          "submitted_at": "2026-11-23T16:01:47.663487+00:00",
+          "options": {
+            "a1": "12",
+            "a3": "10",
+            "a2": "9",
+            "a4": "11"
+          },
+          "label": "a1",
+          "answer": "12",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2524,
+            1408
+          ],
+          "after": [
+            2525,
+            1408
+          ]
+        }
+      ]
+    },
+    "80c4404d4ede831890e67e4391219af00a0d3b97b0b7e997ea2ddcd184c7f9b7": {
+      "question": "在2003年度凭哪一张国语专辑夺得台湾金曲奖“最佳国语男演唱人”和“最佳专辑”两个大奖，成为了继张学友后首位夺得这个大奖的香港男歌手，亦是第一个同时夺得这两个奖项的香港歌手？",
+      "attempts": [
+        {
+          "id": "9807d7a8949645b99389bb73a51b2696",
+          "submitted_at": "2026-11-23T16:03:44.283095+00:00",
+          "options": {
+            "a4": "《上五楼的快活》",
+            "a3": "《怎么样》",
+            "a1": "《Special Thanks To…》",
+            "a2": "《黑白灰》"
+          },
+          "label": "a1",
+          "answer": "《Special Thanks To…》",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1212,
+            899
+          ],
+          "after": [
+            1213,
+            900
           ]
         }
       ]
