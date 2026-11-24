@@ -1278,6 +1278,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "d5ca83f1d9a747e4b0336321433389e2",
+          "submitted_at": "2026-11-24T16:02:10.810178+00:00",
+          "options": {
+            "a4": "那一夜有没有说",
+            "a3": "不如承诺来的简单",
+            "a2": "今天只做一件事",
+            "a1": "那些让你死去活来的女孩"
+          },
+          "label": "a4",
+          "answer": "那一夜有没有说",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2529,
+            1412
+          ],
+          "after": [
+            2530,
+            1413
+          ]
         }
       ]
     },
@@ -5472,6 +5495,28 @@
             1170,
             865
           ]
+        },
+        {
+          "id": "a51bcdbb0c91425db475dfdc692ad767",
+          "submitted_at": "2026-11-24T16:03:37.142095+00:00",
+          "options": {
+            "a1": "K歌之王/防不胜防/粤语残片/沙龙/富士山下/人来人往/之外/浮夸/热带雨林/黄金时代/时代曲/绵绵（清唱）",
+            "a2": "K歌之王/防不胜防/粤语残片/沙龙/你的背包/黑暗中漫舞/人来人往/之外/浮夸/黄金时代/时代曲/绵绵（清唱）",
+            "a3": "K歌之王/防不胜防/粤语残片/陀飞轮/是但求其爱/失忆蝴蝶/打回原形/单车/黄金时代/时代曲/浮夸/绵绵（清唱）"
+          },
+          "label": "a2",
+          "answer": "K歌之王/防不胜防/粤语残片/沙龙/你的背包/黑暗中漫舞/人来人往/之外/浮夸/黄金时代/时代曲/绵绵（清唱）",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1215,
+            902
+          ],
+          "after": [
+            1216,
+            903
+          ]
         }
       ]
     },
@@ -7386,6 +7431,29 @@
           "after": [
             1158,
             856
+          ]
+        },
+        {
+          "id": "0a4bafc2b7c149dba17a19e60cff7f17",
+          "submitted_at": "2026-11-24T16:03:28.119982+00:00",
+          "options": {
+            "a3": "高海宁",
+            "a1": "佘诗曼",
+            "a4": "蔡思贝",
+            "a2": "杨怡"
+          },
+          "label": "a1",
+          "answer": "佘诗曼",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1213,
+            900
+          ],
+          "after": [
+            1214,
+            901
           ]
         }
       ]
@@ -9304,6 +9372,90 @@
           "after": [
             1213,
             900
+          ]
+        }
+      ]
+    },
+    "1936f60adb8d19a284d246b2f6f3dc709066fa5bbd213b893b212e9170e89fc6": {
+      "question": "阿牛2023年1月份看了3场陈奕迅 FEAR AND DREAMS 香港演唱会，以下哪一天不可能是他看演唱会的日期？",
+      "attempts": [
+        {
+          "id": "41107ef6c9cb484d914c23bbe44f8a3b",
+          "submitted_at": "2026-11-24T16:01:56.146494+00:00",
+          "options": {
+            "a4": "14号",
+            "a2": "6号",
+            "a1": "5号",
+            "a3": "13号"
+          },
+          "label": "a1",
+          "answer": "5号",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2527,
+            1410
+          ],
+          "after": [
+            2528,
+            1411
+          ]
+        }
+      ]
+    },
+    "996214ac80c71a0c4ca94214f408b25db46cf1638f193f07a2dd6479e8072d32": {
+      "question": "陈奕迅的《十年》收录在英皇唱片发行的哪张专辑当中？",
+      "attempts": [
+        {
+          "id": "9ad85a9d27204a6b8486e6f177f9a03b",
+          "submitted_at": "2026-11-24T16:02:08.180443+00:00",
+          "options": {
+            "a3": "打得火热",
+            "a2": "黑白灰",
+            "a1": "The Line-Up",
+            "a4": "U87"
+          },
+          "label": "a2",
+          "answer": "黑白灰",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2528,
+            1411
+          ],
+          "after": [
+            2529,
+            1412
+          ]
+        }
+      ]
+    },
+    "5fff4c32bf24a1dfd6bb33340a6a150cb3446d4a313e85d08871763ec06901ff": {
+      "question": "专辑《L.O.V.E》收录了多少首国语歌？",
+      "attempts": [
+        {
+          "id": "b601cf241b054fecafb5ee645fa5fc38",
+          "submitted_at": "2026-11-24T16:03:35.371355+00:00",
+          "options": {
+            "a3": "3",
+            "a2": "2",
+            "a1": "1",
+            "a4": "4"
+          },
+          "label": "a2",
+          "answer": "2",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1214,
+            901
+          ],
+          "after": [
+            1215,
+            902
           ]
         }
       ]
