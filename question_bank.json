@@ -2493,6 +2493,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "77795fb3c33a4d5ba346b411180db31e",
+          "submitted_at": "2026-11-25T16:03:09.296433+00:00",
+          "options": {
+            "a3": "不然你要我怎么样",
+            "a2": "还有什么可以送給你",
+            "a4": "不如承诺來的简单",
+            "a1": "只要你过得比我好"
+          },
+          "label": "a1",
+          "answer": "只要你过得比我好",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1216,
+            903
+          ],
+          "after": [
+            1217,
+            904
+          ]
         }
       ]
     },
@@ -3492,6 +3515,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "cc58450176174af18d28ef249e93198e",
+          "submitted_at": "2026-11-25T16:03:37.421495+00:00",
+          "options": {
+            "a4": "新加坡",
+            "a1": "台湾",
+            "a2": "澳门",
+            "a3": "香港"
+          },
+          "label": "a4",
+          "answer": "新加坡",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1218,
+            905
+          ],
+          "after": [
+            1219,
+            906
+          ]
         }
       ]
     },
@@ -3685,6 +3731,29 @@
           "after": [
             1148,
             850
+          ]
+        },
+        {
+          "id": "0eecf3a24bfe42ceb0008b89f66871e2",
+          "submitted_at": "2026-11-25T16:01:47.086944+00:00",
+          "options": {
+            "a3": "上海",
+            "a1": "香港",
+            "a4": "广州",
+            "a2": "北京"
+          },
+          "label": "a1",
+          "answer": "香港",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2530,
+            1413
+          ],
+          "after": [
+            2531,
+            1414
           ]
         }
       ]
@@ -9065,6 +9134,29 @@
             1198,
             887
           ]
+        },
+        {
+          "id": "24d678d3455547fcba7c4f0c3c21229f",
+          "submitted_at": "2026-11-25T16:01:49.415460+00:00",
+          "options": {
+            "a1": "《TIME》",
+            "a4": "《The New York Times》",
+            "a2": "《Newsweek》",
+            "a3": "《U.S.News&WorldReport》"
+          },
+          "label": "a1",
+          "answer": "《TIME》",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2531,
+            1414
+          ],
+          "after": [
+            2532,
+            1415
+          ]
         }
       ]
     },
@@ -9456,6 +9548,62 @@
           "after": [
             1215,
             902
+          ]
+        }
+      ]
+    },
+    "d625c5ed457798c8c81a85096bfe29ccd21aef0e86b6acdd218ff1fec2bc5728": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "b8626824ad6242e1ae04056f92fb35fd",
+          "submitted_at": "2026-11-25T16:02:09.052630+00:00",
+          "options": {
+            "a4": "好人",
+            "a1": "大人",
+            "a2": "敌人",
+            "a3": "坏情人"
+          },
+          "label": "a2",
+          "answer": "敌人",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2532,
+            1415
+          ],
+          "after": [
+            2533,
+            1415
+          ]
+        }
+      ]
+    },
+    "e05c7d6d3f7d14295d70722da41a5c234def669261ab1b69019cd3d1310e5610": {
+      "question": "以下哪首陈奕迅的歌不是由小克填词？",
+      "attempts": [
+        {
+          "id": "e6e6e071e92c46b58e98b2e2998763a7",
+          "submitted_at": "2026-11-25T16:03:35.206903+00:00",
+          "options": {
+            "a4": "不期而遇的夏天",
+            "a3": "床头床尾",
+            "a2": "是但求其爱",
+            "a1": "张氏情歌"
+          },
+          "label": "a4",
+          "answer": "不期而遇的夏天",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1217,
+            904
+          ],
+          "after": [
+            1218,
+            905
           ]
         }
       ]
