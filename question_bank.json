@@ -5754,6 +5754,29 @@
             1123,
             831
           ]
+        },
+        {
+          "id": "6a9ddac76ed24aabb5889d4d3f6d3fa4",
+          "submitted_at": "2026-11-26T16:03:50.562575+00:00",
+          "options": {
+            "a3": "拜访",
+            "a1": "奋斗",
+            "a2": "飘",
+            "a4": "偷故事的人"
+          },
+          "label": "a1",
+          "answer": "奋斗",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1220,
+            906
+          ],
+          "after": [
+            1221,
+            907
+          ]
         }
       ]
     },
@@ -7416,6 +7439,29 @@
           "after": [
             1156,
             854
+          ]
+        },
+        {
+          "id": "3c5e7567b9c54c92856c308e2eb21ddf",
+          "submitted_at": "2026-11-26T16:03:48.360992+00:00",
+          "options": {
+            "a1": "《圣诞结》：我住的城市从不下雪，记忆却堆满冷的感觉",
+            "a4": "《天使的礼物》：在夜空翱翔一趟，陪你看城市亮光",
+            "a3": "《好久不见》：我来到你的城市，走过你来时的路",
+            "a2": "《十面埋伏》：轨迹改变角度交错，寂寞城市又再探戈"
+          },
+          "label": "a1",
+          "answer": "《圣诞结》：我住的城市从不下雪，记忆却堆满冷的感觉",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1219,
+            906
+          ],
+          "after": [
+            1220,
+            906
           ]
         }
       ]
@@ -9604,6 +9650,118 @@
           "after": [
             1218,
             905
+          ]
+        }
+      ]
+    },
+    "a64356cd8b6f8ffbc4d9034a549658c9281caa13b4576bd60786017cc41815d1": {
+      "question": "2023年新专《CHIN UP!》社交恐惧癌MV看更一角，陈奕迅原本想找谁来出演？但因疫情问题又找了谁？",
+      "attempts": [
+        {
+          "id": "3f2756fb63e84e16b89dc21535b0d8df",
+          "submitted_at": "2026-11-26T16:02:12.839149+00:00",
+          "options": {
+            "a2": "郭富城、黎明",
+            "a4": "张学友、周润发",
+            "a1": "刘德华、梁朝伟",
+            "a3": "张家辉、张震"
+          },
+          "label": "a4",
+          "answer": "张学友、周润发",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2533,
+            1415
+          ],
+          "after": [
+            2534,
+            1416
+          ]
+        }
+      ]
+    },
+    "7c2c8695e15d0c323029b5d24a033dd9f98ef79fd94d6f4d5eaaf429ac3bddab": {
+      "question": "歌曲《浮夸》的原曲名是什么，创作初衷是为了悼念哪位艺人？",
+      "attempts": [
+        {
+          "id": "e124825fdf14482faa00215f582808e2",
+          "submitted_at": "2026-11-26T16:02:22.497142+00:00",
+          "options": {
+            "a4": "《悲曲》，黄家驹",
+            "a1": "《压抑》，梅艳芳",
+            "a2": "《Depression》，张国荣",
+            "a3": "《无声叹息》，罗文"
+          },
+          "label": "a2",
+          "answer": "《Depression》，张国荣",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2534,
+            1416
+          ],
+          "after": [
+            2535,
+            1417
+          ]
+        }
+      ]
+    },
+    "e4b523ff57eb70c457522a05674ec60d459f173345faef0ded5ec708011a8433": {
+      "question": "2026年陈奕迅在金像奖颁奖礼上唱了哪一首歌？",
+      "attempts": [
+        {
+          "id": "8215df29e70e4c96b5d8a14aa28bc5a0",
+          "submitted_at": "2026-11-26T16:02:31.945127+00:00",
+          "options": {
+            "a1": "我的快乐时代",
+            "a3": "我们万岁",
+            "a4": "尘大师",
+            "a2": "致明日的舞"
+          },
+          "label": "a2",
+          "answer": "致明日的舞",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2535,
+            1417
+          ],
+          "after": [
+            2536,
+            1418
+          ]
+        }
+      ]
+    },
+    "e47552e1640f5618bdcd178bbf46148232afbc2d64317faec2bf538267140bfa": {
+      "question": "名为（Big Live 陈奕迅大个唱99）在hk体育馆连举办几场？",
+      "attempts": [
+        {
+          "id": "24ef199a1edd45aaad4e8267b85ad976",
+          "submitted_at": "2026-11-26T16:03:57.167406+00:00",
+          "options": {
+            "a4": "6",
+            "a3": "5",
+            "a2": "4",
+            "a1": "3"
+          },
+          "label": "a2",
+          "answer": "4",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1221,
+            907
+          ],
+          "after": [
+            1222,
+            908
           ]
         }
       ]
