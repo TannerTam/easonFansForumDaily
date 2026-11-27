@@ -4378,6 +4378,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "5f705940140949bd8286fa7206dcd73a",
+          "submitted_at": "2026-11-27T16:04:09.619328+00:00",
+          "options": {
+            "a1": "我的理想",
+            "a2": "一滴眼泪",
+            "a3": "时代曲",
+            "a4": "超人的主题曲"
+          },
+          "label": "a1",
+          "answer": "我的理想",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1222,
+            908
+          ],
+          "after": [
+            1223,
+            909
+          ]
         }
       ]
     },
@@ -9096,6 +9119,29 @@
             2512,
             1398
           ]
+        },
+        {
+          "id": "daec7145af5049e9bba204398c5435bb",
+          "submitted_at": "2026-11-27T16:01:53.488624+00:00",
+          "options": {
+            "a3": "世界",
+            "a1": "好久不见",
+            "a2": "十年",
+            "a4": "圣诞结"
+          },
+          "label": "a4",
+          "answer": "圣诞结",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2536,
+            1418
+          ],
+          "after": [
+            2537,
+            1419
+          ]
         }
       ]
     },
@@ -9762,6 +9808,118 @@
           "after": [
             1222,
             908
+          ]
+        }
+      ]
+    },
+    "b944c115b5bda5dfd70a1c9079a8637da43f2f4d214d672843df18306fe3245c": {
+      "question": "以下哪首不是陈奕迅的歌？",
+      "attempts": [
+        {
+          "id": "569c0bddba9145d899db9321bf9210cf",
+          "submitted_at": "2026-11-27T16:02:41.285431+00:00",
+          "options": {
+            "a4": "黑夜不再来",
+            "a3": "一夜销魂",
+            "a1": "二个人的夜晚",
+            "a2": "寂寞夜晚"
+          },
+          "label": "a3",
+          "answer": "一夜销魂",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2537,
+            1419
+          ],
+          "after": [
+            2538,
+            1419
+          ]
+        }
+      ]
+    },
+    "4979b46a438fa8f28cc6733876a8196f9cbc1eb297f4865ef94a8e3f732d7c59": {
+      "question": "以下哪首歌是陈奕迅的？",
+      "attempts": [
+        {
+          "id": "19663bfe8f2a4f8c961facf03f28143f",
+          "submitted_at": "2026-11-27T16:02:57.970116+00:00",
+          "options": {
+            "a3": "月球上的人",
+            "a2": "月球",
+            "a1": "私奔到月球",
+            "a4": "月球下的人"
+          },
+          "label": "a1",
+          "answer": "私奔到月球",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2538,
+            1419
+          ],
+          "after": [
+            2539,
+            1419
+          ]
+        }
+      ]
+    },
+    "f60c975e38dbdeef5219cc829dbb61828cecd78f85bee69d755cc9cb47147b04": {
+      "question": "以下哪首歌不是陈奕迅的？",
+      "attempts": [
+        {
+          "id": "ba2fbd2df921469ebb8d2ddef246ca43",
+          "submitted_at": "2026-11-27T16:04:46.553964+00:00",
+          "options": {
+            "a2": "烂",
+            "a4": "梦",
+            "a3": "蚊",
+            "a1": "闪"
+          },
+          "label": "a1",
+          "answer": "闪",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            1223,
+            909
+          ],
+          "after": [
+            1224,
+            909
+          ]
+        }
+      ]
+    },
+    "d31c14e507182180794793a84fa9bb4437358f4145ca46d7c3b909d1dbce8c13": {
+      "question": "《落花流水》最后一句“但是经历过最温柔____”。",
+      "attempts": [
+        {
+          "id": "6d5f0ed6936d443fa9d361ec33eb17af",
+          "submitted_at": "2026-11-27T16:04:54.789070+00:00",
+          "options": {
+            "a3": "拥吻",
+            "a2": "共震",
+            "a4": "拥抱",
+            "a1": "的吻"
+          },
+          "label": "a2",
+          "answer": "共震",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1224,
+            909
+          ],
+          "after": [
+            1225,
+            910
           ]
         }
       ]
