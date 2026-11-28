@@ -1126,6 +1126,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "157651cb0b5c44869401a714067835dc",
+          "submitted_at": "2026-11-28T16:01:57.313958+00:00",
+          "options": {
+            "a1": "我怎么可以哭",
+            "a2": "可以了",
+            "a3": "想哭",
+            "a4": "你为什么哭了呢"
+          },
+          "label": "a3",
+          "answer": "想哭",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2540,
+            1419
+          ],
+          "after": [
+            2541,
+            1420
+          ]
         }
       ]
     },
@@ -3449,6 +3472,29 @@
           "result": "confirmed",
           "before": null,
           "after": null
+        },
+        {
+          "id": "e6a42f1840a449d28fa85e6bab6db51b",
+          "submitted_at": "2026-11-28T16:03:19.165048+00:00",
+          "options": {
+            "a4": "《十面埋伏》",
+            "a2": "《低等动物》",
+            "a3": "《防不胜防》",
+            "a1": "《打回原形》"
+          },
+          "label": "a2",
+          "answer": "《低等动物》",
+          "source": "question_bank",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1225,
+            910
+          ],
+          "after": [
+            1226,
+            911
+          ]
         }
       ]
     },
@@ -8288,6 +8334,29 @@
             1180,
             872
           ]
+        },
+        {
+          "id": "b5409de332b449a095f5b9e7194ed70e",
+          "submitted_at": "2026-11-28T16:03:36.441851+00:00",
+          "options": {
+            "a1": "小孩不懂怕",
+            "a2": "我怕你不肯",
+            "a3": "怕死",
+            "a4": "不要害怕"
+          },
+          "label": "a4",
+          "answer": "不要害怕",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1227,
+            912
+          ],
+          "after": [
+            1228,
+            913
+          ]
         }
       ]
     },
@@ -9920,6 +9989,90 @@
           "after": [
             1225,
             910
+          ]
+        }
+      ]
+    },
+    "47143dca44251c90ed1cdf95ea211a548754903f292bb58e86c4d4b54870af21": {
+      "question": "以下哪首歌陈奕迅有参与作曲？",
+      "attempts": [
+        {
+          "id": "3db7849b7b7c4968ba2b6df489a056e4",
+          "submitted_at": "2026-11-28T16:01:54.678521+00:00",
+          "options": {
+            "a3": "人造卫星",
+            "a1": "人生马拉松",
+            "a2": "人人爱",
+            "a4": "人工智能"
+          },
+          "label": "a3",
+          "answer": "人造卫星",
+          "source": "api",
+          "correct": false,
+          "result": "confirmed",
+          "before": [
+            2539,
+            1419
+          ],
+          "after": [
+            2540,
+            1419
+          ]
+        }
+      ]
+    },
+    "97338fe84bbf38e815f18425b6f0d3335a8ddb9303c2d1440586f64c5b55974b": {
+      "question": "以下哪首歌是陈奕迅作曲的？",
+      "attempts": [
+        {
+          "id": "ccf2666ceb7a46e589e19529a626194d",
+          "submitted_at": "2026-11-28T16:02:04.881695+00:00",
+          "options": {
+            "a4": "龙舌兰",
+            "a3": "恐龙进化论",
+            "a2": "沙龙",
+            "a1": "变色龙"
+          },
+          "label": "a2",
+          "answer": "沙龙",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            2541,
+            1420
+          ],
+          "after": [
+            2542,
+            1421
+          ]
+        }
+      ]
+    },
+    "a230bed521affed8237dadf7dc03d5ab07d17e257e21faaa098bc11822e42086": {
+      "question": "陈奕迅为郑伊健监制的歌曲名称是？",
+      "attempts": [
+        {
+          "id": "7bd6e3321f0545e7b0e4714aa389940d",
+          "submitted_at": "2026-11-28T16:03:27.033393+00:00",
+          "options": {
+            "a4": "新月",
+            "a1": "新歌",
+            "a2": "新篇",
+            "a3": "新章"
+          },
+          "label": "a1",
+          "answer": "新歌",
+          "source": "api",
+          "correct": true,
+          "result": "confirmed",
+          "before": [
+            1226,
+            911
+          ],
+          "after": [
+            1227,
+            912
           ]
         }
       ]
